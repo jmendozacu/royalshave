@@ -1,0 +1,74 @@
+<?php
+/**
+* @author Amasty Team
+* @copyright Copyright (c) 2010-2011 Amasty (http://www.amasty.com)
+* @package Amasty_Customerimg
+*/
+?>
+
+<script type="text/javascript">
+
+var h = new Hash();
+h.set('value',1);  
+function timer_form(){
+    h.set('value', h.get('value')+1);
+}
+function amcustomerimg_showUpload()
+{
+    $('box-amcustomerimg-form-openlink').style.display = 'none';
+    $('box-amcustomerimg-form-form-container').style.display = '';
+    
+    var timerMulti = window.setInterval("timer_form();", 1000);
+}
+</script>
+
+<div class="box-collateral box-amcustomerimg-form" id="box-amcustomerimg-form">
+
+    <?php if ($this->showHeader()):?><h2><?php echo $this->__('Upload images for this product'); ?></h2><?php endif; ?>
+    
+    <iframe id="box-amcustomerimg-form-target" name="box-amcustomerimg-form-target" style="display: none; width: 600px; height: 600px;"></iframe>
+    <div><?php echo Mage::getStoreConfig('amcustomerimg/general/note'); ?></div>
+    
+    <div id="box-amcustomerimg-form-error" style="display: none;"></div>
+    <div id="box-amcustomerimg-form-success" style="display: none;"></div>
+    
+    <div id="box-amcustomerimg-form-openlink">
+    <a href="#" onclick="javascript: amcustomerimg_showUpload(); return false;"><?php echo $this->__('+ Start Uploading My Own Images'); ?></a>
+    </div>
+    
+    <div id="box-amcustomerimg-form-form-container" style="display: none;">
+        <form method="post" action="<?php echo $this->getPostUrl(); ?>" id="box-amcustomerimg-form-form" enctype="multipart/form-data">
+            <input type="hidden" name="product_id" id="product_id" value="<?php echo $this->getProductId(); ?>" />
+            <div class="form-add">
+                <label><?php echo $this->__('Add Your Images:'); ?></label>
+                <div class="input-box">
+                    <input type="file" name="image[0]" class="input-file" size="50" /> &nbsp;&nbsp;
+                            <?php echo $this->__('Title: '); ?> <input type="text" name="title[0]" class="input-text" value="" size="30" /><br/>
+                    <input type="file" name="image[1]" class="input-file" size="50" /> &nbsp;&nbsp;
+                            <?php echo $this->__('Title: '); ?> <input type="text" name="title[1]" class="input-text" value="" size="30" /><br/>
+                    <input type="file" name="image[2]" class="input-file" size="50" /> &nbsp;&nbsp;
+                            <?php echo $this->__('Title: '); ?> <input type="text" name="title[2]" class="input-text" value="" size="30" />
+                </div>
+                <?php 
+                    $customerSession = Mage::getSingleton('customer/session');
+                    $chars = array('&nbsp;', '&iexcl;', '&cent;', '&pound;', '&curren;', '&yen;', '&brvbar;', '&sect;', '&uml;', '&copy;', '&ordf;', '&laquo;', '&not;', '&shy;', '&reg;', '&macr;', '&deg;', '&plusmn;', '&sup2;', '&sup3;', '&acute;', '&micro;', '&para;', '&middot;', '&cedil;', '&sup1;', '&ordm;', '&raquo;', '&frac14;', '&frac12;', '&frac34;', '&iquest;', '&times;', '&divide;');
+                    if (!$customerSession->isLoggedIn())
+                    {
+                        echo $this->__('Email address: ');?>
+                        <?php if (Mage::getStoreConfig('amcustomerimg/general/require_enter_email')){echo "<em style='color: red;'>*</em>";}?>
+                        <br/>
+                        <input type="text" name="guest_email" id="guest_email"  class="input-text validate-email <?php if (Mage::getStoreConfig('amcustomerimg/general/require_enter_email')){echo "required-entry";}?>" size="42" />
+                        <input type="hidden" name="check1"  id="check1" value="<?php echo $chars[array_rand($chars)].$chars[array_rand($chars)].$chars[array_rand($chars)];?>" />
+                        <input type="hidden" name="check2" id="check2"  value="" />
+                        <br><?php
+                    }
+                ?>
+                <button type="button" onclick="javascript: amcustomerimg_upload('box-amcustomerimg-form');" class="button upload-button" title="<?php echo $this->__('Upload Images'); ?>">
+                    <span>
+                        <span><?php echo $this->__('Upload Images'); ?></span>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

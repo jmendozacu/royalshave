@@ -1,0 +1,559 @@
+.countdown { clear:both; width: 100%; max-width: 240px; margin: 10px auto 15px; }
+
+.countdown .unit-wrap {
+    float: left;
+}
+
+.countdown .unit-wrap > span {
+    font-family: Arial;
+    color: #555555;
+}
+
+.countdown {
+    font-family: 'Unica One', 'cursive';
+    -webkit-font-smoothing: subpixel-antialiased; 
+}
+
+/* Skeleton */
+.countdown div.digits {
+    border-radius: 5px;
+    float: left;
+    position: relative;
+}
+
+.countdown .unit-wrap:last-child, .countdown div.digits:last-child { margin: 0px !important; }
+
+.countdown div.digits div.digits-inner {
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    display: none;
+}
+
+.countdown div.digits div.digits-inner div.flip-wrap {
+    height: 100%;
+    -webkit-perspective: 100px;
+    -moz-perspective: 100px;
+    perspective: 100px;
+}
+
+.countdown div.digits div.digits-inner div.flip-wrap div {
+    height: 50%;
+    left: 0;
+    position: absolute;
+    outline: 1px solid transparent;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+}
+
+.countdown div.digits div.digits-inner div.flip-wrap div .shadow {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+.countdown div.digits div.digits-inner div.flip-wrap div.up {
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    top: 0;
+}
+
+.countdown div.digits div.digits-inner div.flip-wrap div.down {
+    bottom: 0;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    -o-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+}
+
+.countdown div.digits div.digits-inner div.flip-wrap div div.inn {
+    background-color: #191919;
+    border-radius: 5px;
+    color: #fff;
+    height: 200%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.countdown div.digits div.digits-inner div.flip-wrap div.up div.inn {
+    background: #373737;
+    top: 0;
+}
+
+.countdown div.digits div.digits-inner div.flip-wrap div.down div.inn {
+    bottom: 0;
+}
+
+/* PLAY */
+.countdown div.play div.digits-inner.before {
+    z-index: 3;
+    display: block;
+}
+
+.countdown div.play div.digits-inner.active {
+    -webkit-animation: asd 0.5s 0.5s linear both;
+    -moz-animation: asd 0.5s 0.5s linear both;
+    animation: asd 0.5s 0.5s linear both;
+    z-index: 1;
+}
+
+@-webkit-keyframes asd {
+    0% { z-index: 2; }
+    20% { z-index: 4; }
+    100% { z-index: 4; }
+}
+
+@-moz-keyframes asd {
+    0% { z-index: 2; }
+    20% { z-index: 4; }
+    100% { z-index: 4; }
+}
+
+@-o-keyframes asd {
+    0% { z-index: 2; }
+    20% { z-index: 4; }
+    100% { z-index: 4; }
+}
+
+@keyframes asd {
+    0% { z-index: 2; }
+    20% { z-index: 4; }
+    100% { z-index: 4; }
+}
+
+.countdown div.play div.digits-inner.active .down {
+    -webkit-animation: turn 0.5s 0.5s linear both;
+    -moz-animation: turn 0.5s 0.5s linear both;
+    animation: turn 0.5s 0.5s linear both;
+    z-index: 2;
+}
+
+@-webkit-keyframes turn {
+    0% { -webkit-transform: rotateX(90deg); }
+    100% { -webkit-transform: rotateX(0deg); }
+}
+
+@-moz-keyframes turn {
+    0% { -moz-transform: rotateX(90deg); }
+    100% { -moz-transform: rotateX(0deg); }
+}
+
+@-o-keyframes turn {
+    0% { -o-transform: rotateX(90deg); }
+    100% { -o-transform: rotateX(0deg); }
+}
+
+@keyframes turn {
+    0% { transform: rotateX(90deg); }
+    100% { transform: rotateX(0deg); }
+}
+
+.countdown div.play div.digits-inner.before .up {
+    -webkit-animation: turn2 0.5s linear both;
+    -moz-animation: turn2 0.5s linear both;
+    animation: turn2 0.5s linear both;
+    z-index: 2;
+}
+
+@-webkit-keyframes turn2 {
+    0% { -webkit-transform: rotateX(0deg); }
+    100% { -webkit-transform: rotateX(-90deg); }
+}
+
+@-moz-keyframes turn2 {
+    0% { -moz-transform: rotateX(0deg); }
+    100% { -moz-transform: rotateX(-90deg); }
+}
+
+@-o-keyframes turn2 {
+    0% { -o-transform: rotateX(0deg); }
+    100% { -o-transform: rotateX(-90deg); }
+}
+
+@keyframes turn2 {
+    0% { transform: rotateX(0deg); }
+    100% { transform: rotateX(-90deg); }
+}
+
+.countdown div div.digits-inner.active {
+    z-index: 3;
+    display: block;
+}
+
+/* SHADOW */
+.countdown div.play div.digits-inner.before .up .shadow {
+    -webkit-animation: show 0.5s linear both;
+    -moz-animation: show 0.5s linear both;
+    animation: show 0.5s linear both;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, black));
+    background: linear, top, rgba(0, 0, 0, 0.1) 0%, black 100%;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+    background: linear, to bottom, rgba(0, 0, 0, 0.1) 0%, black 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.countdown div.play div.digits-inner.active .up .shadow {
+    -webkit-animation: hide 0.5s 0.3s linear both;
+    -moz-animation: hide 0.5s 0.3s linear both;
+    animation: hide 0.5s 0.3s linear both;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, black));
+    background: linear, top, rgba(0, 0, 0, 0.1) 0%, black 100%;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+    background: linear, to bottom, rgba(0, 0, 0, 0.1) 0%, black 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+/*DOWN*/
+.countdown div.play div.digits-inner.before .down .shadow {
+    -webkit-animation: show 0.5s linear both;
+    -moz-animation: show 0.5s linear both;
+    animation: show 0.5s linear both;
+    background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, rgba(0, 0, 0, 0.1)));
+    background: linear, top, black 0%, rgba(0, 0, 0, 0.1) 100%;
+    background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -ms-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: linear, to bottom, black 0%, rgba(0, 0, 0, 0.1) 100%;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.countdown div.play div.digits-inner.active .down .shadow {
+    -webkit-animation: hide 0.5s 0.3s linear both;
+    -moz-animation: hide 0.5s 0.3s linear both;
+    animation: hide 0.5s 0.2s linear both;
+    background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, rgba(0, 0, 0, 0.1)));
+    background: linear, top, black 0%, rgba(0, 0, 0, 0.1) 100%;
+    background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -ms-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: linear, to bottom, black 0%, rgba(0, 0, 0, 0.1) 100%;
+    border-radius: 0px 0px 5px 5px;
+}
+
+@-webkit-keyframes show {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-moz-keyframes show {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-o-keyframes show {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes show {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes hide {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-moz-keyframes hide {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-o-keyframes hide {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes hide {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+
+/* COUNTDOWN SIZES */
+
+/*DEFAULT*/
+.countdown { max-width: 196px; height: 58px; }
+
+.countdown div.unit-wrap {
+    width: 60px;
+    margin: 0 8px 0 0;
+}
+
+.countdown div.digits {
+    width: 29px;
+    height: 42px;
+    line-height: 42px;
+    margin: 0 2px 0 0;
+}
+
+.countdown div.digits div.digits-inner div.flip-wrap div div.inn {
+    font-size: 32px;
+}
+
+.countdown .unit-wrap > span { 
+    font-size: 11px; 
+}
+
+
+
+/*LARGE*/
+.countdown.countdown-large { max-width: 169px; height: 50px; }
+
+.countdown.countdown-large div.unit-wrap {
+    width: 52px;
+    margin: 0 6px 0 0;
+}
+
+.countdown.countdown-large div.digits {
+    width: 25px;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 2px 0 0;
+}
+
+.countdown.countdown-large div.digits div.digits-inner div.flip-wrap div div.inn {
+    font-size: 28px;
+}
+
+.countdown.countdown-large .unit-wrap > span { 
+    font-size: 10px; 
+    display: block;
+    margin-top: 40px;
+}
+
+
+
+/*MEDIUM*/
+.countdown.countdown-medium { max-width: 150px; height: 40px; }
+
+.countdown.countdown-medium div.unit-wrap {
+    width: 46px;
+    margin: 0 6px 0 0;
+}
+
+.countdown.countdown-medium div.digits {
+    width: 22px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 1px 0 0;
+}
+
+.countdown.countdown-medium div.digits div.digits-inner div.flip-wrap div div.inn {
+    font-size: 24px;
+}
+
+.countdown.countdown-medium .unit-wrap > span { 
+    font-size: 9px; 
+    display: block;
+    margin-top: 31px;
+}
+
+
+
+/*SMALL*/
+.countdown.countdown-small { max-width: 126px; height: 39px; }
+
+.countdown.countdown-small div.unit-wrap {
+    width: 39px;
+    margin: 0 4px 0 0;
+}
+
+.countdown.countdown-small div.digits {
+    width: 19px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 1px 0 0;
+}
+
+.countdown.countdown-small div.digits div.digits-inner div.flip-wrap div div.inn {
+    font-size: 24px;
+}
+
+.countdown.countdown-small .unit-wrap > span { 
+    font-size: 8px; 
+    display: block;
+    margin-top: 32px;
+}
+
+
+
+/*EXTRA SMALL*/
+.countdown.countdown-xsmall { max-width: 120px; height: 37px; }
+
+.countdown.countdown-xsmall div.unit-wrap {
+    width: 37px;
+    margin: 0 4px 0 0;
+}
+
+.countdown.countdown-xsmall div.digits {
+    width: 18px;
+    height: 28px;
+    line-height: 28px;
+    margin: 0 1px 0 0;
+}
+
+.countdown.countdown-xsmall div.digits div.digits-inner div.flip-wrap div div.inn {
+    font-size: 19px;
+}
+
+.countdown.countdown-xsmall .unit-wrap > span { 
+    font-size: 8px; 
+    display: block;
+    margin-top: 30px;
+}
+
+
+
+/* COUNTDOWN DAYS SIZES */
+
+/*DEFAULT*/
+.countdown-days { max-width: 240px; height: 53px; }
+
+.countdown-days div.unit-wrap {
+	width: 54px;
+    margin: 0 8px 0 0;
+}
+
+.countdown-days div.digits {
+	width: 26px;
+	height: 40px;
+    line-height: 40px;
+    margin: 0 2px 0 0;
+}
+
+.countdown-days div.digits div.digits-inner div.flip-wrap div div.inn {
+    font-size: 30px;
+}
+
+.countdown-days .unit-wrap > span { 
+	font-size: 11px; 
+    display: block;
+    margin-top: 43px;
+}
+
+
+
+/*LARGE*/
+.countdown-days.countdown-large { max-width: 214px; height: 52px; }
+
+.countdown-days.countdown-large div.unit-wrap {
+    width: 48px;
+    margin: 0 7px 0 0;
+}
+
+.countdown-days.countdown-large div.digits {
+    width: 23px;
+    height: 34px;
+    line-height: 34px;
+    margin: 0 2px 0 0;
+}
+
+.countdown-days.countdown-large div.digits div.digits-inner div.flip-wrap div div.inn {
+    font-size: 24px;
+}
+
+.countdown-days.countdown-large .unit-wrap > span { 
+    font-size: 10px; 
+    display: block;
+    margin-top: 37px;
+}
+
+
+
+/*MEDIUM*/
+.countdown-days.countdown-medium { max-width: 198px; height: 41px; }
+
+.countdown-days.countdown-medium div.unit-wrap {
+    width: 45px;
+    margin: 0 6px 0 0;
+}
+
+.countdown-days.countdown-medium div.digits {
+    width: 22px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 1px 0 0;
+}
+
+.countdown-days.countdown-medium div.digits div.digits-inner div.flip-wrap div div.inn {
+    font-size: 24px;
+}
+
+.countdown-days.countdown-medium .unit-wrap > span { 
+    font-size: 9px; 
+    display: block;
+    margin-top: 32px;
+}
+
+
+
+/*SMALL*/
+.countdown-days.countdown-small { max-width: 168px; height: 39px; }
+
+.countdown-days.countdown-small div.unit-wrap {
+    width: 39px;
+    margin: 0 4px 0 0;
+}
+
+.countdown-days.countdown-small div.digits {
+    width: 19px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 1px 0 0;
+}
+
+.countdown-days.countdown-small div.digits div.digits-inner div.flip-wrap div div.inn {
+    font-size: 24px;
+}
+
+.countdown-days.countdown-small .unit-wrap > span { 
+    font-size: 8px; 
+    display: block;
+    margin-top: 32px;
+}
+
+
+
+/*EXTRA SMALL*/
+.countdown-days.countdown-xsmall { max-width: 120px; height: 30px; }
+
+.countdown-days.countdown-xsmall div.unit-wrap {
+    width: 27px;
+    margin: 0 4px 0 0;
+}
+
+.countdown-days.countdown-xsmall div.digits {
+    width: 13px;
+    height: 24px;
+    line-height: 24px;
+    margin: 0 1px 0 0;
+}
+
+.countdown-days.countdown-xsmall div.digits div.digits-inner div.flip-wrap div div.inn {
+    font-size: 18px;
+}
+
+.countdown-days.countdown-xsmall .unit-wrap > span { 
+    font-size: 6px; 
+    display: block;
+    margin-top: 26px;
+}

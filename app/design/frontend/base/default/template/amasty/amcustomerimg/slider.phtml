@@ -1,0 +1,82 @@
+<?php
+/**
+* @author Amasty Team
+* @copyright Copyright (c) 2010-2011 Amasty (http://www.amasty.com)
+* @package Amasty_Customerimg
+*/
+?>
+
+<?php
+$_imagesNum   = 3;
+$_images      = $this->getImages();
+$_imgHlp      = Mage::helper('amcustomerimg/image');
+$_width       = Mage::getStoreConfig('amcustomerimg/image/size_x');
+$_height      = Mage::getStoreConfig('amcustomerimg/image/size_y');
+$_sliderWidth = ($_width + 6) * $_imagesNum;
+$totalImgs    = 0;
+?>
+
+<?php if ($_images->getSize() > 0): ?>
+
+<div class="box-collateral box-amcustomerimg-slider" id="box-amcustomerimg-slider">
+
+    <?php if ($this->showHeader()):?><h2><?php echo $this->__('Customer Product Images'); ?></h2><?php endif; ?>
+    
+    <div class="box-amcustomerimg-slider-wrap" id="box-amcustomerimg-slider-wrap">
+        <div class="box-amcustomerimg-slider-left" style="height: <?php echo $_height; ?>px;"></div>
+        <div id="box-amcustomerimg-slider-container" style="width: <?php echo $_sliderWidth; ?>px;">
+            <div class="box-amcustomerimg-slider-content">
+                <ul>
+                    <?php foreach ($_images as $image): ?>
+                        <li style="width: <?php echo $_width; ?>px; height: <?php echo $_height; ?>px;">
+                            <a href="<?php echo $_imgHlp->getSeparateUrl($image); ?>" class="amcustomerimg-fancybox" rel="group">
+                                <img src="<?php echo $_imgHlp->getSeparateThumbUrl($image); ?>" />
+                            </a>
+                        </li>
+                    <?php $totalImgs++; endforeach; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="box-amcustomerimg-slider-right" style="height: <?php echo $_height; ?>px;"></div>
+    </div>
+    <div style="clear: both;"></div>
+
+</div>
+<script>
+<?php
+$_itemFullWidth  = $_width + 2 * 2 + 1 * 2; // 2 px padding + 1 px border  - at each side
+$_itemFullHeight = $_height + 1 * 2; // 1 px border at each side
+?>
+Event.observe(window, "load", function(){
+    amImgSlider = new amSlider('box-amcustomerimg-slider-wrap', {
+        width : <?php echo $_itemFullWidth; ?>,
+        height: <?php echo $_itemFullHeight; ?>,
+        total: <?php echo $totalImgs; ?>,
+        visibleCnt: <?php echo $_imagesNum; ?>,
+        autoscroll: true,
+        interval: 10,
+        object: "amImgSlider",
+    });
+    
+    jQuery('.amcustomerimg-fancybox').fancybox({
+        'transitionIn'  :    'elastic',
+        'transitionOut' :    'elastic',
+        'speedIn'       :    600, 
+        'speedOut'      :    200, 
+        'overlayShow'   :    true ,
+        'loop'          : true,
+        'helpers'       :   {
+           'thumbs' : { 
+               'width'  : 50,
+               'height' : 50, 
+           },
+           'title'  : {
+               'type'   : 'float'
+           }
+        },
+    });
+});
+
+</script>
+           
+<?php endif; ?>

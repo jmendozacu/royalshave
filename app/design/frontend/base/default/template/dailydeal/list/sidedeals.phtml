@@ -1,0 +1,59 @@
+<?php
+$displayCartButton = Mage::getStoreConfig('dailydeal/sidebar_configuration/display_cart_button'); 
+$displayQty = Mage::getStoreConfig('dailydeal/sidebar_configuration/display_qty'); 
+$displayPrice = Mage::getStoreConfig('dailydeal/sidebar_configuration/display_price');
+$sidedealsNr = Mage::getStoreConfig('dailydeal/sidebar_configuration/sidedeals_number');
+$displayPastDeals = Mage::getStoreConfig('dailydeal/configuration/past_deals');
+$displayPriceForType = array('simple', 'virtual', 'downloadable', 'configurable');
+$displayQtyForType = array('simple', 'virtual', 'downloadable');
+$items = $this->getItems(); 
+?>
+<?php if ($this->helper('dailydeal')->isEnabled() && count($items)>0 && $sidedealsNr>0): ?>
+	<div class="box base-mini mini-related-items block block-deals">
+	    <div class="head block-title">
+	    	<?php if ($this->getFeaturedDeal()): ?>
+	        	<strong><span><?php echo $this->__('More Deals') ?></span></strong>
+        	<?php else: ?>
+	        	<strong><span><?php echo $this->__('Active Deals') ?></span></strong>
+			<?php endif; ?>
+	    </div>
+	    <div class="block-content">
+	        <ol class="mini-products-list" id="block-deals">
+	        <?php $i = 0; foreach($items as $_item): $i++; ?>
+	            <li class="item">
+	    			<!-- deal image -->
+	    			<div class="product-images">
+	            		<a href="<?php echo $_item->getProductUrl(); ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(60) ?>" width="60" height="60" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
+				    </div>	                    
+	                <div class="product-details">	                	
+	    				<!-- deal name -->
+	                    <p class="product-name"><a href="<?php echo $_item->getProductUrl(); ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></p>	                    
+	                    
+						<!-- deal price, add to cart button & qty -->
+				  		<?php if ($displayPrice && in_array($_item->getTypeId(), $displayPriceForType)): ?>
+					    	<?php echo $this->getPriceHtml($_item, true, '-deal') ?>
+					    <?php endif; ?>
+
+				  		<?php if ($displayQty && in_array($_item->getTypeId(), $displayQtyForType)): ?>
+					    	<div class="deal-qty"><?php echo $this->__('<b>%s item(s)</b> left!', $_item->getDealQty()); ?></div>
+					    <?php endif; ?>
+
+			            <?php if($displayCartButton): ?>
+						    <?php if($_item->isSaleable()): ?>
+				                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+				            <?php else: ?>
+				                <span><?php echo $this->__('Out of stock') ?></span>
+				            <?php endif; ?>
+			            <?php endif; ?>
+	                </div>
+	            </li>
+				<?php if ($sidedealsNr<=$i) break; ?>
+	        <?php endforeach; ?>
+	        </ol>
+			<div class="actions">
+				<div class="left" style="margin-right:7px;font-weight:bold"><?php echo $this->__('View:'); ?> </div><a class="left" href="<?php echo $this->getUrl('dailydeal/index/list'); ?>"><?php echo $this->__('All Deals') ?></a><?php if ($displayPastDeals): ?><div class="separator">||</div><a class="left" href="<?php echo $this->getUrl('dailydeal/index/recent'); ?>"><?php echo $this->__('Past Deals') ?></a><?php endif; ?>
+			</div>
+	        <script type="text/javascript">decorateList('block-deals', 'none-recursive')</script>
+	    </div>
+	</div>
+<?php endif; ?>

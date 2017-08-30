@@ -1,0 +1,17 @@
+<?php
+/**
+* @author Amasty Team
+* @copyright Copyright (c) 2010-2011 Amasty (http://www.amasty.com)
+* @package Amasty_Customerimg
+*/
+?>
+<?php echo Mage::helper('amcustomerimg')->showSlider(); ?>
+<script type="text/javascript">
+if ($('box-amcustomerimg-slider'))
+{
+$('box-amcustomerimg-slider').style.display = 'none';
+document.observe("dom:loaded", function() {
+    amcustomerimg_position('box-amcustomerimg-slider', '<?php echo Mage::getStoreConfig('amcustomerimg/general/container_selector')?>');
+});
+}
+</script>

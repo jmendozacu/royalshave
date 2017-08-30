@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+/**
+* @author Amasty Team
+* @copyright Copyright (c) 2010-2011 Amasty (http://www.amasty.com)
+* @package Amasty_Customerimg
+*/
+
+.box-collateral.box-amcustomerimg-slider
+{
+    margin: 25px 0px 0px 0px;
+}
+
+#box-amcustomerimg-slider-container
+{
+    overflow: hidden;
+    float: left;
+}
+
+#box-amcustomerimg-slider-container ul 
+{
+    margin: 0;
+    padding:0;
+    width: 100000px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#box-amcustomerimg-slider-container ul li 
+{
+    text-align: center;
+    list-style: none;   
+    float: left;
+    border: 1px solid #e5dcc3;
+    margin: 0px 2px 0px 2px;
+}
+
+.box-amcustomerimg-slider-wrap
+{
+    width: 100%;
+    text-align: center;
+}
+
+.box-amcustomerimg-slider-wrap .box-amcustomerimg-slider-left
+{
+    width: 18px;
+    background-image: url("left.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+}
+
+.box-amcustomerimg-slider-wrap .box-amcustomerimg-slider-right
+{
+    width: 18px;
+    background-image: url("right.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+}

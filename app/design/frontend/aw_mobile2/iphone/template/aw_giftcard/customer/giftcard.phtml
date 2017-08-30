@@ -1,0 +1,69 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This software is designed to work with Magento community edition and
+ * its use on an edition other than specified is prohibited. aheadWorks does not
+ * provide extension support in case of incorrect edition use.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Giftcard
+ * @version    1.0.9
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ */
+?><div class="customer-giftcard">
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <?php if(Mage::registry('current_giftcard')): ?>
+        <div id="aw-giftcard-info-block" class="gift-card-info">
+            <div class="gift-card-info-item">
+                <span class="title"><?php echo $this->__("Code:"); ?></span>
+                <span class="value"><?php echo $this->__("%s", Mage::registry('current_giftcard')->getCode());?></span>
+            </div>
+            <div class="gift-card-info-item">
+                <span class="title"><?php echo $this->__("Active:"); ?></span>
+                <span class="value"><?php echo $this->__("%s", Mage::getModel('aw_giftcard/source_product_attribute_option_yesno')->getOptionText(Mage::registry('current_giftcard')->getStatus())); ?></span>
+            </div>
+            <div class="gift-card-info-item">
+                <span class="title"><?php echo $this->__("Status:"); ?></span>
+                <span class="value"><?php echo $this->__("%s", Mage::getModel('aw_giftcard/source_giftcard_status')->getOptionByValue(Mage::registry('current_giftcard')->getState()));?></span>
+            </div>
+            <div class="gift-card-info-item">
+                <span class="title"><?php echo $this->__("Balance:"); ?></span>
+                <span class="value"><?php echo $this->__("%s", Mage::helper('core')->currency(Mage::registry('current_giftcard')->getBalance()));?></span>
+            </div>
+            <?php if (Mage::registry('current_giftcard')->getExpireAt()): ?>
+                <div class="gift-card-info-item">
+                    <span class="title"><?php echo $this->__("Expires:"); ?></span>
+                    <span class="value"><?php echo $this->__("%s", $this->formatDate(Mage::registry('current_giftcard')->getExpireAt(), 'short'));?></span>
+                </div>
+            <?php endif;?>
+        </div>
+        <div style="clear:both"></div>
+    <?php endif;?>
+    <form id="aw_giftcard-form" action="<?php echo $this->getFormUrl(); ?>" method="post" class="form">
+        <div class="form__field">
+            <p class="form__field">
+                <label for="giftcard_code" class="form__label"><?php echo $this->__('Enter gift card code') ?></label>
+                <input type="text" id="giftcard_code" name="giftcard_code" class="required-entry form__textfield textfield" value="<?php echo $this->getCurrentGiftcard(); ?>" />
+            </p>
+            <p class="form__submit-wrapper">
+                <button class="button check-gc-status green-button-other" id="check-gc-status" type="button" onclick="AwGiftcardForm.submit(this)" value="<?php echo $this->__('Check status and balance') ?>"><?php echo $this->__('Check status and balance') ?></button>
+            </p>
+        </div>
+    </form>
+    <script type="text/javascript">
+        var AwGiftcardForm = new VarienForm('aw_giftcard-form');
+    </script>
+</div>

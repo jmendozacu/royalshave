@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Devinc_Dailydeal>
+            <version>2.5.0</version>
+        </Devinc_Dailydeal>
+    </modules>
+ 	<admin>
+        <routers>
+			<dailydealadmin>
+				<use>admin</use>
+				<args>
+					<module>Devinc_Dailydeal</module>
+					<frontName>dailydealadmin</frontName>
+				</args>
+			</dailydealadmin>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <dailydeal>
+                <use>standard</use>
+                <args>
+                    <module>Devinc_Dailydeal</module>
+                    <frontName>dailydeal</frontName>
+                </args>
+            </dailydeal>
+        </routers>
+        <layout>
+            <updates>
+                <dailydeal>
+                    <file>dailydeal.xml</file>
+                </dailydeal>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <dailydeal>
+                    <files>
+                        <default>Dailydeal.csv</default>
+                    </files>
+                </dailydeal>
+            </modules>
+        </translate>
+    </frontend>
+    <adminhtml>
+		<menu>
+			<dailydeal module="dailydeal">
+				<title>Daily Deal</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<add module="dailydeal">
+						<title>Add Deal</title>
+						<sort_order>0</sort_order>
+						<action>dailydealadmin/adminhtml_dailydeal/new/</action>
+					</add>
+					<items module="dailydeal">
+						<title>Manage Deals</title>
+						<sort_order>1</sort_order>
+						<action>dailydealadmin/adminhtml_dailydeal/</action>
+					</items>
+					<configuration module="dailydeal">
+						<title>Settings</title>
+						<sort_order>2</sort_order>
+						<action>adminhtml/system_config/edit/section/dailydeal</action>
+					</configuration>
+				</children>
+			</dailydeal>
+		</menu>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<dailydeal translate="title" module="dailydeal">
+							<title>Daily Deal Menu</title>
+							<sort_order>50</sort_order>  							 
+							<children>
+								<add translate="title" module="dailydeal">
+									<title>Add Deal</title>
+									<sort_order>0</sort_order>
+								</add>
+								<items translate="title" module="dailydeal">
+									<title>Manage Deals</title>
+									<sort_order>1</sort_order>
+								</items>
+								<configuration translate="title" module="dailydeal">
+									<title>Settings</title>
+									<sort_order>2</sort_order>
+								</configuration>
+							</children>
+						</dailydeal>
+						<system>
+							<children>
+								<config>
+									<children>
+										<dailydeal translate="title" module="dailydeal">
+											<title>Daily Deal Settings</title>
+											<sort_order>50</sort_order>
+										</dailydeal>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>		
+		</acl>		
+		<layout>
+			<updates>
+				<dailydeal>
+					<file>dailydeal.xml</file>
+				</dailydeal>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+		<events> 	
+			<catalog_controller_product_delete> 
+				<observers> 
+					<dailydeal_observer_delete_deal> 
+						<type>singleton</type> 
+						<class>dailydeal/observer</class> 
+						<method>deleteDeal</method> 
+					</dailydeal_observer_delete_deal> 
+				</observers> 
+			</catalog_controller_product_delete> 	
+
+			<http_response_send_before> 
+				<observers> 
+					<dailydeal_observer_refresh_deals_and_homepage_redirect> 
+						<type>singleton</type> 
+						<class>dailydeal/observer</class> 
+						<method>refreshDealsHomepageRedirect</method> 
+					</dailydeal_observer_refresh_deals_and_homepage_redirect> 
+				</observers> 
+			</http_response_send_before>
+
+			<sales_quote_item_qty_set_after> 
+				<observers> 
+					<dailydeal_observer_cart_review> 
+						<type>singleton</type> 
+						<class>dailydeal/observer</class> 
+						<method>reviewCartItem</method> 
+					</dailydeal_observer_cart_review> 
+				</observers> 
+			</sales_quote_item_qty_set_after> 		
+
+			<sales_order_place_after> 
+				<observers> 
+					<dailydeal_observer_update_deal_qty> 
+						<type>singleton</type> 
+						<class>dailydeal/observer</class> 
+						<method>updateDealQty</method> 
+					</dailydeal_observer_update_deal_qty> 
+				</observers> 
+			</sales_order_place_after> 
+
+			<catalog_product_get_final_price> 
+				<observers> 
+					<dailydeal_observer_set_product_price> 
+						<type>singleton</type> 
+						<class>dailydeal/observer</class> 
+						<method>getFinalPrice</method> 
+					</dailydeal_observer_set_product_price> 
+				</observers> 
+			</catalog_product_get_final_price> 
+
+			<catalog_product_collection_load_after> 
+				<observers> 
+					<dailydeal_observer_set_collection_price> 
+						<type>singleton</type> 
+						<class>dailydeal/observer</class> 
+						<method>setCollectionFinalPrice</method> 
+					</dailydeal_observer_set_collection_price> 
+				</observers> 
+			</catalog_product_collection_load_after> 
+			
+			<core_block_abstract_to_html_before>
+				<observers>
+					<update_product_list_blocks>
+						<type>singleton</type>
+						<class>dailydeal/observer</class>
+						<method>updateBlocksBefore</method>
+					</update_product_list_blocks>
+				</observers>
+			</core_block_abstract_to_html_before>
+
+			<catalog_product_collection_load_after> 
+				<observers> 
+				  	<collect_product_ids> 
+						<type>singleton</type> 
+						<class>dailydeal/observer</class> 
+						<method>collectLoadedProductIds</method> 
+					</collect_product_ids> 
+				</observers> 
+			</catalog_product_collection_load_after> 
+		</events> 
+        <models>
+            <dailydeal>
+                <class>Devinc_Dailydeal_Model</class>
+                <resourceModel>dailydeal_mysql4</resourceModel>
+            </dailydeal>
+            <dailydeal_mysql4>
+                <class>Devinc_Dailydeal_Model_Mysql4</class>
+                <entities>
+                    <dailydeal>
+                        <table>dailydeal</table>
+                    </dailydeal>
+                </entities>
+            </dailydeal_mysql4>
+        </models>
+        <resources>
+            <dailydeal_setup>
+                <setup>
+                    <module>Devinc_Dailydeal</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </dailydeal_setup>
+            <dailydeal_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </dailydeal_write>
+            <dailydeal_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </dailydeal_read>
+        </resources>
+        <blocks>
+            <dailydeal>
+                <class>Devinc_Dailydeal_Block</class>
+            </dailydeal> 
+			<rss>
+				<rewrite>
+					<catalog_special>Devinc_Dailydeal_Block_Rss_Catalog_Special</catalog_special>
+				</rewrite>
+			</rss>
+        </blocks>
+        <helpers>
+            <dailydeal>
+                <class>Devinc_Dailydeal_Helper</class>
+            </dailydeal>
+        </helpers>
+    </global>
+	<crontab>
+        <jobs>
+            <dailydeal_refresh>
+                <schedule><cron_expr>* * * * *</cron_expr></schedule> 
+                <run><model>dailydeal/dailydeal::refreshDealsCron</model></run>
+            </dailydeal_refresh>
+        </jobs>
+    </crontab>
+</config>

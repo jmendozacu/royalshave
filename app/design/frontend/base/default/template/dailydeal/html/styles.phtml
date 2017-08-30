@@ -1,0 +1,111 @@
+<?php if ($this->helper('dailydeal')->isEnabled()): ?>	
+	<link href="<?php if (Mage::app()->getStore()->isCurrentlySecure()): ?>https<?php else: ?>http<?php endif; ?>://fonts.googleapis.com/css?family=Josefin+Sans|Lobster+Two:400italic" rel="stylesheet" type="text/css" />
+	<?php if (Mage::getStoreConfig('dailydeal/configuration/countdown_type')==1): ?>
+		<link rel="stylesheet" href="<?php if (Mage::app()->getStore()->isCurrentlySecure()): ?>https<?php else: ?>http<?php endif; ?>://fonts.googleapis.com/css?family=Unica+One" />
+	<?php elseif (Mage::getStoreConfig('dailydeal/configuration/countdown_type')==2): ?>
+		<link href="<?php if (Mage::app()->getStore()->isCurrentlySecure()): ?>https<?php else: ?>http<?php endif; ?>://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet" type="text/css" />
+	<?php endif; ?>
+
+	<style>
+		/* featured deal design */
+		<?php if (Mage::getStoreConfig('dailydeal/featured_deal/sidebar_rounded_corners')): ?>
+			.dd-featured-deal .dd-image, .dd-featured-deal .dd-header { 
+				-moz-border-radius: 0; 
+				-o-border-radius: 5px 5px 0 0; 
+				-webkit-border-radius: 5px 5px 0 0; 
+				border-radius: 5px 5px 0 0; 
+				-khtml-border-radius: 5px 5px 0 0;
+			}
+			.dd-featured-deal .dd-content { 
+				-moz-border-radius: 0 0 5px 5px; 
+				-o-border-radius: 0 0 5px 5px; 
+				-webkit-border-radius: 0 0 5px 5px; 
+				border-radius: 0 0 5px 5px; 
+				-khtml-border-radius: 0 0 5px 5px;
+			}
+			@media only screen and (min-width: 480px) {
+				.dd-slim-countdown .dd-image, .dd-slim-countdown .dd-header { 
+					-moz-border-radius: 5px 0 0 5px; 
+					-o-border-radius: 5px 0 0 5px; 
+					-webkit-border-radius: 5px 0 0 5px; 
+					border-radius: 5px 0 0 5px; 
+					-khtml-border-radius: 5px 0 0 5px;
+				}
+				.dd-slim-countdown .dd-content { 
+					-moz-border-radius: 0 5px 5px 0; 
+					-o-border-radius: 0 5px 5px 0; 
+					-webkit-border-radius: 0 5px 5px 0; 
+					border-radius: 0 5px 5px 0; 
+					-khtml-border-radius: 0 5px 5px 0;
+				}
+			}
+		<?php endif; ?>
+		.dd-featured-deal .dd-content { background:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/bg_main'); ?>; }
+		.dd-featured-deal .dd-content:before { background:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/bg_main'); ?>; }
+		.dd-featured-deal .dd-content:after { background:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/bg_main'); ?>; }
+		.dd-featured-deal .dd-header .dd-image:before { background:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/bg_main'); ?>; }
+		.dd-featured-deal .dd-header .dd-image:after { background:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/bg_main'); ?>; }
+		.dd-featured-deal .dd-content .dd-title { color:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/title_color'); ?> !important; }
+		.dd-featured-deal .dd-content .product_name { color:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/product_name_color'); ?> !important; }
+		.dd-featured-deal .dd-content .dd-actions button { color:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/cart_button_text_color'); ?> !important; }
+		<?php $priceBkgColor = (Mage::getStoreConfig('dailydeal/featured_deal/price_background')) ? Mage::helper('dailydeal')->hex2rgb(Mage::getStoreConfig('dailydeal/featured_deal/price_background')) : '255, 255, 255'; ?>
+		.dd-featured-deal .dd-header .dd-price .price-box p span.price { background: rgba(<?php echo $priceBkgColor; ?>, 0.9);  }
+		.dd-featured-deal .dd-header .dd-price .price-box p.old-price span.price { color:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/old_price_color'); ?> !important; }
+		.dd-featured-deal .dd-header .dd-price .price-box p.special-price span.price { color:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/special_price_color'); ?> !important; }
+
+		/* product page design */
+		.main-countdown .countdown-title { color:<?php echo Mage::getStoreConfig('dailydeal/configuration/title_color'); ?> !important; }
+		.qty-text { color:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/qty_color'); ?> !important; background:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/qty_background_color'); ?> !important; border-color:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/qty_border_color'); ?> !important; }
+		.qty-text b { color:<?php echo Mage::getStoreConfig('dailydeal/featured_deal/qty_items_color'); ?> !important; }
+		.main-countdown .qty-text { color:<?php echo Mage::getStoreConfig('dailydeal/configuration/qty_color'); ?> !important; }
+		.main-countdown .qty-text b { color:<?php echo Mage::getStoreConfig('dailydeal/configuration/qty_items_color'); ?> !important; }
+		.block-deals .block-content #block-deals .item .product-details .deal-qty { color:<?php echo Mage::getStoreConfig('dailydeal/sidebar_configuration/qty_color'); ?> !important; }
+		.block-deals .block-content #block-deals .item .product-details .deal-qty b { color:<?php echo Mage::getStoreConfig('dailydeal/sidebar_configuration/qty_items_color'); ?> !important; }
+
+
+
+		/* circular countdown */
+		<?php if (Mage::getStoreConfig('dailydeal/configuration/countdown_type')==0): ?>	
+			.countdown_timer li { color:<?php echo Mage::getStoreConfig('dailydeal/circle_countdown/text_color'); ?> !important; }
+		<?php endif; ?>
+
+		/* flip countdown */
+		<?php if (Mage::getStoreConfig('dailydeal/configuration/countdown_type')==1): ?>
+			.countdown div.digits div.digits-inner div.flip-wrap div.up div.inn, .countdown div.digits div.digits-inner div.flip-wrap div.down div.inn { background: <?php echo Mage::getStoreConfig('dailydeal/flip_countdown/bg_color'); ?>; color: <?php echo Mage::getStoreConfig('dailydeal/flip_countdown/digit_color'); ?>; }
+			.countdown .unit-wrap > span { color: <?php echo Mage::getStoreConfig('dailydeal/flip_countdown/text_color'); ?>; }
+
+			/* flip countdown optimizations for iPhone, iPad */	
+			<?php if (($this->helper('dailydeal')->isMobile() || $this->helper('dailydeal')->isTablet()) && strpos($_SERVER["HTTP_USER_AGENT"], 'Safari')): ?>	
+				.countdown div.play div.digits-inner.active .down {
+				    -webkit-animation: turn 0.4s 0.5s linear both;
+				}
+				.countdown div.play div.digits-inner.before .up {
+				    -webkit-animation: turn2 0.4s linear both;
+				}
+				.countdown div.play div.digits-inner.active {
+				    -webkit-animation: asd 0.6s 0.4s linear both;
+				}
+
+				.countdown div.play div.digits-inner.before .up .shadow {
+				    -webkit-animation: show 0.4s linear both;
+				}
+				.countdown div.play div.digits-inner.active .up .shadow {
+				    -webkit-animation: hide 0.4s 0.3s linear both;
+				}
+				.countdown div.play div.digits-inner.before .down .shadow {
+				    -webkit-animation: show 0.4s linear both;
+				}
+				.countdown div.play div.digits-inner.active .down .shadow {
+				    -webkit-animation: hide 0.4s 0.3s linear both;
+				}
+			<?php endif; ?>
+		<?php endif; ?>
+
+		/* simple countdown */
+		<?php if (Mage::getStoreConfig('dailydeal/configuration/countdown_type')==2): ?>	
+			.countdown .label { color:<?php echo Mage::getStoreConfig('dailydeal/simple_countdown/text_color'); ?> !important; }
+			.countdown .sep { color:<?php echo Mage::getStoreConfig('dailydeal/simple_countdown/bullet_color'); ?> !important; }
+			.countdown .digits { color:<?php echo Mage::getStoreConfig('dailydeal/simple_countdown/digit_color'); ?> !important; }
+		<?php endif; ?>
+	</style>
+<?php endif; ?>

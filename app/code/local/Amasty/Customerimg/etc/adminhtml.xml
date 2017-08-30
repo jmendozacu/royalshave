@@ -1,0 +1,53 @@
+<?xml version="1.0"?> 
+<config>
+    <translate>
+        <modules>
+            <Amasty_Customerimg>
+                <files>
+                    <default>Amasty_Customerimg.csv</default>
+                </files>
+            </Amasty_Customerimg>
+        </modules>
+    </translate>
+    <menu>
+         <catalog>
+            <children>
+                <amcustomerimg translate="title" module="amcustomerimg">
+                    <title>Customer Product Images</title>
+                    <action>amcustomerimgadm/adminhtml_image</action>
+                    <sort_order>2</sort_order>
+                </amcustomerimg>
+            </children>
+         </catalog>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <amcustomerimg translate="title">
+                                <title>Customer Product Images</title>
+                                <sort_order>2</sort_order>
+                            </amcustomerimg>
+                        </children>
+                    </catalog>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <amcustomerimg translate="title" module="amcustomerimg">
+                                        <title>Customer Product Images</title>
+                                    </amcustomerimg>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config> 

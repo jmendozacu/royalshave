@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<root>
+    <cms>
+        <pages>
+            <item>
+                <title>Skin 6 Home Page</title>
+                <identifier>skin6_home</identifier>
+                <content><![CDATA[<div class="parallax-banners-wrapper">
+	<div class="background-wrapper">
+		<div class="text-banner" id="parallax-banner-1">
+			<div class="background" style="background-image: url({{media url="wysiwyg/sk6_text_banner_1.jpg"}});"></div>
+			<div class="banner-content skin-1" data-top="43%">
+				<p>From new collection</p>
+				<h2>Men’s accessories</h2>
+				<h3>Rucksack smoke large lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies euismod justo</h3>
+				<h4><button class="button banner-btn"><span><span>Go Shopping</span></span></button></h4>
+			</div>
+		</div>
+		<div class="text-banner" id="parallax-banner-2">
+			<div class="background" style="background-image: url({{media url="wysiwyg/sk6_text_banner_2.jpg"}});"></div>
+			<div class="banner-content skin-2" data-top="43%">
+				<p>From new collection</p>
+				<h2>Mighty Phone Wallet</h2>
+				<h3>Rucksack smoke large lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies euismod justo</h3>
+				<h4><button class="button banner-btn"><span><span>Go Shopping</span></span></button></h4>
+			</div>
+		</div>
+		<div class="text-banner" id="parallax-banner-3">
+			<div class="background" style="background-image: url({{media url="wysiwyg/sk6_text_banner_3.jpg"}});"></div>
+			<div class="banner-content skin-3" data-top="43.5%">
+				<p>From new collection</p>
+				<h2>Tab <span>iPad mini</span> bro feat</h2>
+				<h3>Tablet case lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies euismod justo</h3>
+				<h4><button class="button banner-btn"><span><span>Go Shopping</span></span></button></h4>
+			</div>
+		</div>
+		<div class="text-banner" id="parallax-banner-4">
+			<div class="background" style="background-image: url({{media url="wysiwyg/sk6_text_banner_4.jpg"}});"></div>
+			<div class="banner-content skin-4" data-top="43%">
+				<p>From new collection</p>
+				<h2>Explore more</h2>
+				<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies euismod justo</h3>
+				<h4><button class="button banner-btn"><span><span>Go Shopping</span></span></button></h4>
+			</div>
+		</div>
+		<div class="text-banner" id="parallax-banner-5">
+			<div class="background" style="background-image: url({{media url="wysiwyg/sk6_text_banner_5.jpg"}});"></div>
+			<div class="banner-content skin-5" data-top="43%">
+				<p>From new collection</p>
+				<h2>gadget accessories</h2>
+				<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies euismod justo</h3>
+				<h4><button class="button banner-btn"><span><span>Go Shopping</span></span></button></h4>
+			</div>
+		</div>
+		<div class="text-banner" id="parallax-banner-6">
+			<div class="background" style="background-image: url({{media url="wysiwyg/sk6_text_banner_6.jpg"}});"></div>
+			<div class="banner-content skin-6" data-top="43%">
+				<p>Only for men’s</p>
+				<h2>Leather citybags</h2>
+				<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies euismod justo</h3>
+				<h4><button class="button banner-btn"><span><span>Go Shopping</span></span></button></h4>
+			</div>
+		</div>
+	</div>
+</div>
+<hr class="indent-18 white-space" />
+{{block type="newsletter/subscribe" block_id="wide.newsletter" template="newsletter/wide_subscribe.phtml"}}]]></content>
+                <is_active>1</is_active>
+                <sort_order>0</sort_order>
+				<layout_update_xml><![CDATA[
+					<reference name="head">
+						<action method="addItem"><type>skin_js</type><name>js/jquery.parallax-1.1.3.js</name></action>
+						<action method="addItem"><type>skin_js</type><name>js/jquery.localscroll-1.2.7-min.js</name><params/></action>
+					</reference>]]>
+				</layout_update_xml>
+                <stores>
+                    <item>0</item>
+                </stores>
+                <root_template>one_column</root_template>
+            </item>
+			
+			<item>
+                <title>404 Not Found (Parallax Effect)</title>
+                <identifier>skin6-no-route</identifier>
+                <content><![CDATA[<div class="page-no-route">
+	<div class="not-found-bg" data-bgimg="background-image: url({{media url="wysiwyg/sk6_404_bg.jpg"}})"></div>
+	<header class="header" id="header">
+		<div class="container_12">
+			<div class="grid_12">
+				<h2 class="logo">
+					<a class="logo" href="{{store url=""}}"><img src="{{media url="wysiwyg/sk6_404_logo.png"}}" data-srcX2="{{media url="wysiwyg/sk6_404_logo@x2.png"}}"></a>
+				</h2>
+				<div class="search">{{block type="core/template" block_id="topSearch" template="catalogsearch/form.mini.phtml"}}</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+	<div class="no-route">
+		<div class="container_12">
+			<div class="grid_12">
+				<div class="text-block">
+					<div class="f-left">
+						<h2>404</h2>
+						<h3>Whoops, our bad...</h3>
+					</div>
+					<div class="f-right">
+						<p>The page you requested was not found, and we have a fine guess why.</p>
+						<p>If you typed the URL directly, please make sure the spelling is correct.</p>
+						<p>If you clicked on a link to get here, the link is outdated.</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<button class="button btn-home" type="button" onclick="setLocation('{{store url=""}}')"><span><span>go to home</span></span></button>
+				<div class="clear"></div>
+				<div class="block-or">or</div>
+				<div class="clear"></div>
+				<header class="widget-title"><h2>Check new arrivals</h2></header>
+				{{widget type="meigeewidgetsbizarre/newproducts" template="meigee/meigeewidgetsbizarre/grid.phtml" products_amount="6" products_per_row="6" product_name_grid="1" price_grid="1" widget_id="665"}}
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<footer id="footer">
+		<div class="container_12">
+			<div class="grid_12">
+				<div class="footer-links">
+					<ul>
+						<li><a href="{{store direct_url="about-magento-demo-store"}}">About Us</a></li>
+						<li><a href="{{store direct_url="customer-service"}}">Customer Service</a></li>
+						<li class="privacy"><a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy</a></li>
+						<li><a href="{{store direct_url="catalog/seo_sitemap/category"}}">Site Map </a></li>
+						<li><a href="{{store direct_url="catalogsearch/term/popular"}}">Search Terms</a></li>
+						<li><a href="{{store direct_url="catalogsearch/advanced/"}}">Advanced Search</a></li>
+						<li><a href="{{store direct_url="sales/guest/form/"}}">Orders and Returns</a></li>
+						<li class="last"><a href="{{store direct_url="contacts"}}">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					<address>{{config path="design/footer/copyright"}}</address>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</footer>
+</div>]]></content>
+                <is_active>1</is_active>
+                <sort_order>0</sort_order>
+                <stores>
+                    <item>0</item>
+                </stores>
+                <root_template>empty</root_template>
+            </item>
+        </pages>
+    </cms>
+</root>

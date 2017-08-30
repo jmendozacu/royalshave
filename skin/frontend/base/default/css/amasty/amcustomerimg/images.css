@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+/**
+* @author Amasty Team
+* @copyright Copyright (c) 2010-2011 Amasty (http://www.amasty.com)
+* @package Amasty_Customerimg
+*/
+
+.box-collateral.box-amcustomerimg-form
+{
+    margin: 25px 0px 0px 0px;
+}
+
+.box-amcustomerimg-form .input-file
+{
+    margin: 0px 0px 2px 0px;
+}
+
+.box-amcustomerimg-form .upload-button
+{
+    margin: 4px 0px 0px 0px;
+}
+
+#box-amcustomerimg-form-error
+{
+    background-color: #ffcaca;
+    border: 1px solid #ff5454;
+    padding: 4px 0px 4px 12px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: #993333;
+}
+
+#box-amcustomerimg-form-success
+{
+    background-color: #e1f8e8;
+    border: 1px solid #60bd7f;
+    padding: 4px 0px 4px 12px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: #209430;
+}

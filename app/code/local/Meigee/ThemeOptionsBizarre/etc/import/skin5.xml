@@ -1,0 +1,344 @@
+<?xml version="1.0"?>
+<root>
+    <cms>
+        <pages>
+            <item>
+                <title>Skin 5 Home Page</title>
+                <identifier>skin5_home</identifier>
+                <content><![CDATA[<hr class="indent-40 white-space" />
+<div class="grid_4 alpha text-banner border">
+	<a href="#" title="Text Banner"><img src="{{media url="wysiwyg/sk5_text_banner_1.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_text_banner_1@x2.jpg"}}" alt="" /></a>
+	<div class="text-banner-content">
+		<h2>Fibi the Fox Handcrafted Toys</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		<a class="banner-link" href="#">Shop now <i class="fa fa-angle-right"></i></a>
+	</div>
+</div>
+<hr class="indent-18 white-space mobile" />
+<div class="grid_4 text-banner">
+	<a href="#" title="Text Banner"><img src="{{media url="wysiwyg/sk5_text_banner_2.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_text_banner_2@x2.jpg"}}" alt="" /></a>
+	<div class="text-banner-content skin-2">
+		<h2>Black Tungsten Ring</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		<a class="banner-link" href="#">Shop now <i class="fa fa-angle-right"></i></a>
+	</div>
+</div>
+<hr class="indent-18 white-space mobile" />
+<div class="grid_4 omega text-banner">
+	<a href="#" title="Text Banner"><img src="{{media url="wysiwyg/sk5_text_banner_3.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_text_banner_3@x2.jpg"}}" alt="" /></a>
+	<div class="text-banner-content">
+		<h2>Octopus  Cigarette Case-Wallet</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		<a class="banner-link" href="#">Shop now <i class="fa fa-angle-right"></i></a>
+	</div>
+</div>
+<div class="clear"></div>
+<hr class="indent-40 white-space" />
+<div class="grid_8 alpha">
+	<header class="widget-title"><h2>New products</h2><a class="category-link" href="#">Shop Category <i class="fa fa-angle-right"></i></a></header>
+	{{widget type="meigeewidgetsbizarre/newproducts" template="meigee/meigeewidgetsbizarre/grid.phtml"  products_amount="4" products_per_row="4"  product_name_grid="1" price_grid="1" add_to_cart_grid="1" wishlist_grid="1" compare_grid="1" quickview_grid="1" widget_id="123"}}
+</div>
+<div class="grid_4 omega">
+	<div class="text-banner background" style="background-color: #eee;">
+		<div class="text-banner-content skin-4">
+			<div class="item">
+				<span class="icon">
+					<img src="{{media url="wysiwyg/sk5_banner_ico_1.png"}}" data-srcX2="{{media url="wysiwyg/sk5_banner_ico_1@x2.png"}}" alt="" />
+				</span>
+				<span class="text">
+					<h2>Satisfied Customers</h2>
+					<p>Get to know shops and items with reviews from our community.</p>
+				</span>
+			</div>
+			<div class="item">
+				<span class="icon">
+					<img src="{{media url="wysiwyg/sk5_banner_ico_2.png"}}" data-srcX2="{{media url="wysiwyg/sk5_banner_ico_2@x2.png"}}" alt="" />
+				</span>
+				<span class="text">
+					<h2>Passionate Sellers</h2>
+					<p>Buy from creative people who care about quality and craftsmanship.</p>
+				</span>
+			</div>
+			<div class="item">
+				<span class="icon">
+					<img src="{{media url="wysiwyg/sk5_banner_ico_3.png"}}" data-srcX2="{{media url="wysiwyg/sk5_banner_ico_3@x2.png"}}" alt="" />
+				</span>
+				<span class="text">
+					<h2>High Resolution Photos</h2>
+					<p>Feel confident knowing our Trust & Safety team is here to protect you.</p>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<hr class="indent-40 white-space mobile-invisible" />
+<hr class="indent-18 white-space mobile" />
+<div class="grid_9 alpha text-banner">
+	<a href="#" title="Text Banner"><img src="{{media url="wysiwyg/sk5_text_banner_4.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_text_banner_4@x2.jpg"}}" alt="" /></a>
+	<div class="text-banner-content skin-3">
+		<h2>Get the theme installed and configured for free!</h2>
+		<p>Installation of our theme is pretty easy, anyway if you’ve got into any problems we can install it on your server absolutelly for free.</p>
+	</div>
+</div>
+<hr class="indent-18 white-space mobile" />
+<div class="grid_3 omega address-block">
+	<div class="text-banner background">
+		<span class="banner-title"><i class="fa fa-thumb-tack"></i><strong>Address</strong></span>
+		<p>Jersey City, NJ 07305, New York, USA</p>
+		<p>Call Us : (555) 723-649-4920</p>
+		<p>Email : <a href="mailto:bizarre@info.com">bizarre@info.com</a></p>
+	</div>
+</div>
+<div class="clear"></div>
+<hr class="indent-40 white-space" />
+<ul class="home-banners-wrapper">
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_1.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_1@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_2.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_2@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_3.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_3@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_4.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_4@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_5.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_5@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_6.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_6@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_7.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_7@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_8.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_8@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_9.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_9@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_10.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_10@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_11.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_11@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_12.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_12@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_13.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_13@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_14.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_14@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_15.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_15@x2.jpg"}}" alt="" /></a>
+	</li>
+	<li class="item">
+		<a href="#" title="Home Banner"><img src="{{media url="wysiwyg/sk5_home_banner_16.jpg"}}" data-srcX2="{{media url="wysiwyg/sk5_home_banner_16@x2.jpg"}}" alt="" /></a>
+	</li>
+	<div class="clear"></div>
+</ul>
+<hr class="indent-40 white-space" />
+<div class="newsletter-wrapper">
+	<div class="background-wrapper" style="background-color: #eee"></div>
+	{{block type="newsletter/subscribe" block_id="wide.newsletter" template="newsletter/wide_subscribe.phtml"}}
+</div>]]></content>
+                <is_active>1</is_active>
+                <sort_order>0</sort_order>
+                <stores>
+                    <item>0</item>
+                </stores>
+                <root_template>one_column</root_template>
+            </item>
+
+			<item>
+                <title>404 Not Found (Decor)</title>
+                <identifier>skin5-no-route</identifier>
+                <content><![CDATA[<div class="page-no-route">
+	<div class="not-found-bg" data-bgimg="background-image: url({{media url="wysiwyg/sk5_404_bg.jpg"}})"></div>
+	<header class="header" id="header">
+		<div class="container_12">
+			<div class="grid_12">
+				<h2 class="logo">
+					<a class="logo" href="{{store url=""}}"><img src="{{media url="wysiwyg/sk5_404_logo.png"}}" data-srcX2="{{media url="wysiwyg/sk5_404_logo@x2.png"}}"></a>
+				</h2>
+				<div class="search">{{block type="core/template" block_id="topSearch" template="catalogsearch/form.mini.phtml"}}</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+	<div class="no-route">
+		<div class="container_12">
+			<div class="grid_12">
+				<div class="text-block">
+					<div class="f-left">
+						<h2>404</h2>
+						<h3>Whoops, our bad...</h3>
+					</div>
+					<div class="f-right">
+						<p>The page you requested was not found, and we have a fine guess why.</p>
+						<p>If you typed the URL directly, please make sure the spelling is correct.</p>
+						<p>If you clicked on a link to get here, the link is outdated.</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<button class="button btn-home" type="button" onclick="setLocation('{{store url=""}}')"><span><span>go to home</span></span></button>
+				<div class="clear"></div>
+				<div class="block-or">or</div>
+				<div class="clear"></div>
+				<header class="widget-title"><h2>Check new arrivals</h2></header>
+				{{widget type="meigeewidgetsbizarre/saleproducts" template="meigee/meigeewidgetsbizarre/grid.phtml" products_amount="6" products_per_row="6" product_name_grid="1" price_grid="1" add_to_cart_grid="1" wishlist_grid="1" compare_grid="1" quickview_grid="1" widget_id="594"}}
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<footer id="footer">
+		<div class="container_12">
+			<div class="grid_12">
+				<div class="footer-links">
+					<ul>
+						<li><a href="{{store direct_url="about-magento-demo-store"}}">About Us</a></li>
+						<li><a href="{{store direct_url="customer-service"}}">Customer Service</a></li>
+						<li class="privacy"><a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy</a></li>
+						<li><a href="{{store direct_url="catalog/seo_sitemap/category"}}">Site Map </a></li>
+						<li><a href="{{store direct_url="catalogsearch/term/popular"}}">Search Terms</a></li>
+						<li><a href="{{store direct_url="catalogsearch/advanced/"}}">Advanced Search</a></li>
+						<li><a href="{{store direct_url="sales/guest/form/"}}">Orders and Returns</a></li>
+						<li class="last"><a href="{{store direct_url="contacts"}}">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					<address>{{config path="design/footer/copyright"}}</address>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</footer>
+</div>]]></content>
+                <is_active>1</is_active>
+                <sort_order>0</sort_order>
+                <stores>
+                    <item>0</item>
+                </stores>
+                <root_template>empty</root_template>
+            </item>
+        </pages>
+        <blocks>
+            <item>
+                <title>Bizarre Skin 5 Footer</title>
+                <identifier>bizarre_sk5_footer</identifier>
+                <content><![CDATA[<div class="footer-topline">
+	<div class="container_12">
+		<div class="grid_12">
+			{{widget type="meigeewidgetsbizarre/sociallinks" twitter="http://twitter.com" rss="http://rss.com" facebook="http://facebook.com" googleplus="https://plus.google.com/" linkedin="http://linkedin.com" pinterest="http://pinterest.com/" template="meigee/meigeewidgetsbizarre/sociallinks.phtml"}}
+			<div class="footer-links">
+				<span>Footer links<i class="fa fa-bars"></i></span>
+				<ul>
+					<li><a href="{{store direct_url="about-magento-demo-store"}}">About Us</a></li>
+					<li><a href="{{store direct_url="customer-service"}}">Customer Service</a></li>
+					<li class="privacy"><a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy</a></li>
+					<li><a href="{{store direct_url="catalog/seo_sitemap/category"}}">Site Map </a></li>
+					<li><a href="{{store direct_url="catalogsearch/term/popular"}}">Search Terms</a></li>
+					<li><a href="{{store direct_url="catalogsearch/advanced/"}}">Advanced Search</a></li>
+					<li><a href="{{store direct_url="sales/guest/form/"}}">Orders and Returns</a></li>
+					<li class="last"><a href="{{store direct_url="contacts"}}">Contact Us</a></li>
+					<li class="remover"><i class="fa fa-times"></i></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="footer-second-line">
+	<div class="container_12">
+		<div class="grid_12">
+			<div class="grid_3 alpha">
+				<div class="footer-logo-wrapper">
+					<a class="footer-logo" href="#"><img src="{{media url="wysiwyg/sk5_footer_logo.png"}}" alt="" data-srcx2="{{media url="wysiwyg/sk5_footer_logo@x2.png"}}"></a>
+				</div>
+				<div class="footer-info">
+					<p>Bizarre is a premium Magento theme with advanced admin module. It’s extremely customizable, easy to use and fully responsive and retina ready.</p>
+					<a href="#" title="Buy this theme">Buy this theme<i class="fa fa-angle-right"></i></a>
+				</div>
+			</div>
+			<div class="grid_9 omega">
+				<div class="grid_6 alpha">
+					<div class="top">
+						<div class="grid_3 alpha">
+							<div class="footer-block-title">
+								<h2>Totes</h2>
+							</div>
+							{{widget type="meigeewidgetsbizarre/newproducts" template="meigee/meigeewidgetsbizarre/footer_list.phtml" products_amount="2" product_name_footer_list="1" price_footer_list="1" widget_id="6784"}}
+						</div>
+						<div class="grid_3 omega">
+							<div class="footer-block-title">
+								<h2>Latest Tweets</h2>
+							</div>
+							{{widget type="meigeewidgetsbizarre/tweets" template="meigee/meigeewidgetsbizarre/tweets.phtml" twitter_username="meigeeteam" twitter_widget_id="349107793481043968" tweet_limit="1"}}
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="bottom">
+						<div class="grid_3 alpha">
+							<div class="footer-block-title">
+								<h2>Help</h2>
+							</div>
+							<div class="custom-footer-content">
+								<ul class="links">
+									<li><a href="#">Cras dolor est, pellentesque</a></li>
+									<li><a href="#">Consectetur auctor ligula</a></li>
+									<li><a href="#">Donec interdum</a></li>
+									<li><a href="#">Cras dolor est, pellentesque</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="grid_3 omega">
+							<div class="footer-block-title">
+								<h2>Cloth</h2>
+							</div>
+							<div class="custom-footer-content">
+								<ul class="links">
+									<li><a href="#">Cras dolor est, pellentesque</a></li>
+									<li><a href="#">Consectetur auctor ligula</a></li>
+									<li><a href="#">Donec interdum</a></li>
+									<li><a href="#">Cras dolor est, pellentesque</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="grid_3 omega">
+					<div class="footer-block-title">
+						<h2>Facebook</h2>
+					</div>
+                    {{widget type="meigeewidgetsbizarre/fblikebox" href="http://www.facebook.com/meigeeteam" height="335" colorscheme="light" faces="1" header="1" border="1" template="meigee/meigeewidgetsbizarre/fblikebox.phtml"}}
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="map-wrapper">
+	<div class="container_12">
+		<div class="btn-close"><i class="fa fa-times"></i></div>
+		<div class="background-wrapper">
+			<div class="map-wrapper-bg"><div class="map-button-wrapper"><button class="button map-button"><span><span>find us on map</span></span></button></div></div>
+			{{block type="page/html" block_id="block_map" template="meigee/blockmap_wrapper.phtml"}}
+		</div>
+	</div>
+</div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+		</blocks>
+    </cms>
+</root>

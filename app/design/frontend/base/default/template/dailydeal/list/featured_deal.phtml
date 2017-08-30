@@ -1,0 +1,179 @@
+<?php
+$displayCartButton = Mage::getStoreConfig('dailydeal/featured_deal/display_cart_button'); 
+$displayQty = Mage::getStoreConfig('dailydeal/featured_deal/display_qty'); 
+$displayPrice = Mage::getStoreConfig('dailydeal/featured_deal/display_price');
+$displayPriceForType = array('simple', 'virtual', 'downloadable', 'configurable');
+$displayQtyForType = array('simple', 'virtual', 'downloadable');
+  
+if ($this->helper('dailydeal')->isEnabled() && ($product = $this->getFeaturedDeal())): 
+	$blockId = $this->getBlockId();
+?>	
+	<div class="dd-featured-deal<?php echo $this->isSlimCountdown(); ?>" id="<?php echo $blockId; ?>">
+	    <div class="dd-header" id="scene" onclick="window.location.href = '<?php echo $product->getProductUrl(); ?>'">
+	    	<div class="dd-image">
+	    		<img class="featured-deal-image layer" id="test" data-depth="0.40" src="<?php echo Mage::helper('catalog/image')->init($product, 'image')->resize(500,1000)->keepFrame(false);?>" alt="dailydeal_image" />
+	    	</div>
+
+	    	<!-- deal price -->
+			<?php if ($displayPrice && in_array($product->getTypeId(), $displayPriceForType)): ?>
+		        <div class="dd-price layer" data-depth="0.60">
+				  	<?php echo $this->getPriceHtml($product, true, '-deal') ?>		
+		        </div>
+			<?php else: ?>
+				<style>
+					.dd-featured-deal .dd-content:after { background:none; }
+					.dd-featured-deal .dd-header .dd-image:after { background:none; }
+				</style>
+			<?php endif; ?>
+	    </div>
+	    <div class="dd-content">	
+	        <div class="dd-title"><a href="<?php echo $product->getProductUrl(); ?>"><span><?php echo $this->__('Today\'s deal') ?></span></a></div>
+
+	    	<!-- deal name -->
+			<a href="<?php echo $product->getProductUrl(); ?>"><span class="product_name"><?php echo $product->getName(); ?></span></a><br/>
+						
+			<!-- deal countdown -->
+			<!-- <div class="countdown">                -->
+	            <?php echo $this->helper('dailydeal')->getProductCountdown($product); ?>
+	        <!-- </div> -->
+
+
+	        <?php if($displayCartButton || ($displayQty && in_array($product->getTypeId(), $displayQtyForType))): ?>
+		    	<div class="dd-actions">
+			    	<!-- add to cart button -->
+		            <?php if($displayCartButton): ?>
+			            <?php if($product->isSaleable()): ?>
+			                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" onclick="setLocation('<?php echo $this->getAddToCartUrl($product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+			            <?php else: ?>
+			                <span><?php echo $this->__('Out of stock') ?></span>
+			            <?php endif; ?>
+						<script type="text/javascript">
+							// set the color of the Add to Cart button
+							function hexToRgb(hex) {
+							    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+							    return result ? {
+							    	r:parseInt(result[1], 16),
+							    	g:parseInt(result[2], 16),
+							    	b:parseInt(result[3], 16)
+							    } : null;
+							}
+							function rgbToHsl(r,g,b){
+							    var r1 = r / 255;
+							    var g1 = g/ 255;
+							    var b1 = b / 255;
+							 
+							    var maxColor = Math.max(r1,g1,b1);
+							    var minColor = Math.min(r1,g1,b1);
+							    //Calculate L:
+							    var L = (maxColor + minColor) / 2 ;
+							    var S = 0;
+							    var H = 0;
+							    if(maxColor != minColor){
+							        //Calculate S:
+							        if(L < 0.5){
+							            S = (maxColor - minColor) / (maxColor + minColor);
+							        }else{
+							            S = (maxColor - minColor) / (2.0 - maxColor - minColor);
+							        }
+							        //Calculate H:
+							        if(r1 == maxColor){
+							            H = (g1-b1) / (maxColor - minColor);
+							        }else if(g1 == maxColor){
+							            H = 2.0 + (b1 - r1) / (maxColor - minColor);
+							        }else{
+							            H = 4.0 + (r1 - g1) / (maxColor - minColor);
+							        }
+							    }
+							 
+							    L = L * 100;
+							    S = S * 100;
+							    H = H * 60;
+							    if(H<0){
+							        H += 360;
+							    }
+							    var result = [H, S, L];
+							    return result;
+							}
+							var backgroundHexColor = '<?php echo Mage::getStoreConfig('dailydeal/featured_deal/cart_button_bkg_color'); ?>';
+							var rgb = hexToRgb(backgroundHexColor).r+','+hexToRgb(backgroundHexColor).g+','+hexToRgb(backgroundHexColor).b;
+							var hslArray = rgbToHsl(hexToRgb(backgroundHexColor).r, hexToRgb(backgroundHexColor).g, hexToRgb(backgroundHexColor).b);
+							hslaHover = hslArray[0]+','+hslArray[1]+'%,'+(hslArray[2]-10)+'%,1';
+							hslaColor = hslArray[0]+','+hslArray[1]+'%,'+(hslArray[2]-12)+'%,1';
+	  						jQueryDD('.dd-featured-deal .dd-content .dd-actions button').css({'background':'rgb('+rgb+')'});
+	  						jQueryDD('.dd-featured-deal .dd-content .dd-actions button').css({'text-shadow':'1px 1px 0px hsla('+hslaColor+')'});
+							jQueryDD('.dd-featured-deal .dd-content .dd-actions button').hover(function() {
+	  							jQueryDD(this).css({'background':'hsla('+hslaHover+')'});
+							},function() {
+	  							jQueryDD(this).css({'background':'rgb('+rgb+')'});
+							});
+						</script>
+		            <?php endif; ?>
+
+		    		<!-- deal qty -->
+					<?php if ($displayQty && in_array($product->getTypeId(), $displayQtyForType)): ?>
+						<div class="qty-text"><?php echo $this->__('<b>%s item(s)</b> left!', $product->getDealQty()); ?></div>	
+					<?php endif; ?>
+	            </div>
+	        <?php endif; ?>
+	    </div>    
+		
+		<script src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>dailydeal/jquery/jquery.parallax.js"></script>
+	    <script type="text/javascript">
+			Event.observe(window, 'load', function() { 
+			    jQueryDD('.dd-header').each(function() {
+			    	var scene = jQueryDD(this).parallax();
+			    	var img = jQueryDD(this).find('.featured-deal-image');
+
+			    	img.css({
+				        'left': -Math.floor(img.width()*10/120) + 'px',
+				        'top': -Math.floor(img.height()*10/120) + 'px'
+				    });
+
+					var limitY = 60;
+					var limitX = 40;
+					scene.parallax('scalar', 20, 20);
+					scene.parallax('limit', limitX, limitY);		
+				});
+			})
+
+			//change dd-title font-size depending on sidebar column width
+			jQueryDD(window).resize(function() {
+				if (parseInt(jQueryDD('#<?php echo $blockId; ?>').css('width'))<200) {
+					jQueryDD('#<?php echo $blockId; ?>').find('.dd-title').css({'font-size':'36px'});
+				} else if (parseInt(jQueryDD('#<?php echo $blockId; ?>').css('width'))<210) {
+					jQueryDD('#<?php echo $blockId; ?>').find('.dd-title').css({'font-size':'38px'});
+				} else if (parseInt(jQueryDD('#<?php echo $blockId; ?>').css('width'))<218) {
+					jQueryDD('#<?php echo $blockId; ?>').find('.dd-title').css({'font-size':'40px'});
+				} else if (parseInt(jQueryDD('#<?php echo $blockId; ?>').css('width'))<225) {
+					jQueryDD('#<?php echo $blockId; ?>').find('.dd-title').css({'font-size':'42px'});
+				} else {
+					jQueryDD('#<?php echo $blockId; ?>').find('.dd-title').css({'font-size':'45px'});
+				}
+				if (parseInt(jQueryDD('#<?php echo $blockId; ?>').css('width'))>260) {
+					jQueryDD('.dd-featured-deal .dd-header .dd-image').addClass('wide');
+				} else {
+					jQueryDD('.dd-featured-deal .dd-header .dd-image').removeClass('wide');					
+				}
+			});
+
+			Event.observe(window, 'load', function() { 
+				if (parseInt(jQueryDD('#<?php echo $blockId; ?>').css('width'))<200) {
+					jQueryDD('#<?php echo $blockId; ?>').find('.dd-title').css({'font-size':'36px'});
+				} else if (parseInt(jQueryDD('#<?php echo $blockId; ?>').css('width'))<210) {
+					jQueryDD('#<?php echo $blockId; ?>').find('.dd-title').css({'font-size':'38px'});
+				} else if (parseInt(jQueryDD('#<?php echo $blockId; ?>').css('width'))<218) {
+					jQueryDD('#<?php echo $blockId; ?>').find('.dd-title').css({'font-size':'40px'});
+				} else if (parseInt(jQueryDD('#<?php echo $blockId; ?>').css('width'))<225) {
+					jQueryDD('#<?php echo $blockId; ?>').find('.dd-title').css({'font-size':'42px'});
+				} else {
+					jQueryDD('#<?php echo $blockId; ?>').find('.dd-title').css({'font-size':'45px'});
+				}
+				if (parseInt(jQueryDD('#<?php echo $blockId; ?>').css('width'))>260) {
+					jQueryDD('.dd-featured-deal .dd-header .dd-image').addClass('wide');
+				} else {
+					jQueryDD('.dd-featured-deal .dd-header .dd-image').removeClass('wide');					
+				}
+			});
+	    </script>
+	</div>				
+<?php endif; ?>

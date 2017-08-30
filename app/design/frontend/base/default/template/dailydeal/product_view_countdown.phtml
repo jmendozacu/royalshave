@@ -1,0 +1,20 @@
+<?php
+    $product = $this->getDealProduct();
+	$displayQty = Mage::getStoreConfig('dailydeal/configuration/qty');
+	$displayQtyForType = array('simple', 'virtual', 'downloadable');
+?>
+<?php if ($this->helper('dailydeal')->isEnabled() && $product): ?>	
+	<div class="clearer"></div>          
+	<!-- deal countdown -->	
+	<div class="main-countdown">
+		<div class="countdown-title">
+			<?php echo $this->__('Time left to buy'); ?>
+		</div>   
+    	<?php echo $this->helper('dailydeal')->getProductCountdown($product); ?>
+
+		<!-- deal qty -->
+		<?php if ($displayQty && in_array($product->getTypeId(), $displayQtyForType)): ?>
+			<span class="qty-text"><?php echo $this->__('Hurry, there are only <b>%s  item(s)</b> left!', $product->getDealQty()); ?></span> 
+		<?php endif; ?>
+	</div>          
+<?php endif; ?>

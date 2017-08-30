@@ -1,0 +1,210 @@
+<?php
+/**
+ * Magento
+ *
+ * @category    design
+ * @package     meigeetheme_default
+ * @copyright   Copyright (c) 2012 MeigeeTeam. (http://www.meigeeteam.com)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<?php
+	$meigee_bizarre_general = MAGE::helper('ThemeOptionsBizarre')->getThemeOptionsBizarre('meigee_bizarre_general');
+    $customlogo = $meigee_bizarre_general['customlogo'];
+    $mediaurl = MAGE::helper('ThemeOptionsBizarre')->getThemeOptionsBizarre('mediaurl');
+	$loginAjaxStatus = $meigee_bizarre_general['loginajax']['status'];
+	$customer = Mage::getSingleton('customer/session');
+	$toplinks = $meigee_bizarre_general['toplinks'];
+	$stickyStatus = $meigee_bizarre_general['header']['floatingheader'];
+	$stickyLogo = $meigee_bizarre_general['header']['floatingheader_logo'];
+	switch ($stickyLogo) {
+		case 0:
+			$stickyLogo = '';
+		break;
+		case 1:
+			$stickyLogo = 'sticky-logo';
+		break;
+		case 2: 
+			$stickyLogo = 'sticky-logo-all';
+		break;
+	}
+	$stickyNav = $meigee_bizarre_general['header']['floatingheader_menu'];
+	switch ($stickyNav) {
+		case 0:
+			$stickyNav = '';
+		break;
+		case 1:
+			$stickyNav = 'sticky-nav';
+		break;
+		case 2: 
+			$stickyNav = 'sticky-nav-all';
+		break;
+	}
+	$stickySearch = $meigee_bizarre_general['header']['floatingheader_search'];
+	switch ($stickySearch) {
+		case 0:
+			$stickySearch = '';
+		break;
+		case 1:
+			$stickySearch = 'sticky-search';
+		break;
+		case 2: 
+			$stickySearch = 'sticky-search-all';
+		break;
+	}
+	$stickyCart = $meigee_bizarre_general['header']['floatingheader_cart'];
+	switch ($stickyCart) {
+		case 0:
+			$stickyCart = '';
+		break;
+		case 1:
+			$stickyCart = 'sticky-cart';
+		break;
+		case 2: 
+			$stickyCart = 'sticky-cart-all';
+		break;
+	}	
+	
+	$blockSwitch = $this->getLayout()->getBlockSingleton('Mage_Page_Block_Switch');
+	$blockCurrency = $this->getLayout()->getBlockSingleton('Mage_Directory_Block_Currency');
+	$urls = array();
+	foreach ($blockSwitch->getGroups() as $_group) {
+		$urls[$_group->getName()] = $_group->getHomeUrl();
+	}
+	
+?>
+<div class="header-wrapper <?php if($stickyStatus){echo $stickyLogo .' '. $stickyNav .' '. $stickySearch .' '. $stickyCart;} ?>">
+	<header id="header" class="header" >
+		<!-- top tab -->
+		<div class="bss-header-bar">
+			<div class="container_12">
+				<div class="grid_12">		
+					
+					<div class="bss-header-bar-left">
+						<ul id="bss-switch-store" class="grid_4">
+							<li class="bss-header-tab"><a href="<?php echo $urls['RoyalShave'] ?>"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'images/stores/1/royal-shave-header-logo.png'; ?>" class="bss-tab-logo" alt="<?php echo $customlogo['logo_alt']; ?>" style="margin-top: 10px;"/></a></li>
+							<li class="bss-header-tab"><a href="<?php echo $urls['Pomades'] ?>"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'images/stores/5/pomades-header-logo_1.png'; ?>" class="bss-tab-logo"/></a></li>
+							<li class="bss-header-tab"><a href="<?php echo $urls['Thestache'] ?>"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'images/stores/6/the-stache-header-logo_1.png'; ?>" class="bss-tab-logo"/></a></li>
+							<li class="bss-header-tab bss-header-tab-active"><a href="<?php echo $urls['Bigben'] ?>"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'images/stores/4/big-ben-header-logo_1.png'; ?>" class="bss-tab-logo" style="margin-top: -2px;"/></a></li>
+
+							<li class="bss-header-bar-mid"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('bss-header-text')->toHtml();?></li>
+							
+						</ul>
+						<?php if ($this->getLayout()->createBlock("cms/block")->setBlockId("header_free_shipping_text")->toHtml()):	?>
+						<div class="free-shipping grid_6 hide-u977">
+							<?php echo $this->getLayout()->createBlock("cms/block")->setBlockId("header_free_shipping_text")->toHtml();?>
+						</div>
+						<?php endif; ?>
+						<div class="bss-header-bar-right">
+							<?php if($toplinks['displayas'] == 1){echo '<span class="simple">';}
+							if (Mage::getSingleton('customer/session')->isLoggedIn()==1): 
+								echo '<span class="customer-name"><span class="user"><img src=" ' . Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'images/default/cus-logo.png' . '"/></span><strong>' . $customer->getCustomer()->getFirstname() . '</strong></span>';
+							 endif;
+							if($toplinks['displayas'] == 1){echo '</span>';} ?>
+							<?php echo $this->getChildHtml('topLinks') ?>
+						</div>
+						<?php echo $this->getChildHtml('cart_sidebar'); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end  -->
+		<div class="topline">
+			<div class="container_12">
+				<div class="grid_12">
+					<div class="first-block">			
+						<?php if((count($blockSwitch->getStores())) > 1 || $blockCurrency->getCurrencyCount() > 1) : ?>
+							<div class="language-currency-block">
+								<span class="language">
+									<?php $currentLang = Mage::app()->getStore()->getName(); ?>
+									<img src="<?php echo $this->getSkinUrl('images/lang/'.$this->escapeHtml($currentLang).'.png') ?>" <?php echo MAGE::helper('ThemeOptionsBizarre/Retina')->getRetinaData('languages', $currentLang); ?> alt="<?php echo $currentLang; ?>" />
+								</span>
+								<span class="currency">
+									<?php echo '<span class="icon">' . Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol() . '</span>' . $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode() .'<i class="fa fa-caret-down"></i>'; ?>
+								</span>
+							</div>
+							<div class="language-currency-dropdown">
+								<?php echo $this->getChildHtml('currency') ?>
+								<?php echo $this->getChildHtml('store_language') ?>
+							</div>
+						<?php endif; ?>
+                        <?php /*
+    						<?php if (Mage::getSingleton('customer/session')->isLoggedIn()== 0): ?>
+    							<!--p class="welcome-msg"><span><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></span></p-->
+    						<?php endif; ?>
+                        */ ?>
+						<?php if ($static_html = $this->getChildHtml('bizarre_header_phone')):
+							echo $static_html;
+						endif; ?>
+						<div class="clear"></div>
+					</div>
+					<?php if ($customlogo['logo_status'] == 0): ?>
+						<h2 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" <?php echo MAGE::helper('ThemeOptionsBizarre/Retina')->getRetinaData('logo'); ?> alt="<?php echo $this->getLogoAlt() ?>" /></a></h2>
+						<?php else:?>
+						<h2 class="logo"><strong><?php echo $customlogo['logo_alt']; ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $customlogo['logo_alt']; ?>" class="logo"><img src="<?php echo $mediaurl.$customlogo['logo']; ?>" <?php echo MAGE::helper('ThemeOptionsBizarre/Retina')->getRetinaData('logo_custom'); ?> alt="<?php echo $customlogo['logo_alt']; ?>" /></a></h2>
+					<?php endif; ?>
+					<div class="quick-access">
+						<?php echo $this->getChildHtml('topSearch') ?>
+					</div>
+					<div class="header-primary-right">
+						<?php echo $this->getLayout()->createBlock("cms/block")->setBlockId("header-primary-right")->toHtml();?>
+					</div>
+                    <?php /*
+    					<div class="header-right<?php if($toplinks['displayas'] == 1){echo ' simple-list';} if(Mage::getSingleton('customer/session')->isLoggedIn()==1){echo ' logged-in';} if($toplinks['accountlink'] == 1){echo ' accountlink';} if($toplinks['wishlistlink'] == 1){echo ' wishlistlink';} if($toplinks['cartlink'] == 1){echo ' cartlink';} if($toplinks['checkoutlink'] == 1){echo ' checkoutlink';} if($toplinks['loginlink'] == 1){echo ' loginlink';} ?>">
+    						<?php if($toplinks['displayas'] == 0){
+    						//	echo $this->getChildHtml('cart_sidebar');
+    						//} ?>
+    						<?php if($toplinks['displayas'] == 1){echo '<span class="simple">';}
+    						//if (Mage::getSingleton('customer/session')->isLoggedIn()==1): 
+    						//	echo '<span class="customer-name"><span class="user">'. MAGE::helper('ThemeOptionsBizarre')->getIcon('account') . '</span><strong>' . $customer->getCustomer()->getFirstname() . '</strong><span class="arrow"><i class="fa fa-th-list"></i></span></span>';
+    						// endif;
+    						//if($toplinks['displayas'] == 1){echo '</span>';} ?>
+    						<?php echo $this->getChildHtml('topLinks') ?>
+                    */ ?>
+						<span class="wishlist-items"><?php/* echo $this->helper('wishlist')->getItemCount() */ ?></span>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+
+		<div class="menu-line">
+			<div class="container_12">
+				<div class="grid_12">
+					<?php echo $this->getChildHtml('topMenu') ?>
+					<div class="menu-button"><span><?php echo MAGE::helper('ThemeOptionsBizarre')->getIcon('mobilemenu'); ?><?php echo $this->__('Menu'); ?></span></div>
+					<div class="search-button">
+						<?php echo MAGE::helper('ThemeOptionsBizarre')->getIcon('search'); ?>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</header>
+	<?php 
+		if ($stickyStatus) { 
+			echo $this->getChildHtml('sticky_header') ;
+		}
+	?>	
+</div>
+<?php echo $this->getChildHtml('topContainer'); ?>
+<?php echo $this->getChildHtml('header_slider_container') ?>
+<?php if($loginAjaxStatus): ?>
+	<?php $isSecure = Mage::app()->getStore()->isCurrentlySecure(); ?>
+	<script type="text/javascript">
+		/* Login ajax */
+		var isSecure = '<?php echo $isSecure ?>';
+		jQuery('.top-link-login').on('click', function(){
+			if(isSecure == '') {
+				ajaxLogin("<?php echo $this->getUrl('meigeeactions/login/') ?>", false);
+			}else {
+				ajaxLogin("<?php echo $this->getUrl('meigeeactions/login/',array('_secure'=>true)) ?>", false);
+			}
+			return false;
+		});
+	</script>
+<?php endif; ?>

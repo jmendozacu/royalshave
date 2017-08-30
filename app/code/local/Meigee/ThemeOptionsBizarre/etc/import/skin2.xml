@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<root>
+    <cms>
+        <pages>
+            <item>
+                <title>Skin 2 Home Page</title>
+                <identifier>skin2_home</identifier>
+                <content><![CDATA[<hr class="indent-60 white-space" />
+<div class="home-banners">
+	<div class="grid_4 alpha text-banner border">
+		<a href="#" title="Text Banner"><img src="{{media url="wysiwyg/sk2_text_banner_1.jpg"}}" data-srcX2="{{media url="wysiwyg/sk2_text_banner_1@x2.jpg"}}" alt="" /></a>
+		<div class="text-banner-content">
+			<h2>Airaid Round Air Filters</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<a class="banner-link" href="#">Shop now <i class="fa fa-angle-right"></i></a>
+		</div>
+	</div>
+	<div class="grid_4 text-banner">
+		<a href="#" title="Text Banner"><img src="{{media url="wysiwyg/sk2_text_banner_2.jpg"}}" data-srcX2="{{media url="wysiwyg/sk2_text_banner_2@x2.jpg"}}" alt="" /></a>
+		<div class="text-banner-content skin-2">
+			<h2>GT Series Cross Drilled Brake Kits</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<a class="banner-link" href="#">Shop now <i class="fa fa-angle-right"></i></a>
+		</div>
+	</div>
+	<div class="grid_4 omega text-banner">
+		<a href="#" title="Text Banner"><img src="{{media url="wysiwyg/sk2_text_banner_3.jpg"}}" data-srcX2="{{media url="wysiwyg/sk2_text_banner_3@x2.jpg"}}" alt="" /></a>
+		<div class="text-banner-content">
+			<h2>Amazing Choise & Service</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<a class="banner-link" href="#">Shop now <i class="fa fa-angle-right"></i></a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<hr class="indent-60 white-space" />
+<div class="widget-wrapper">
+	<div class="background-wrapper" style="background-color: #ddd;"></div>
+	<header class="widget-title"><h2>LED Lights</h2></header>
+	{{widget type="meigeewidgetsbizarre/saleproducts" template="meigee/meigeewidgetsbizarre/masonry_grid.phtml" products_amount="8" grid2_description="1" widget_id="6785"}}
+</div>
+<hr class="indent-56 white-space" />
+<header class="widget-title"><h2>Suits</h2><a class="category-link" href="#">Shop Category <i class="fa fa-angle-right"></i></a></header>
+{{widget type="meigeewidgetsbizarre/newproducts" template="meigee/meigeewidgetsbizarre/slider.phtml" products_amount="10" visible_products="4" product_name_slider="1" price_slider="1" add_to_cart_slider="1" wishlist_slider="1" compare_slider="1" quickview_slider="1" rating_stars_slider="1" rating_cust_link_slider="1" rating_add_review_link_slider="1" autoSlide="1" autoSlideTimer="5000" autoSlideTransTimer="5000" widget_id="2030"}}
+<hr class="indent-60 white-space" />
+<div class="product-tabs-wrapper">
+	<div class="product-tabs-bg">
+		<img src="{{media url="wysiwyg/sk2_products_tabs_bg.jpg"}}" data-srcX2="{{media url="wysiwyg/sk2_products_tabs_bg@x2.jpg"}}" alt="" />
+	</div>
+	<header class="widget-title"><h2>Best from our shop</h2></header>
+	{{widget type="meigeewidgetsbizarre/tabs" static_blocks="headlights,air_intakes,led_lights" template="meigee/meigeewidgetsbizarre/tabs.phtml" buttons_pos="1"}}
+</div>
+<hr class="indent-56 white-space" />
+<header class="widget-title"><h2>Bags</h2><a class="category-link" href="#">Shop Category <i class="fa fa-angle-right"></i></a></header>
+{{widget type="meigeewidgetsbizarre/newproducts" template="meigee/meigeewidgetsbizarre/grid.phtml" products_amount="6" products_per_row="6" product_name_grid="1" price_grid="1" widget_id="665"}}
+<hr class="indent-36 white-space" />
+<div class="newsletter-wrapper">
+	<div class="background-wrapper" style="background-color: #eee"></div>
+	{{block type="newsletter/subscribe" block_id="wide.newsletter" template="newsletter/wide_subscribe.phtml"}}
+</div>]]></content>
+                <is_active>1</is_active>
+                <sort_order>0</sort_order>
+                <stores>
+                    <item>0</item>
+                </stores>
+                <root_template>one_column</root_template>
+            </item>
+			<item>
+                <title>404 Not Found (Cars)</title>
+                <identifier>skin2-no-route</identifier>
+                <content><![CDATA[<div class="page-no-route">
+	<div class="not-found-bg" data-bgimg="background-image: url({{media url="wysiwyg/sk2_404_bg.jpg"}})"></div>
+	<header class="header" id="header">
+		<div class="container_12">
+			<div class="grid_12">
+				<h2 class="logo">
+					<a class="logo" href="{{store url=""}}"><img src="{{media url="wysiwyg/sk2_404_logo.png"}}" data-srcX2="{{media url="wysiwyg/sk2_404_logo@x2.png"}}"></a>
+				</h2>
+				<div class="search">{{block type="core/template" block_id="topSearch" template="catalogsearch/form.mini.phtml"}}</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+	<div class="no-route">
+		<div class="container_12">
+			<div class="grid_12">
+				<div class="text-block">
+					<div class="f-left">
+						<h2>404</h2>
+						<h3>Whoops, our bad...</h3>
+					</div>
+					<div class="f-right">
+						<p>The page you requested was not found, and we have a fine guess why.</p>
+						<p>If you typed the URL directly, please make sure the spelling is correct.</p>
+						<p>If you clicked on a link to get here, the link is outdated.</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<button class="button btn-home" type="button" onclick="setLocation('{{store url=""}}')"><span><span>go to home</span></span></button>
+				<div class="clear"></div>
+				<div class="block-or">or</div>
+				<div class="clear"></div>
+				<header class="widget-title"><h2>Check new arrivals</h2></header>
+				{{widget type="meigeewidgetsbizarre/newproducts" template="meigee/meigeewidgetsbizarre/grid.phtml" products_amount="6" products_per_row="6" product_name_grid="1" price_grid="1" widget_id="665"}}
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<footer id="footer">
+		<div class="container_12">
+			<div class="grid_12">
+				<div class="footer-links">
+					<ul>
+						<li><a href="{{store direct_url="about-magento-demo-store"}}">About Us</a></li>
+						<li><a href="{{store direct_url="customer-service"}}">Customer Service</a></li>
+						<li class="privacy"><a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy</a></li>
+						<li><a href="{{store direct_url="catalog/seo_sitemap/category"}}">Site Map </a></li>
+						<li><a href="{{store direct_url="catalogsearch/term/popular"}}">Search Terms</a></li>
+						<li><a href="{{store direct_url="catalogsearch/advanced/"}}">Advanced Search</a></li>
+						<li><a href="{{store direct_url="sales/guest/form/"}}">Orders and Returns</a></li>
+						<li class="last"><a href="{{store direct_url="contacts"}}">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					<address>{{config path="design/footer/copyright"}}</address>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</footer>
+</div>]]></content>
+                <is_active>1</is_active>
+                <sort_order>0</sort_order>
+                <stores>
+                    <item>0</item>
+                </stores>
+                <root_template>empty</root_template>
+            </item>
+        </pages>
+        <blocks>
+            <item>
+                <title>Bizarre Skin 2 Footer</title>
+                <identifier>bizarre_sk2_footer</identifier>
+                <content><![CDATA[<div class="footer-topline">
+	<div class="container_12">
+		<div class="grid_12">
+			{{widget type="meigeewidgetsbizarre/sociallinks" twitter="http://twitter.com" rss="http://rss.com" facebook="http://facebook.com" googleplus="https://plus.google.com/" linkedin="http://linkedin.com" pinterest="http://pinterest.com/" template="meigee/meigeewidgetsbizarre/sociallinks.phtml"}}
+			<div class="footer-links">
+				<span>Footer links<i class="fa fa-bars"></i></span>
+				<ul>
+					<li><a href="{{store direct_url="about-magento-demo-store"}}">About Us</a></li>
+					<li><a href="{{store direct_url="customer-service"}}">Customer Service</a></li>
+					<li class="privacy"><a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy</a></li>
+					<li><a href="{{store direct_url="catalog/seo_sitemap/category"}}">Site Map </a></li>
+					<li><a href="{{store direct_url="catalogsearch/term/popular"}}">Search Terms</a></li>
+					<li><a href="{{store direct_url="catalogsearch/advanced/"}}">Advanced Search</a></li>
+					<li><a href="{{store direct_url="sales/guest/form/"}}">Orders and Returns</a></li>
+					<li class="last"><a href="{{store direct_url="contacts"}}">Contact Us</a></li>
+					<li class="remover"><i class="fa fa-times"></i></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="footer-second-line">
+	<div class="container_12">
+		<div class="grid_12">
+			<div class="grid_3 alpha">
+				<div class="footer-logo-wrapper">
+					<a class="footer-logo" href="#"><img src="{{media url="wysiwyg/sk2_footer_logo.png"}}" alt="" data-srcx2="{{media url="wysiwyg/sk2_footer_logo@x2.png"}}"></a>
+				</div>
+				<div class="footer-info">
+					<p>Bizarre is a premium Magento theme with advanced admin module. It’s extremely customizable, easy to use and fully responsive and retina ready.</p>
+					<a href="#" title="Buy this theme">Buy this theme<i class="fa fa-angle-right"></i></a>
+				</div>
+			</div>
+			<div class="grid_9 omega">
+				<div class="grid_3 alpha">
+					<div class="footer-block-title">
+						<h2>Air Intakes</h2>
+					</div>
+					{{widget type="meigeewidgetsbizarre/newproducts" template="meigee/meigeewidgetsbizarre/footer_list.phtml" products_amount="4" product_name_footer_list="1" price_footer_list="1" widget_id="6784"}}
+				</div>
+				<div class="grid_3">
+					<div class="footer-block-title">
+						<h2>Latest tweets</h2>
+					</div>
+					{{widget type="meigeewidgetsbizarre/tweets" template="meigee/meigeewidgetsbizarre/tweets.phtml" twitter_username="meigeeteam" twitter_widget_id="349107793481043968" tweet_limit="2"}}
+				</div>
+				<div class="grid_3 omega">
+					<div class="footer-block-title">
+						<h2>Facebook</h2>
+					</div>
+                    {{widget type="meigeewidgetsbizarre/fblikebox" href="http://www.facebook.com/meigeeteam" height="335" colorscheme="light" faces="1" header="1" border="1" template="meigee/meigeewidgetsbizarre/fblikebox.phtml"}}
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Bizarre Skin 2 Phones</title>
+                <identifier>bizarre_sk2_phones</identifier>
+                <content><![CDATA[Call Free <a href="skype:(555) 324-783-8246" class="phone">(555) 324-783-8246</a> / Open 7 Days A Week]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Headlights</title>
+                <identifier>headlights</identifier>
+                <content><![CDATA[{{widget type="meigeewidgetsbizarre/saleproducts" template="meigee/meigeewidgetsbizarre/grid.phtml" products_amount="4" products_per_row="4" widget_id="7356"}}]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Air Intakes</title>
+                <identifier>air_intakes</identifier>
+                <content><![CDATA[{{widget type="meigeewidgetsbizarre/newproducts" template="meigee/meigeewidgetsbizarre/grid.phtml" products_amount="4" products_per_row="4" widget_id="6153"}}]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Led Lights</title>
+                <identifier>led_lights</identifier>
+                <content><![CDATA[{{widget type="meigeewidgetsbizarre/featuredcategory" featured_category="category/107" template="meigee/meigeewidgetsbizarre/grid.phtml" products_amount="4" products_per_row="4" widget_id="2173"}}]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+		</blocks>
+    </cms>
+</root>

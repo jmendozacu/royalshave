@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_system_config_edit>
+        <reference name="head">
+            <action method="addJs"><file>dailydeal/jscolor/jscolor.js</file></action>
+        </reference>
+    </adminhtml_system_config_edit>
+    
+    <dailydealadmin_adminhtml_dailydeal_index>
+        <reference name="content">
+            <block type="dailydeal/adminhtml_dailydeal" name="dailydeal" />
+        </reference>
+    </dailydealadmin_adminhtml_dailydeal_index>
+
+    <dailydealadmin_adminhtml_dailydeal_grid>        
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="dailydeal/adminhtml_dailydeal_grid" name="dailydeal.grid"/>
+        </block>
+    </dailydealadmin_adminhtml_dailydeal_grid>
+</layout>

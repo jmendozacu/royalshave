@@ -1,0 +1,727 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+		<dd translate="label" module="dailydeal">
+            <label>Developers-inc</label>
+            <sort_order>200</sort_order>
+		</dd>
+    </tabs>
+	<sections>
+        <devinc_license translate="label" module="license">
+			<label>Licenses</label>
+			<tab>dd</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>100</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<dailydeal translate="label">
+					<label>Daily Deal License</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+                        <domains_label translate="label">
+							<frontend_type>label</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_label</frontend_model>
+    						<sort_order>0</sort_order>
+						  	<show_in_default>1</show_in_default>
+						  	<show_in_website>1</show_in_website>
+						  	<show_in_store>1</show_in_store>
+						</domains_label>
+                        <domains translate="label">
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_multiline</frontend_model>
+						  	<backend_model>license/system_config_backend_license</backend_model>
+    						<sort_order>1</sort_order>
+						  	<show_in_default>1</show_in_default>
+						  	<show_in_website>0</show_in_website>
+						  	<show_in_store>0</show_in_store>
+						</domains>
+					</fields>
+				</dailydeal>
+			</groups>
+        </devinc_license>
+		<dailydeal translate="label" module="dailydeal">
+			<label>Daily Deal</label>
+			<tab>dd</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>10</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<configuration translate="label">
+					<label>Configuration</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<enabled translate="label">
+							<label>Enable Daily Deal</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enabled>
+						<header_links translate="label">
+							<label>Display in Header Links</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</header_links>
+						<redirect translate="label">
+							<label>Use Main Deal as Homepage</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</redirect>
+						<title_color translate="label">
+							<label>Product Page - Title Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</title_color>
+						<qty translate="label">
+							<label>Product Page - Display Remaining QTY</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</qty>
+						<qty_color translate="label">
+							<label>Product Page - Quantity Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</qty_color>	
+						<qty_items_color translate="label">
+							<label>Product Page - Quantity Items Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</qty_items_color>	
+						<past_deals translate="label">
+							<label>Display Past Deals</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</past_deals>
+						<no_deal_message translate="label comment">
+							<label>No Deal Message</label>
+							<frontend_type>textarea</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_textarea</frontend_model>
+							<sort_order>8</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>This is the message that will appear in case the product quantity or the countdown reaches 0 and there is no new deal scheduled.</comment>
+						</no_deal_message>
+						<notify translate="label">
+							<label>Notify Admin</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>9</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If Yes - the admin will be notified via email when a deal expires and there is no new deal scheduled.</comment>
+						</notify>
+						<admin_email translate="label comment">
+							<label>Admin Email</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</admin_email>
+						<countdown_type translate="label">
+							<label>Countdown Type</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>dailydeal/source_countdown</source_model>
+							<sort_order>11</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If Flash isn't present on the computer or mobile device, the Flash Countdown will automatically be replaced with the Javascript Countdown.</comment>
+						</countdown_type>	
+						<refresh_rate translate="label comment">
+							<label>Refresh Rate (minutes)</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>12</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>This represents the time interval in which all the deals Statuses(i.e. Running, Queued etc.) refresh. If set to 0, the deals will refresh using Magento's cronjobs, if they're setup.</comment>
+						</refresh_rate>
+					</fields>
+				</configuration>
+				<featured_deal translate="label">
+					<label>Featured Deal Configuration</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>15</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>	
+						<enabled translate="label">
+							<label>Feature Main Deal</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If Yes - the Main Deal won't be included in the Deals block, it will have it's own featured block.</comment>
+						</enabled>
+						<sidebar_rounded_corners translate="label">
+							<label>Enable Rounded Corners</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sidebar_rounded_corners>
+						<bg_main translate="label">
+							<label>Background Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</bg_main>	
+						<title_color translate="label">
+							<label>Title Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</title_color>	
+						<product_name_color translate="label">
+							<label>Product Name Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</product_name_color>	
+						<display_price translate="label">
+							<label>Display Price</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</display_price>
+						<price_background translate="label">
+							<label>Price Background Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</price_background>	
+						<old_price_color translate="label">
+							<label>Old Price Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</old_price_color>		
+						<special_price_color translate="label">
+							<label>Special Price Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>8</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</special_price_color>	
+						<display_cart_button translate="label">
+							<label>Display Add to Cart Button</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>9</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</display_cart_button>
+						<cart_button_bkg_color translate="label">
+							<label>Add to Cart Button Background Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</cart_button_bkg_color>
+						<cart_button_text_color translate="label">
+							<label>Add to Cart Text Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>11</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</cart_button_text_color>	
+						<display_qty translate="label">
+							<label>Display Remaining QTY</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>12</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</display_qty>
+						<qty_color translate="label">
+							<label>Quantity Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>13</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</qty_color>	
+						<qty_items_color translate="label">
+							<label>Quantity Items Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>14</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</qty_items_color>	
+						<qty_background_color translate="label">
+							<label>Quantity Background Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</qty_background_color>	
+						<qty_border_color translate="label">
+							<label>Quantity Border Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>16</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</qty_border_color>	
+					</fields>
+				</featured_deal>
+				<sidebar_configuration translate="label">
+					<label>Deals Sidebar Configuration</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>20</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>	
+						<left_sidebar translate="label">
+							<label>Display in Left Sidebar</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>This also affects the Featured Deal.</comment>
+						</left_sidebar>
+						<right_sidebar translate="label">
+							<label>Display in Right Sidebar</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>This also affects the Featured Deal.</comment>
+						</right_sidebar>
+						<sidedeals_number translate="label">
+							<label>Number of Sidebar Deals</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sidedeals_number>	
+						<display_price translate="label">
+							<label>Display Price</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</display_price>
+						<display_cart_button translate="label">
+							<label>Display Add to Cart Button</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</display_cart_button>
+						<display_qty translate="label">
+							<label>Display Remaining QTY</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_select</frontend_model>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</display_qty>						
+						<qty_color translate="label">
+							<label>Quantity Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>13</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</qty_color>	
+						<qty_items_color translate="label">
+							<label>Quantity Items Color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>14</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</qty_items_color>
+					</fields>
+				</sidebar_configuration>
+				<circle_countdown translate="label">
+					<label>Circle Countdown Configuration</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>25</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>	
+						<bg_color translate="label">
+							<label>Circle Background Color</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</bg_color>
+						<loading_color translate="label">
+							<label>Circle Loading Color</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</loading_color>
+						<text_color translate="label">
+							<label>Sec/Min/Hour Color</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</text_color>
+						<days_text translate="label">
+							<label>Days Text</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</days_text>
+						<hour_text translate="label">
+							<label>Hours Text</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</hour_text>
+						<min_text translate="label">
+							<label>Minutes Text</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_text>
+						<sec_text translate="label">
+							<label>Seconds Text</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sec_text>
+					</fields>
+				</circle_countdown>
+				<flip_countdown translate="label">
+					<label>Flip Countdown Configuration</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>30</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>	
+						<bg_color translate="label">
+							<label>Digit Background Color</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</bg_color>
+						<digit_color translate="label">
+							<label>Digit Text Color</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</digit_color>
+						<text_color translate="label">
+							<label>Sec/Min/Hour Color</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</text_color>
+						<days_text translate="label">
+							<label>Days Text</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</days_text>
+						<hour_text translate="label">
+							<label>Hours Text</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</hour_text>
+						<min_text translate="label">
+							<label>Minutes Text</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_text>
+						<sec_text translate="label">
+							<label>Seconds Text</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sec_text>
+					</fields>
+				</flip_countdown>
+				<simple_countdown translate="label">
+					<label>Simple Countdown Configuration</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>40</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>	
+						<digit_color translate="label">
+							<label>Digit Color</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</digit_color>
+						<bullet_color translate="label">
+							<label>Bullet Separator Color</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</bullet_color>
+						<text_color translate="label">
+							<label>Sec/Min/Hour Color</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<validate>color {hash:true}</validate>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Click on input to select.</comment>
+						</text_color>
+						<days_text translate="label">
+							<label>Days Text</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</days_text>
+						<hour_text translate="label">
+							<label>Hours Text</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</hour_text>
+						<min_text translate="label">
+							<label>Minutes Text</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_text>
+						<sec_text translate="label">
+							<label>Seconds Text</label>
+							<frontend_type>text</frontend_type> 
+							<frontend_model>license/adminhtml_system_config_form_text</frontend_model>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sec_text>
+					</fields>
+				</simple_countdown>
+			</groups>
+        </dailydeal>
+    </sections>
+</config>

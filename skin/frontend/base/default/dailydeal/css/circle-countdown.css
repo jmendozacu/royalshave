@@ -1,0 +1,396 @@
+.countdown {
+	width: 100%;
+	max-width: 204px;
+	margin: 5px auto 10px;
+	font-size: 0px;
+	font-family: Arial;
+}
+
+.countdown_timer,
+.countdown_timer ul,
+.circular_countdown {
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+.countdown_clock {
+	position:relative;
+	z-index:1;
+	margin: 0;
+	padding:0;
+	width: 100%;
+}
+.circular_countdown_element {
+	display: inline-block;
+	position:relative;
+	z-index:1;
+	padding:0;
+	width: 60px;
+	margin: 0 8px 0 0;
+}
+.circular_countdown_element.last {
+	margin:0px;
+}
+.countdown_timer {
+	z-index:2;
+}
+.countdown_timer li {
+	list-style: none;
+	margin-top: 15px;
+	float: left;
+	width: 60px;
+	color:#333333;
+	font-size: 7px;
+	position: absolute;
+	text-align: center;
+	/*text-transform:uppercase;*/
+}
+.countdown_timer li.days {
+	left:0px;
+}
+.countdown_timer li.hours {
+	left:4px;
+}
+.countdown_timer li.minutes {
+	left:72px;
+}
+.countdown_timer li.seconds {
+	left:141px;
+}
+.countdown_timer li em {
+	display: block;
+	font-size:18px;
+	line-height:18px;
+	font-weight:bold;
+	font-style: normal;
+	font-family: "Helvetica Neue", Helvetica, Arial;
+	padding:0;
+}
+
+
+
+/*
+Markup to keep a decent layout under IE8 and below
+*/
+
+/* IE8 */
+
+@media \0screen {
+	.countdown_timer {
+		height: 130px;
+	}
+	.countdown_container h1 {
+		margin:0 auto;
+	}
+}
+
+/* IE7 and below */
+
+.countdown_timer {
+	*height: 130px;
+}
+.countdown_container h1 {
+	*margin:0 auto;
+}
+
+
+
+/*COUNTDOWN SIZES*/
+/*LARGE*/
+.countdown.countdown-large {
+	width: 100%;
+	max-width: 170px;
+}
+
+.countdown.countdown-large .countdown_clock {
+	width: 170px;
+}
+.countdown.countdown-large .circular_countdown_element {
+	width: 54px;
+	margin: 0 4px 0 0;
+}
+.countdown.countdown-large .circular_countdown_element.last {
+	margin: 0px;
+}
+.countdown.countdown-large .countdown_timer li {
+	margin-top: 12px;
+	font-size: 7px;
+	width: 54px;
+}
+.countdown.countdown-large .countdown_timer li.hours {
+	left:0px;
+}
+.countdown.countdown-large .countdown_timer li.minutes {
+	left:58px;
+}
+.countdown.countdown-large .countdown_timer li.seconds {
+	left:116px;
+}
+.countdown.countdown-large .countdown_timer li em {
+	font-size:17px;
+	line-height:17px;
+}
+
+/*MEDIUM*/
+.countdown.countdown-medium {
+	width: 100%;
+	max-width: 156px;
+	margin: 3px auto 15px;
+}
+.countdown.countdown-medium .countdown_clock {
+	width: 156px;
+}
+.countdown.countdown-medium .circular_countdown_element {
+	width: 50px;
+	height: 50px;
+	margin: 0 3px 0 0;
+}
+.countdown.countdown-medium .circular_countdown_element.last {
+	margin: 0px;
+}
+.countdown.countdown-medium .countdown_timer li {
+	margin-top: 11px;
+	font-size: 6px;
+	width: 50px;
+	height: 50px;
+}
+.countdown.countdown-medium .countdown_timer li.hours {
+	left:0px;
+}
+.countdown.countdown-medium .countdown_timer li.minutes {
+	left:53px;
+}
+.countdown.countdown-medium .countdown_timer li.seconds {
+	left:106px;
+}
+.countdown.countdown-medium .countdown_timer li em {
+	font-size:16px;
+	line-height:16px;
+}
+
+/*SMALL*/
+.countdown.countdown-small {
+	width: 100%;
+	max-width: 120px;
+	margin: 0 auto 15px;
+}
+
+.countdown.countdown-small .countdown_clock {
+	width: 120px;
+}
+.countdown.countdown-small .circular_countdown_element {
+	width: 38px;
+	margin: 0 2px 0 0;
+}
+.countdown.countdown-small .circular_countdown_element.last {
+	margin: 0px;
+}
+.countdown.countdown-small .countdown_timer li {
+	margin-top: -2px;
+	font-size: 7px;
+	width: 38px;
+}
+.countdown.countdown-small .countdown_timer li.hours {
+	left:1px;
+}
+.countdown.countdown-small .countdown_timer li.minutes {
+	left:41px;
+}
+.countdown.countdown-small .countdown_timer li.seconds {
+	left:82px;
+}
+.countdown.countdown-small .countdown_timer li em {
+	font-size:14px;
+	line-height:42px;
+}
+
+
+
+/*COUNTDOWN DAYS SIZES*/
+/*DEFAULT*/
+.countdown-days {
+	max-width: 220px;
+	margin: 5px auto 20px;
+}
+.countdown-days .circular_countdown_element {
+	width: 50px;
+	margin: 0 5px 0 0;
+}
+.countdown-days .countdown_timer li {
+	margin-top: -4px;
+	font-size: 8px;
+	width: 50px;
+}
+.countdown-days .countdown_timer li.days {
+	left:1px;
+}
+.countdown-days .countdown_timer li.hours {
+	left:55px;
+}
+.countdown-days .countdown_timer li.minutes {
+	left:111px;
+}
+.countdown-days .countdown_timer li.seconds {
+	left:165px;
+}
+.countdown-days .countdown_timer li em {
+	font-size:16px;
+	line-height:58px;
+}
+
+/*LARGE*/
+.countdown-days.countdown-large {
+	width: 100%;
+	max-width: 192px;
+	margin: 5px auto 20px;
+}
+
+.countdown-days.countdown-large .countdown_clock {
+	width: 192px;
+}
+.countdown-days.countdown-large .circular_countdown_element {
+	width: 45px;
+	margin: 0 4px 0 0;
+}
+.countdown-days.countdown-large .circular_countdown_element.last {
+	margin: 0px;
+}
+.countdown-days.countdown-large .countdown_timer li {
+	margin-top: -1px;
+	font-size: 8px;
+	width: 45px;
+}
+.countdown-days.countdown-large .countdown_timer li.days {
+	left:0px;
+}
+.countdown-days.countdown-large .countdown_timer li.hours {
+	left:49px;
+}
+.countdown-days.countdown-large .countdown_timer li.minutes {
+	left:98px;
+}
+.countdown-days.countdown-large .countdown_timer li.seconds {
+	left:147px;
+}
+.countdown-days.countdown-large .countdown_timer li em {
+	font-size:14px;
+	line-height:48px;
+}
+
+/*MEDIUM*/
+.countdown-days.countdown-medium {
+	width: 100%;
+	max-width: 170px;
+	margin: 5px auto 20px;
+}
+
+.countdown-days.countdown-medium .countdown_clock {
+	width: 170px;
+}
+.countdown-days.countdown-medium .circular_countdown_element {
+	width: 41px;
+	margin: 0 2px 0 0;
+}
+.countdown-days.countdown-medium .circular_countdown_element.last {
+	margin: 0px;
+}
+.countdown-days.countdown-medium .countdown_timer li {
+	margin-top: -2px;
+	font-size: 8px;
+	width: 41px;
+}
+.countdown-days.countdown-medium .countdown_timer li.days {
+	left:0px;
+}
+.countdown-days.countdown-medium .countdown_timer li.hours {
+	left:43px;
+}
+.countdown-days.countdown-medium .countdown_timer li.minutes {
+	left:86px;
+}
+.countdown-days.countdown-medium .countdown_timer li.seconds {
+	left:129px;
+}
+.countdown-days.countdown-medium .countdown_timer li em {
+	font-size:14px;
+	line-height:46px;
+}
+
+/*SMALL*/
+.countdown-days.countdown-small {
+	width: 100%;
+	max-width: 156px;
+	margin: 5px auto 15px;
+}
+
+.countdown-days.countdown-small .countdown_clock {
+	width: 156px;
+}
+.countdown-days.countdown-small .circular_countdown_element {
+	width: 36px;
+	margin: 0 4px 0 0;
+}
+.countdown-days.countdown-small .circular_countdown_element.last {
+	margin: 0px;
+}
+.countdown-days.countdown-small .countdown_timer li {
+	margin-top: -2px;
+	font-size: 7px;
+	width: 36px;
+}
+.countdown-days.countdown-small .countdown_timer li.days {
+	left:0px;
+}
+.countdown-days.countdown-small .countdown_timer li.hours {
+	left:40px;
+}
+.countdown-days.countdown-small .countdown_timer li.minutes {
+	left:80px;
+}
+.countdown-days.countdown-small .countdown_timer li.seconds {
+	left:120px;
+}
+.countdown-days.countdown-small .countdown_timer li em {
+	font-size:12px;
+	line-height:40px;
+}
+
+/*EXTRA SMALL*/
+.countdown-days.countdown-xsmall {
+	width: 100%;
+	max-width: 120px;
+	margin: 5px auto 15px;
+}
+
+.countdown-days.countdown-xsmall .countdown_clock {
+	width: 120px;
+}
+.countdown-days.countdown-xsmall .circular_countdown_element {
+	width: 28px;
+	margin: 0 2px 0 0;
+}
+.countdown-days.countdown-xsmall .circular_countdown_element.last {
+	margin: 0px;
+}
+.countdown-days.countdown-xsmall .countdown_timer li {
+	margin-top: -2px;
+	font-size: 6px;
+	width: 28px;
+}
+.countdown-days.countdown-xsmall .countdown_timer li.days {
+	left:2px;
+}
+.countdown-days.countdown-xsmall .countdown_timer li.hours {
+	left:32px;
+}
+.countdown-days.countdown-xsmall .countdown_timer li.minutes {
+	left:62px;
+}
+.countdown-days.countdown-xsmall .countdown_timer li.seconds {
+	left:92px;
+}
+.countdown-days.countdown-xsmall .countdown_timer li em {
+	font-size:10px;
+	line-height:32px;
+}

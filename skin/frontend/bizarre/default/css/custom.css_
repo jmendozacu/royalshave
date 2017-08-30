@@ -1,0 +1,12 @@
+/**
+*
+* Feel free to add your own css rules here.
+*
+*/
+
+.meigee-tabs-content::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.menu-line{background:#f5f5f5;}

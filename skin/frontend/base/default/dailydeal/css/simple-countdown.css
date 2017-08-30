@@ -1,0 +1,204 @@
+.countdown { margin-top: 5px; }
+.countdown-days { margin-top: 8px; }
+
+.main-countdown { max-width: 230px; }
+.main-countdown .countdown { margin-top: 0px; }
+
+.countdown div span {
+    display: block;
+    line-height: 1;
+}
+.countdown > div {
+    min-width: 46px;
+}
+.countdown div, .countdown .sep {
+    display: inline-block;
+    margin-left: 3px;
+    text-align: center;
+}
+.countdown .sep {
+	font-size:41px;
+    line-height: 1;
+    position: relative;
+    top:-21px;
+    left: -1px;
+    /*text-shadow: 0 0px 2px rgba(0, 0, 0, 1);*/
+}
+.countdown .label {
+    font-size: 15px;
+    font-weight: 300;
+}
+.countdown .digits {
+    font-family: "Fjalla One",sans-serif;
+    font-size: 44px;
+    font-weight: 400;
+    /*text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);*/
+}
+
+.countdown .label {
+    color: #777777;
+}
+.countdown .sep {
+	color: #ABABAB;
+}
+.countdown .digits {
+	color: #333333;
+}
+
+
+
+/* COUNTDOWN SIZES */
+.countdown-large > div {
+    min-width: 36px;
+}
+.countdown-large .digits {
+	font-size: 34px;
+}
+.countdown-large div, .countdown-large .sep {
+	margin-left: 0px;
+}
+.countdown-large .sep {
+	font-size:32px;
+    top:-17px;
+}
+.countdown-large .label {
+	font-size:13px;
+}
+
+
+
+.countdown-medium > div {
+    min-width: 30px;
+}
+.countdown-medium .digits {
+	font-size: 28px;
+}
+.countdown-medium div, .countdown-medium .sep {
+	margin-left: 0px;
+}
+.countdown-medium .sep {
+	font-size:26px;
+    top:-14px;
+    left: 0px;
+}
+.countdown-medium .label {
+	font-size:11px;
+}
+
+
+
+.countdown-small > div {
+    min-width: 28px;
+}
+.countdown-small .digits {
+	font-size: 26px;
+}
+.countdown-small div, .countdown-small .sep {
+	margin-left: 0px;
+}
+.countdown-small .sep {
+	font-size:24px;
+    top:-13px;
+    left: 0px;
+}
+.countdown-small .label {
+	font-size:11px;
+}
+
+
+/* COUNTDOWN DAYS SIZES */
+.countdown-days .days-sep { left: -3px; }
+.countdown-days > div {
+    min-width: 36px;
+}
+.countdown-days .digits {
+	font-size: 34px;
+}
+.countdown-days div, .countdown-days .sep {
+	margin-left: 1px;
+}
+.countdown-days .sep {
+	font-size:32px;
+    top:-18px;
+}
+.countdown-days .label {
+	font-size:13px;
+}
+
+
+
+.countdown-days.countdown-large > div {
+    min-width: 32px;
+}
+.countdown-days.countdown-large .digits {
+	font-size: 30px;
+}
+.countdown-days.countdown-large div, .countdown-days.countdown-large .sep {
+	margin-left: 0px;
+}
+.countdown-days.countdown-large .sep {
+	font-size:28px;
+    top:-16px;
+}
+.countdown-days.countdown-large .label {
+	font-size:12px;
+}
+
+
+
+.countdown-days.countdown-medium > div {
+    min-width: 28px;
+}
+.countdown-days.countdown-medium .digits {
+	font-size: 26px;
+}
+.countdown-days.countdown-medium div, .countdown-days.countdown-medium .sep {
+	margin-left: 0px;
+}
+.countdown-days.countdown-medium .sep {
+	font-size:24px;
+    top:-15px;
+}
+.countdown-days.countdown-medium .label {
+	font-size:11px;
+}
+
+
+
+.countdown-days.countdown-small .days-sep { left: -2px; }
+.countdown-days.countdown-small > div {
+    min-width: 24px;
+}
+.countdown-days.countdown-small .digits {
+	font-size: 22px;
+}
+.countdown-days.countdown-small div, .countdown-days.countdown-small .sep {
+	margin-left: 0px;
+}
+.countdown-days.countdown-small .sep {
+	font-size:20px;
+    top:-13px;
+}
+.countdown-days.countdown-small .label {
+	font-size:11px;
+}
+
+
+
+.countdown-days.countdown-xsmall .days-sep { left: -2px; }
+.countdown-days.countdown-xsmall > div {
+    min-width: 18px;
+}
+.countdown-days.countdown-xsmall .digits {
+	font-size: 17px;
+}
+.countdown-days.countdown-xsmall div, .countdown-days.countdown-xsmall .sep {
+	margin-left: 0px;
+}
+.countdown-days.countdown-xsmall .sep {
+	font-size:18px;
+    top:-10px;
+}
+.countdown-days.countdown-xsmall .label {
+	font-size:10px;
+}

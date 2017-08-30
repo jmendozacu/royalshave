@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<root>
+    <cms>
+        <pages>
+            <item>
+                <title>Skin 4 Home Page</title>
+                <identifier>skin4_home</identifier>
+                <content><![CDATA[<div class="grid_9 alpha">
+	 <div class="slider-block">
+		<div class="grid_6 alpha">
+			{{widget type="revslider/slider_preview" id="3"}}
+		</div>
+		<hr class="indent-18 white-space mobile" />
+		<div class="grid_3 omega">
+			<div class="slider-banner">
+				<a href="#" title="slider-banner"><img src="{{media url="wysiwyg/sk4_slider_banner.jpg"}}" data-srcX2="{{media url="wysiwyg/sk4_slider_banner@x2.jpg"}}" alt="" /></a>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<hr class="indent-18 white-space" />
+	<div class="banners-block">
+		<div class="grid_3 alpha">
+			<div class="text-banner border">
+				<a href="#" title="Text Banner"><img src="{{media url="wysiwyg/sk4_text_banner.jpg"}}" data-srcX2="{{media url="wysiwyg/sk4_text_banner@x2.jpg"}}" alt="" /></a>
+				<div class="text-banner-content">
+					<h2>Menu Thermo Kettle Carbon Black</h2>
+				</div>
+			</div>
+		</div>
+		<hr class="indent-18 white-space mobile" />
+		<div class="grid_3">
+			<div class="text-banner">
+				<a href="#" title="Text Banner 2"><img src="{{media url="wysiwyg/sk4_text_banner_2.jpg"}}" data-srcX2="{{media url="wysiwyg/sk4_text_banner_2@x2.jpg"}}" alt="" /></a>
+				<div class="text-banner-content skin-1">
+					<h2>Tivoli Audio Model One AM/FM Table </h2>
+				</div>
+			</div>
+		</div>
+		<hr class="indent-18 white-space mobile" />
+		<div class="grid_3 omega">
+			<div class="text-banner">
+				<a href="#" title="Text Banner 3"><img src="{{media url="wysiwyg/sk4_text_banner_3.jpg"}}" data-srcX2="{{media url="wysiwyg/sk4_text_banner_3@x2.jpg"}}" alt="" /></a>
+				<div class="text-banner-content">
+					<h2>Mondaine Evo Giant Ultra Black Men's Watch</h2>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<hr class="indent-18 white-space" />
+	<header class="widget-title"><h2>New Products</h2><a class="category-link" href="#">Shop Category <i class="fa fa-angle-right"></i></a></header>
+	{{widget type="meigeewidgetsbizarre/newproducts" template="meigee/meigeewidgetsbizarre/slider.phtml" products_amount="10" visible_products="3" product_name_slider="1" price_slider="1" add_to_cart_slider="1" wishlist_slider="1" compare_slider="1" quickview_slider="1" rating_stars_slider="1" rating_cust_link_slider="1" rating_add_review_link_slider="1" widget_id="4372"}}
+	<hr class="indent-18 white-space" />
+	<div class="text-banner background-color">
+		<div class="text-banner-content skin-2">
+			<h2>Get the theme installed and configured for free!</h2>
+			<p>Installation of our theme is pretty easy, anyway if you’ve got into any problems we can install it on your server absolutelly for free.</p>
+		</div>
+	</div>
+</div>
+<hr class="indent-18 white-space mobile" />
+<div class="grid_3 omega home-sidebar">
+	<div class="faq block">
+		<div class="block-title">
+			<h2>Frequently Ask Questions:</h2>
+		</div>
+		<div class="items-wrapper">
+			<div class="item">
+				<span class="question">
+					<i class="fa fa-question-circle"></i> How I can get free shipping?
+				</span>
+				<span class="answer">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada fringilla augue, eget porttitor libero cursus facilisis. 
+				</span>
+			</div>
+			<div class="item">
+				<span class="question">
+					<i class="fa fa-question-circle"></i> how to cancel an order?
+				</span>
+				<span class="answer">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada fringilla augue, eget porttitor libero cursus facilisis. Sed feugiat vel lorem ut scelerisque. Ut varius nunc felis. 
+				</span>
+			</div>
+			<div class="item">
+				<span class="question">
+					<i class="fa fa-question-circle"></i> how to get a discount card?
+				</span>
+				<span class="answer">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada.
+				</span>
+			</div>
+			<div class="item last">
+				<span class="question">
+					<i class="fa fa-question-circle"></i> how to change a password?
+				</span>
+				<span class="answer">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada fringilla augue, eget porttitor libero cursus facilisis. Sed feugiat vel lorem ut scelerisque. Ut varius nunc felis. Phasellus eget lectus in sapien auctor porta. Vestibulum vitae massa eu nisl sollicitudin tempor blandit et nisl. Nunc faucibus pharetra imperdiet. Nam luctus mi vitae nisi porta, id lobortis arcu laoreet. Maecenas dignissim.
+				</span>
+			</div>
+		</div>
+	</div>
+	<hr class="indent-18 white-space" />
+	<div class="social-likes block">
+		<div class="block-title">
+			<h2>Do you like our store?</h2>
+		</div>
+		<div class="block-content">
+			<div class="g-plusone"></div>
+			<script type="text/javascript">
+			  (function() {
+				var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+				po.src = 'https://apis.google.com/js/platform.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			  })();
+			</script>
+			<div id="fb-root"></div>
+			<script>
+			(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+			</script>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-via="meigeeteam">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			<script src="https://apis.google.com/js/platform.js"></script>
+			<div class="g-ytsubscribe" data-channel="GoogleDevelopers" data-layout="default" data-count="default"></div>
+		</div>
+	</div>
+	<hr class="indent-18 white-space" />
+	<div class="block address-block">
+		<div class="text-banner background">
+			<span class="banner-title"><i class="fa fa-thumb-tack"></i><strong>Address</strong></span>
+			<p>No. 315, Jersey City, NJ 07305, New York, USA</p>
+			<p>Call Us : (555) 723-649-4920</p>
+			<p>Email : <a href="mailto:bizarre@info.com">bizarre@info.com</a></p>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<hr class="indent-18 white-space" />
+<header class="widget-title"><h2>Household appliances</h2><a class="category-link" href="#">Shop Category <i class="fa fa-angle-right"></i></a></header>
+{{widget type="meigeewidgetsbizarre/newproducts" template="meigee/meigeewidgetsbizarre/grid.phtml" products_amount="6" products_per_row="6" product_name_grid="1" price_grid="1" widget_id="234"}}
+<hr class="indent-18 white-space" />
+<div class="newsletter-wrapper">
+	<div class="background-wrapper" style="background-color: #f5f5f5"></div>
+	{{block type="newsletter/subscribe" block_id="wide.newsletter" template="newsletter/wide_subscribe.phtml"}}
+</div>]]></content>
+                <is_active>1</is_active>
+                <sort_order>0</sort_order>
+                <stores>
+                    <item>0</item>
+                </stores>
+                <root_template>one_column</root_template>
+            </item>
+			<item>
+                <title>404 Not Found (Home Appliance)</title>
+                <identifier>skin4-no-route</identifier>
+                <content><![CDATA[<div class="page-no-route">
+	<div class="not-found-bg" data-bgimg="background-image: url({{media url="wysiwyg/sk4_404_bg.jpg"}})"></div>
+	<header class="header" id="header">
+		<div class="container_12">
+			<div class="grid_12">
+				<h2 class="logo">
+					<a class="logo" href="{{store url=""}}"><img src="{{media url="wysiwyg/sk4_404_logo.png"}}" data-srcX2="{{media url="wysiwyg/sk4_404_logo@x2.png"}}"></a>
+				</h2>
+				<div class="search">{{block type="core/template" block_id="topSearch" template="catalogsearch/form.mini.phtml"}}</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+	<div class="no-route">
+		<div class="container_12">
+			<div class="grid_12">
+				<div class="text-block">
+					<div class="f-left">
+						<h2>404</h2>
+						<h3>Whoops, our bad...</h3>
+					</div>
+					<div class="f-right">
+						<p>The page you requested was not found, and we have a fine guess why.</p>
+						<p>If you typed the URL directly, please make sure the spelling is correct.</p>
+						<p>If you clicked on a link to get here, the link is outdated.</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<button class="button btn-home" type="button" onclick="setLocation('{{store url=""}}')"><span><span>go to home</span></span></button>
+				<div class="clear"></div>
+				<div class="block-or">or</div>
+				<div class="clear"></div>
+				<header class="widget-title"><h2>Check new arrivals</h2></header>
+				{{widget type="meigeewidgetsbizarre/newproducts" template="meigee/meigeewidgetsbizarre/grid.phtml" products_amount="6" products_per_row="6" product_name_grid="1" price_grid="1" widget_id="665"}}
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<footer id="footer">
+		<div class="container_12">
+			<div class="grid_12">
+				<div class="footer-links">
+					<ul>
+						<li><a href="{{store direct_url="about-magento-demo-store"}}">About Us</a></li>
+						<li><a href="{{store direct_url="customer-service"}}">Customer Service</a></li>
+						<li class="privacy"><a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy</a></li>
+						<li><a href="{{store direct_url="catalog/seo_sitemap/category"}}">Site Map </a></li>
+						<li><a href="{{store direct_url="catalogsearch/term/popular"}}">Search Terms</a></li>
+						<li><a href="{{store direct_url="catalogsearch/advanced/"}}">Advanced Search</a></li>
+						<li><a href="{{store direct_url="sales/guest/form/"}}">Orders and Returns</a></li>
+						<li class="last"><a href="{{store direct_url="contacts"}}">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					<address>{{config path="design/footer/copyright"}}</address>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</footer>
+</div>]]></content>
+                <is_active>1</is_active>
+                <sort_order>0</sort_order>
+                <stores>
+                    <item>0</item>
+                </stores>
+                <root_template>empty</root_template>
+            </item>
+        </pages>
+        <blocks>
+            <item>
+                <title>Bizarre Skin 4 Footer</title>
+                <identifier>bizarre_sk4_footer</identifier>
+                <content><![CDATA[<div class="footer-topline">
+	<div class="container_12">
+		<div class="grid_12">
+			{{widget type="meigeewidgetsbizarre/sociallinks" twitter="http://twitter.com" rss="http://rss.com" facebook="http://facebook.com" googleplus="https://plus.google.com/" linkedin="http://linkedin.com" pinterest="http://pinterest.com/" template="meigee/meigeewidgetsbizarre/sociallinks.phtml"}}
+			<div class="footer-links">
+				<span>Footer links<i class="fa fa-bars"></i></span>
+				<ul>
+					<li><a href="{{store direct_url="about-magento-demo-store"}}">About Us</a></li>
+					<li><a href="{{store direct_url="customer-service"}}">Customer Service</a></li>
+					<li class="privacy"><a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy</a></li>
+					<li><a href="{{store direct_url="catalog/seo_sitemap/category"}}">Site Map </a></li>
+					<li><a href="{{store direct_url="catalogsearch/term/popular"}}">Search Terms</a></li>
+					<li><a href="{{store direct_url="catalogsearch/advanced/"}}">Advanced Search</a></li>
+					<li><a href="{{store direct_url="sales/guest/form/"}}">Orders and Returns</a></li>
+					<li class="last"><a href="{{store direct_url="contacts"}}">Contact Us</a></li>
+					<li class="remover"><i class="fa fa-times"></i></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="footer-second-line">
+	<div class="container_12">
+		<div class="grid_12">
+			<div class="grid_3 alpha">
+				<div class="footer-logo-wrapper">
+					<a class="footer-logo" href="#"><img src="{{media url="wysiwyg/sk4_footer_logo.png"}}" alt="" data-srcx2="{{media url="wysiwyg/sk4_footer_logo@x2.png"}}"></a>
+				</div>
+				<div class="footer-info">
+					<p>Bizarre is a premium Magento theme with advanced admin module. It’s extremely customizable, easy to use and fully responsive and retina ready.</p>
+					<a href="#" title="Buy this theme">Buy this theme<i class="fa fa-angle-right"></i></a>
+				</div>
+			</div>
+			<div class="grid_9 omega">
+				<div class="top">
+					<div class="grid_3 alpha">
+						<div class="footer-block-title">
+							<h2>Totes</h2>
+						</div>
+						{{widget type="meigeewidgetsbizarre/newproducts" template="meigee/meigeewidgetsbizarre/footer_list.phtml" products_amount="2" product_name_footer_list="1" price_footer_list="1" widget_id="6784"}}
+					</div>
+					<div class="grid_3">
+						<div class="footer-block-title">
+							<h2>Tags</h2>
+						</div>
+						{{block type="tag/popular" block_id="tags_popular" template="tag/popular.phtml"}}
+					</div>
+					<div class="grid_3 omega">
+						<div class="footer-block-title">
+							<h2>Latest Tweets</h2>
+						</div>
+						{{widget type="meigeewidgetsbizarre/tweets" template="meigee/meigeewidgetsbizarre/tweets.phtml" twitter_username="meigeeteam" twitter_widget_id="349107793481043968" tweet_limit="1"}}
+					</div>
+				</div>
+				<div class="bottom">
+					<div class="grid_3 alpha">
+						<div class="footer-block-title">
+							<h2>Help</h2>
+						</div>
+						<div class="custom-footer-content">
+							<ul class="links">
+								<li><a href="#">Cras dolor est, pellentesque</a></li>
+								<li><a href="#">Consectetur auctor ligula</a></li>
+								<li><a href="#">Donec interdum</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="grid_3">
+						<div class="footer-block-title">
+							<h2>Accessories</h2>
+						</div>
+						<div class="custom-footer-content">
+							<ul class="links">
+								<li><a href="#">Cras dolor est, pellentesque</a></li>
+								<li><a href="#">Consectetur auctor ligula</a></li>
+								<li><a href="#">Donec interdum</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="grid_3 omega">
+						<div class="footer-block-title">
+							<h2>Cloth</h2>
+						</div>
+						<div class="custom-footer-content">
+							<ul class="links">
+								<li><a href="#">Cras dolor est, pellentesque</a></li>
+								<li><a href="#">Consectetur auctor ligula</a></li>
+								<li><a href="#">Donec interdum</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="links-block">
+	<div class="container_12">
+		<div class="grid_12">
+			<div class="grid_2 alpha">
+				<ul class="links">
+					<li><a href="#">Laptops</a></li>
+					<li><a href="#">Computers</a></li>
+					<li><a href="#">Tablets</a></li>
+					<li><a href="#">Software</a></li>
+					<li><a href="#">Monitors</a></li>
+				</ul>
+			</div>
+			<div class="grid_2">
+				<ul class="links">
+					<li><a href="#">Major Appliances</a></li>
+					<li><a href="#">Integrated appliances</a></li>
+					<li><a href="#">Small Appliances</a></li>
+					<li><a href="#">Climate Technology</a></li>
+					<li><a href="#">Cooking Utensils</a></li>
+				</ul>
+			</div>
+			<div class="grid_2">
+				<ul class="links">
+					<li><a href="#">Televisions and Accessories</a></li>
+					<li><a href="#">DVD / HD-media player</a></li>
+					<li><a href="#">Cameras</a></li>
+					<li><a href="#">Musical Instruments</a></li>
+					<li><a href="#">Accessories for photo / video</a></li>
+				</ul>
+			</div>
+			<div class="grid_2">
+				<ul class="links">
+					<li><a href="#">Tools</a></li>
+					<li><a href="#">Gardening Equipment</a></li>
+					<li><a href="#">Furniture</a></li>
+					<li><a href="#">Irrigation systems</a></li>
+					<li><a href="#">Modern House</a></li>
+				</ul>
+			</div>
+			<div class="grid_2">
+				<ul class="links">
+					<li><a href="#">Autosound</a></li>
+					<li><a href="#">Avtosvet</a></li>
+					<li><a href="#">Auto Electronics</a></li>
+					<li><a href="#">Automobile equipment</a></li>
+					<li><a href="#">Autocosmetics</a></li>
+				</ul>
+			</div>
+			<div class="grid_2 omega">
+				<ul class="links">
+					<li><a href="#">Balls for team sports</a></li>
+					<li><a href="#">Table tennis</a></li>
+					<li><a href="#">Rackets for table tennis</a></li>
+					<li><a href="#">Sets for table tennis</a></li>
+					<li><a href="#">Balls for table tennis</a></li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+		</blocks>
+    </cms>
+</root>

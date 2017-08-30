@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Amasty_Customerimg>
+            <version>1.1.6</version>
+        </Amasty_Customerimg>
+    </modules>
+    
+    <admin>
+        <routers>
+            <amcustomerimgadm>
+                <use>admin</use>
+                <args>
+                    <module>Amasty_Customerimg</module>
+                    <frontName>amcustomerimgadm</frontName>
+                </args>
+            </amcustomerimgadm>
+        </routers>
+    </admin>
+    
+    <frontend>
+        <translate>
+            <modules>
+                <Amasty_Customerimg>
+                    <files>
+                        <default>Amasty_Customerimg.csv</default>
+                    </files>
+                </Amasty_Customerimg>
+            </modules>
+        </translate>
+        
+        <layout>
+            <updates>
+                <amcustomerimg>
+                    <file>amasty/amcustomerimg.xml</file>
+                </amcustomerimg>
+            </updates>
+        </layout>
+        
+        <routers>
+            <amcustomerimg>
+                <use>standard</use>
+                <args>
+                    <module>Amasty_Customerimg</module>
+                    <frontName>amcustomerimg</frontName>
+                </args>
+            </amcustomerimg>
+        </routers>
+    </frontend>
+    
+    
+    
+    
+    <adminhtml>
+        <translate>
+			<modules>
+				<Amasty_Customerimg>
+					<files>
+						<default>Amasty_Customerimg.csv</default>
+					</files>
+				</Amasty_Customerimg>
+			</modules>
+		</translate>
+		<menu>
+			 <catalog>
+				<children>
+					<amcustomerimg translate="title" module="amcustomerimg">
+						<title>Customer Product Images</title>
+						<action>amcustomerimgadm/adminhtml_image</action>
+						<sort_order>2</sort_order>
+					</amcustomerimg>
+				</children>
+			 </catalog>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<catalog>
+							<children>
+								<amcustomerimg translate="title">
+									<title>Customer Product Images</title>
+									<sort_order>2</sort_order>
+								</amcustomerimg>
+							</children>
+						</catalog>
+						<system>
+							<children>
+								<config>
+									<children>
+										<amcustomerimg translate="title" module="amcustomerimg">
+											<title>Customer Product Images</title>
+										</amcustomerimg>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+    </adminhtml>
+    
+    
+    
+    <global>
+    
+        <models>
+            <amcustomerimg>
+                <class>Amasty_Customerimg_Model</class>
+                <resourceModel>amcustomerimg_mysql4</resourceModel>
+            </amcustomerimg>
+            
+            <amcustomerimg_mysql4>
+                <class>Amasty_Customerimg_Model_Mysql4</class>
+                <entities>
+                    <image>
+                        <table>amasty_amcustomerimg_image</table>
+                    </image>
+                </entities>
+            </amcustomerimg_mysql4>
+
+        </models>
+        
+		<resources>
+             <amcustomerimg_setup>
+                <setup>
+                    <module>Amasty_Customerimg</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </amcustomerimg_setup>
+		    <amcustomerimg_write>
+		        <connection><use>core_write</use></connection>
+		    </amcustomerimg_write>
+		    <amcustomerimg_read>
+		        <connection><use>core_read</use></connection>
+		    </amcustomerimg_read>
+		</resources>
+		  
+        <blocks>
+            <amcustomerimg>
+                <class>Amasty_Customerimg_Block</class>
+            </amcustomerimg>
+            
+        </blocks>
+        
+        <helpers>
+            <amcustomerimg>
+                <class>Amasty_Customerimg_Helper</class>
+            </amcustomerimg>
+        </helpers>
+        
+
+        <template>
+            <email>
+               <amcustomerimg_coupon_template translate="label" module="amcustomerimg">
+                   <label>Customer Product Images Coupon</label>
+                   <file>amcustomerimg_coupon_template.html</file>
+                   <type>html</type>
+               </amcustomerimg_coupon_template>
+               <amcustomerimg_notification_template translate="label" module="amcustomerimg">
+                   <label>Customer Product Images Admin Notification</label>
+                   <file>amcustomerimg_notification_template.html</file>
+                   <type>html</type>
+               </amcustomerimg_notification_template>
+            </email>
+        </template> 
+    </global>
+    
+    <crontab>
+        <jobs>
+            <amcustomerimg_rmcoupons>
+                <schedule><cron_expr>3 * * * *</cron_expr></schedule>
+                <run><model>amcustomerimg/coupon::removeOldCoupons</model></run>
+            </amcustomerimg_rmcoupons>
+        </jobs> 
+    </crontab>
+    
+    <default>
+        <amcustomerimg>
+           <general>
+               <enabled>1</enabled>
+               <approve>1</approve>
+               <purchased_only>0</purchased_only>
+               <note></note>
+               <container_selector>.product-collateral</container_selector>
+           </general>
+           <image>
+               <size_x>160</size_x>
+               <size_y>120</size_y>
+               <lightbox_x>800</lightbox_x>
+               <lightbox_y>600</lightbox_y>
+           </image>
+           <notification>
+               <send>0</send>
+               <to></to>
+               <from>general</from>
+               <template>amcustomerimg_admin_notify_template</template>
+           </notification>
+           <coupon>
+               <send>0</send>
+               <approved_cnt>5</approved_cnt>
+               <identity>general</identity>
+               <template>amcustomerimg_coupon_template</template>
+               <coupon_type>by_percent</coupon_type>
+               <coupon_amount>1</coupon_amount>
+               <coupon_days>3</coupon_days>
+               <coupon_uses>1</coupon_uses>
+               <remove_days>0</remove_days>
+           </coupon>
+        </amcustomerimg>
+    </default>
+    
+</config>
