@@ -43,7 +43,7 @@
           <host><![CDATA[127.0.0.1]]></host>
           <username><![CDATA[royalsh1_magento]]></username>
           <password><![CDATA[9iTC2liDYeh9]]></password>
-          <dbname><![CDATA[royalsh1_upgradenew]]></dbname>
+          <dbname><![CDATA[royalsh1_dev2]]></dbname>
           <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
           <model><![CDATA[mysql4]]></model>
           <type><![CDATA[pdo_mysql]]></type>
@@ -52,12 +52,12 @@
         </connection>
       </default_setup>
     </resources>
-    <session_save><![CDATA[memcache]]></session_save>
-    <session_save_path><![CDATA[unix:///var/tmp/memcached.royalsh1.royalshave.com_sessions.sock?persistent=1&weight=2&timeout=10&retry_interval=10]]></session_save_path>
-    <session_cache_limiter><![CDATA[]]></session_cache_limiter>
+    <session_save><![CDATA[files]]></session_save>
+    <!-- <session_save><![CDATA[memcache]]></session_save>
     <cache>
+      <backend><![CDATA[Cm_Cache_Backend_Redis]]></backend>
       <backend_options>
-        <server><![CDATA[/var/tmp/redis-multi_royalsh1.royalshave.com_cache.sock]]></server>
+        <server><![CDATA[/var/tmp/redis-multi_royalsh1.royalshave.com_dev2_cache.sock]]></server>
         <port><![CDATA[0]]></port>
         <persistent><![CDATA[]]></persistent>
         <database><![CDATA[0]]></database>
@@ -71,8 +71,9 @@
         <compression_lib><![CDATA[gzip]]></compression_lib>
         <use_lua><![CDATA[0]]></use_lua>
       </backend_options>
-      <backend><![CDATA[Cm_Cache_Backend_Redis]]></backend>
     </cache>
+    <session_save_path><![CDATA[unix:///var/tmp/memcached.royalsh1.royalshave.com_dev2_sessions.sock?persistent=1&weight=2&timeout=10&retry_interval=10]]></session_save_path>
+    <session_cache_limiter><![CDATA[]]></session_cache_limiter> -->
   </global>
   <admin>
     <routers>

@@ -1,12 +1,4 @@
 <?php
-## BEGIN NEXCESS DEBUGING ##
-## if(isset($_SERVER['REMOTE_ADDR'])) $debug = $_SERVER['REMOTE_ADDR'];
-## if ($debug == "192.240.191.2"){
-##    $file = fopen('/tmp/flag','w');
-##    sleep(5);
-##    fclose($file);
-## }
-## END NEXCESS DEBUGGING ##
 /**
  * Magento
  *
@@ -28,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage
- * @copyright  Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -78,7 +70,7 @@ if (isset($_SERVER['MAGE_IS_DEVELOPER_MODE'])) {
     Mage::setIsDeveloperMode(true);
 }
 
-ini_set('display_errors', 1);
+#ini_set('display_errors', 1);
 
 umask(0);
 

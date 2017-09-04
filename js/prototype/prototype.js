@@ -56,6 +56,7 @@ var Prototype = {
 
   K: function(x) { return x }
 };
+
 if (Prototype.Browser.MobileSafari)
   Prototype.BrowserFeatures.SpecificElementExtensions = false;
 
@@ -1061,9 +1062,6 @@ var Enumerable = (function() {
     find:       detect
   };
 })();
-
-
-
 
 function $A(iterable) {
   if (!iterable) return [];

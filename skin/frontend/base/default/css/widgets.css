@@ -19,7 +19,7 @@
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 
@@ -94,15 +94,3 @@
 .sidebar .widget-cms-link { display:block; margin:0 0 15px; padding:0 10px; }
 .sidebar .widget-cms-link a { background:url(../images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding:0 15px 0 0; }
 /* ======================================================================================= */
-#checkout-step-login .paypal-new > div, #checkout-step-login .paypal-logo, #checkout-step-login #AmazonPayButtonBefore {
-    text-align: center;
-}
-@media only screen and (min-width: 1281px){
-.checkout-onepage-index .opc .form-list .input-box {
-    width: 95%!important;
-}
-.opc #login-form input{width:100%;}
-}
-@media only screen and (max-width: 767px){
-	#checkout-step-login .child-checkoutmethod{width:100%;}
-}

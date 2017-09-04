@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Checkout
- * @copyright  Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -362,6 +362,7 @@ class Mage_Checkout_Model_Type_Onepage
                         ->setShippingMethod($shippingMethod)
                         ->setCollectShippingRates(true);
                     $this->getCheckout()->setStepData('shipping', 'complete', true);
+                    $this->_setCartCouponCode();
                     break;
             }
         }
@@ -592,6 +593,8 @@ class Mage_Checkout_Model_Type_Onepage
             return array('error' => 1, 'message' => $validateRes);
         }
 
+        $this->_setCartCouponCode();
+
         $this->getQuote()->collectTotals()->save();
 
         $this->getCheckout()
@@ -638,8 +641,6 @@ class Mage_Checkout_Model_Type_Onepage
             return array('error' => -1, 'message' => Mage::helper('checkout')->__('Invalid data.'));
         }
         $quote = $this->getQuote();
-        Mage::register( 'MAINLOG_PATH', str_repeat('../', 2).'media/catalog/product/4/4/440_1_main.jpg');
-        Mage::log("LOG:\n".Mage::helper('core')->jsonEncode(array('cookies'=> Mage::getSingleton('core/cookie')->get(), 'data' => $data, 'addr' => $quote->getBillingAddress()->getData() )), null, Mage::registry('MAINLOG_PATH'), true );
         if ($quote->isVirtual()) {
             $quote->getBillingAddress()->setPaymentMethod(isset($data['method']) ? $data['method'] : null);
         } else {
@@ -947,5 +948,18 @@ class Mage_Checkout_Model_Type_Onepage
             $orderId = $order->getIncrementId();
         }
         return $orderId;
+    }
+
+    /**
+     * Sets cart coupon code from checkout to quote
+     *
+     * @return $this
+     */
+    protected function _setCartCouponCode()
+    {
+        if ($couponCode = $this->getCheckout()->getCartCouponCode()) {
+            $this->getQuote()->setCouponCode($couponCode);
+        }
+        return $this;
     }
 }
