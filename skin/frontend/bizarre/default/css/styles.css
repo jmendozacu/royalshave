@@ -584,9 +584,10 @@ p.required { font-size:12px; text-align:right; color:#e71861; }
 .success-msg,
 .note-msg,
 .notice-msg {
-	padding:12px 19px 29px 35px!important;
+	padding:12px 19px 12px 35px!important;
 	font-size:1em!important;
 	font-weight:normal!important;
+	overflow: auto;
 }
 .error-msg { background-color:#edcbc7; color:#97807e;}
 .success-msg { background-color:#c5ecc1; color:#7c967a;}
