@@ -182,6 +182,7 @@
 				<div class="clear"></div>
 			</div>
 		</div>
+		<div id="nav-cover"></div>
 	</header>
 	<?php 
 		if ($stickyStatus) { 
@@ -206,3 +207,32 @@
 		});
 	</script>
 <?php endif; ?>
+<script type="text/javascript">
+	jQuery( document ).ready(function() {
+    	var pageHeight = jQuery('body').height();
+    	var headerHeight = jQuery('#header').height();
+    	var coverHeight = pageHeight - headerHeight;
+    	var windowsize = jQuery(window).width();
+	    if(windowsize < 768){
+	    	headerHeight = headerHeight + 45;
+	    }
+    	jQuery("#nav-cover").css({'height': coverHeight+'px', 'top': headerHeight+'px'});
+    	/*resize */
+    	jQuery(window).resize(function() {
+		  	pageHeight = jQuery('body').height();
+    		headerHeight = jQuery('#header').height();
+    		coverHeight = pageHeight - headerHeight;
+    		jQuery("#nav-cover").css({'height': coverHeight+'px', 'top': headerHeight+'px'});
+		});
+	});
+	jQuery(".nav-wide li.level-top.parent").mouseover(function() {
+		jQuery("#nav-cover").addClass('active');
+	});
+
+	jQuery(".nav-wide li.level-top.parent").mouseout(function() {
+		jQuery("#nav-cover").removeClass('active');
+	});
+	jQuery('header.header .top-cart .block-title').click(function() {
+		jQuery("#nav-cover").toggleClass('active');
+	});
+</script>
