@@ -109,6 +109,12 @@ function topCart(isOnHover){
 				event.stopPropagation();
 				jQuery(this).toggleClass('active');
 				jQuery(this).next('.topCartContent').slideToggle(500).toggleClass('active');
+				var checkClass = jQuery('.header .top-cart .block-title').hasClass('active');
+				if(checkClass){
+					jQuery("#nav-cover").css('display', 'block');
+				}else{
+					jQuery("#nav-cover").css('display', 'none');
+				}
 				document.addEventListener('touchstart', topCartListener, false);
 				jQuery(document).on('click.cartEvent', function(e) {
 					if (jQuery(e.target).parents('.topCartContent').length == 0) {

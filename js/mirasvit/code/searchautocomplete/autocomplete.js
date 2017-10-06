@@ -286,8 +286,7 @@ jQuery(function ($) {
             self.$placeholder.show();
             self.$el.addClass('active');
             self.shown = true;
-            $("#nav-cover").addClass('active');
-
+            setTimeout(function(){ $("#nav-cover").addClass('active');}, 100);
             $('li', self.$placeholder).each(function (key, el) {
                 var $el = $(el);
                 $el.on('mouseover', self.mouseover);
