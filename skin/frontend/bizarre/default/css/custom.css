@@ -50,19 +50,6 @@
 	border-bottom: 0;
 }
 
-/***0308 titicaca***/
-/*.customer-account-index .block-account li:nth-child(5),
-.customer-account-index .block-account li:nth-child(6),
-.customer-account-index .block-account li:nth-child(8),
-.customer-account-index .block-account li:nth-child(10),
-.customer-account-index .block-account li:nth-child(11),
-.customer-account-index .block-account li:nth-child(12),
-.customer-account-index .block-account li:nth-child(14),
-.customer-account-index .block-account li:nth-child(16),
-.customer-account-index .block-account li:nth-child(19) {
-    display: none !important;
-}*/
-
 
 #popup-block .block-subscribe{
     float: none;
@@ -70,7 +57,6 @@
 }
 
 
-/***2806 titicaca***/
 .catalog-product-view .product-options-bottom .add-to-cart {
     margin-bottom: 10px;
 }
@@ -85,9 +71,7 @@
 .catalog-product-view  .product-view .product-shop .add-to-links-box {
     margin-left: 20px;
 }
-/*.omega {
-    float: right;
-}*/
+
 #giftcard_code {
     width: 92% !important;
 }
@@ -101,27 +85,26 @@
 #nav-cover {position: absolute; width: 100vw; background: #000; left: 0; opacity: 0.5; display: none;}
 #nav-cover.active {display: block!important;}
 @media only screen and (max-width : 360px) {
-.catalog-product-view .add-to-cart button.button {
-    padding-left: 2px ;
-}
-.bss-header-bar-left .top-cart .cart div {
-    width: 47px;
-}
-.header .top-cart {
-    top: 53px !important;
-}
-.product-omega-professional-boar-bristle-shaving-brush-cast-acrylic  .add-to-links{
-	margin-left: 15px;
-}
-.catalog-product-view .product-view .product-shop .add-to-links-box {
-    margin-left: 10px;
-}
+	.catalog-product-view .add-to-cart button.button {
+	    padding-left: 2px ;
+	}
+	.bss-header-bar-left .top-cart .cart div {
+	    width: 47px;
+	}
+	.header .top-cart {
+	    top: 53px !important;
+	}
+	.product-omega-professional-boar-bristle-shaving-brush-cast-acrylic  .add-to-links{
+		margin-left: 15px;
+	}
+	.catalog-product-view .product-view .product-shop .add-to-links-box {
+	    margin-left: 10px;
+	}
 }
 @media only screen and (min-width : 361px) {
-.catalog-product-view .product-custom {
-    width: 352px;}
+	.catalog-product-view .product-custom {
+	    width: 352px;}
 }
-/*******1308 titicaca********/
 .cart .totals .checkout-types .paypal-logo {width: 170px;}
 .cart .totals.totals-accordion .checkout-types #AmazonPayButtonBefore {width: 170px;}
 .main-checkoutmethod {width: 100%;}
@@ -157,7 +140,6 @@
 .product-type-block .short-description {
     margin-top: 15px;
 }
-/**2008**/
 .product-view .product-shop .price-box .price-label {
     display: none;
 }
@@ -169,36 +151,38 @@
 
 header#header .quick-access{z-index: 1;}
 .nav-container.mobile{z-index: 999;}
-/*.product-view .product-shop .short-description {border-top: dotted 1px #ddd;padding-top: 1.5em;}*/
-/***2108***/
+
+@media screen and (min-width: 1366px){
+	.nav-container li.level-top > a span {
+	    max-width: 65px!important;
+	    text-align: center;
+	    padding: 0!important;
+	    display: inline-block;
+	}
+}
 @media only screen and (max-width : 977px) {
-.hide-u977 {display:none!important;}
-.search_mini_form.positioned {top:50px!important;}
-#bss-switch-store {width:auto;float:left;width:100%;}
-.header-primary-right {
-    display: block;
-    top: 13px;
-    position: relative;
+	.hide-u977 {display:none!important;}
+	.search_mini_form.positioned {top:50px!important;}
+	#bss-switch-store {width:auto;float:left;width:100%;}
+	.header-primary-right {
+	    display: block;
+	    top: 13px;
+	    position: relative;
+	}
+	    header.header .form-search input {
+	    width: 190px;
+	}
+	.header-primary-right img {
+	    width: 185px;
+	}
+	header#header h2.logo {
+	    margin-right: 20px;
+	}
+	body header.header .search_mini_form {
+	    right: auto;
+	}
 }
-    header.header .form-search input {
-    width: 190px;
-}
-.header-primary-right img {
-    width: 185px;
-}
-header#header h2.logo {
-    margin-right: 20px;
-}
-body header.header .search_mini_form {
-    right: auto;
-}
-}
-@media only screen and (max-width : 977px) and (min-width: 786px){
-	
 
-
-
-}
 @media only screen and (max-width : 767px) {
     .title-4cart-site{display:none !important;}
     .bss-header-bar-right {
