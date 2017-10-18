@@ -152,7 +152,7 @@
 header#header .quick-access{z-index: 1;}
 .nav-container.mobile{z-index: 999;}
 
-@media screen and (min-width: 1366px){
+@media screen and (min-width: 977px){
 	.nav-container li.level-top > a span {
 	    max-width: 65px!important;
 	    text-align: center;
@@ -160,6 +160,9 @@ header#header .quick-access{z-index: 1;}
 	    display: inline-block;
 	    height: 36px;
 	}
+    body .nav-container a.level-top {
+        padding: 1.33em 12px;
+    }
 }
 @media only screen and (max-width : 977px) {
 	.hide-u977 {display:none!important;}
@@ -181,6 +184,14 @@ header#header .quick-access{z-index: 1;}
 	}
 	body header.header .search_mini_form {
 	    right: auto;
+	}
+}
+@media screen and (max-width: 976px){
+	header.header .nav-container.mobile li.level0 > a {
+	    box-sizing: border-box;
+	}
+	body .nav-wide li.level-top.nav-1 {
+	    margin-left: 2px;
 	}
 }
 
