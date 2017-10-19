@@ -28,7 +28,7 @@ wishlistForm.submitAjaxWishlist = function(button, url,id){
         delete Validation.methods['validate-one-required-by-name'];
         if (this.validator.validate()) {
         	url = url.replace("wishlist/index","ajax/whishlist");
-        	url = url.replace("https","http");
+        	// url = url.replace("https","http");
         	var data = jQuery('#product_addtocart_form').serialize();
 			data += '&isAjax=1';
 			jQuery('#ajax_wishlist_loading'+id).show();

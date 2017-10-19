@@ -31,7 +31,7 @@ function ajaxCompare(url,id){
 }
 function ajaxWishlist(url,id){
 	url = url.replace("wishlist/index","ajax/whishlist");
-	url = url.replace("https","http");
+	// url = url.replace("https","http");
 	url += 'isAjax/1/';
 	jQuery('#ajax_wishlist_loading'+id).show();
 	function popUpMessage(data){
