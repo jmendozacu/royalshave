@@ -11,13 +11,13 @@
 <div class="block block-subscribe">
 	<div class="block-title">
 		<strong>
-			<span><?php echo $this->__('Love Deals?') ?></span>  
+			<span><?php echo $this->__('Newsletter') ?></span>  
 		</strong>
 	</div>
     <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail_<?php echo $random; ?>">
         <div class="block-content">
             <div class="form-subscribe-header">
-                <label for="newsletter_<?php echo $random; ?>"><?php echo $this->__('Subscribe to the RoyalShave newsletter to be among the first to know about our flash sales, Deal of the Weeks, and new arrivals!') ?></label>
+                <label for="newsletter_<?php echo $random; ?>"><?php echo $this->__('Subscribe to our newsletter to receive updates on new arrivals and special offers.') ?></label>
             </div>
             <div class="input-box">
                <input type="text" name="email" id="newsletter_<?php echo $random; ?>" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email" />

@@ -647,7 +647,7 @@ nav.breadcrumbs li strong{font-size: .91em; font-family: Georgia; font-style: it
 .widget-title,
 .related-wrapper-bottom .block-title,
 .rating-title,
-.block-title {border-bottom: solid 1px #000; margin-bottom: 1.5em;}
+.block-title {border-bottom: solid 1px #ddd; margin-bottom: 1.5em;}
 body .widget .widget-title h1,
 body .widget .widget-title h2,
 .widget-title h2,
@@ -5311,7 +5311,7 @@ body.boxed-layout.ajax-index-options .container_12 {padding-left: 0!important; p
 
 #popup-block .block-subscribe {float: left; text-align: center; width: 50%; margin-left: 30px; padding-top: 7.5em;}
 #popup-block .block-subscribe strong span {
-	color: #000;
+	color: #fff;
 	font-weight: bold;
 	text-transform: none;
 	font-size: 2.5em;
@@ -5323,13 +5323,13 @@ body.boxed-layout.ajax-index-options .container_12 {padding-left: 0!important; p
 	font-family: Georgia;
 	font-size: 1em;
 	font-style: italic;
-	color: #000;
+	color: #fff;
 	line-height: 1.5em;
 	display: inline-block;
 	padding-bottom: 1em;
 }
 #popup-block .block-subscribe ~ .popup-bottom {color: #fff;}
-#popup-block .block-subscribe input {height: 28px; background-color: rgba(221, 221, 221, 0.52); border-color: rgba(255,255,255,0); margin-bottom: .75em;}
+#popup-block .block-subscribe input {height: 28px; background-color: rgba(255,255,255,.2); border-color: rgba(255,255,255,0); margin-bottom: .75em;}
 #popup-block .block-subscribe .button span {height: 40px;}
 #popup-block .block-subscribe .button span span {line-height: 40px;}
 #popup-block {display: none;}
