@@ -36,5 +36,8 @@
                 <block type="yotpo/yotpo" name="yotpo.questions" as="yotpo-questions" template="yotpo/questions.phtml"/>
             </block>
         </reference>
+        <reference name="before_body_end">
+            <block type="yotpo/yotpo" name="yotpo.testimonials" as="yotpo.testimonials" template="yotpo/testimonials.phtml"/>
+        </reference>
     </default>
 </layout>
