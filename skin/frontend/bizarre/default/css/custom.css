@@ -194,6 +194,10 @@ header#header .quick-access{z-index: 1;}
 	    margin-left: 2px;
 	}
 }
+@media screen and (max-width: 977px){
+	.nav-container.mobile{top:44px;}
+}
+
 
 @media only screen and (max-width : 767px) {
     .title-4cart-site{display:none !important;}
