@@ -289,3 +289,7 @@ header.header .top-cart {top: 50px !important;}
 @media only screen and (max-width: 767px){
     .cart .totals .checkout-types .paypal-logo {width: 100%; text-align: center;}
 }
+
+
+.messages li li:first-child{float: none;}
+.messages li li{display: inline-block;}
