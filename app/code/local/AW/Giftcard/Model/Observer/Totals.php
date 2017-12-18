@@ -27,8 +27,10 @@
 class AW_Giftcard_Model_Observer_Totals extends Mage_Core_Model_Abstract
 {
     public function coreBlockAbstractToHtmlAfter(Varien_Event_Observer $observer)
-    {
-        if (!Mage::helper('aw_giftcard')->isModuleOutputEnabled()) {
+    {   
+        $request = Mage::app()->getRequest();
+        $controller_name = $request->getControllerName();
+        if (!Mage::helper('aw_giftcard')->isModuleOutputEnabled() || $controller_name !='cart') {
             return $this;
         }
 

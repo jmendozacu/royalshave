@@ -1353,7 +1353,10 @@ jQuery.extend(Payment.prototype, {
 	options: null,
 
 	init: function(options) {
-		this.options = options;
+		if(options){
+			this.options = options;
+		}
+		
 		// Braintree's payment extension support
 		var p = this;
 		setTimeout(function() {
