@@ -1,25 +1,12 @@
 <?php
 /**
  * @author Amasty Team
- * @copyright Copyright (c) 2015 Amasty (https://www.amasty.com)
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
  * @package Amasty_Xnotif
  */   
 class Amasty_Xnotif_EmailController extends Mage_Core_Controller_Front_Action
 {
-    public function preDispatch()
-    {
-        parent::preDispatch();
-        if( Mage::getStoreConfig('amxnotif/stock/disable_guest') ) {
-            if (!Mage::getSingleton('customer/session')->authenticate($this)) {
-                $this->setFlag('', 'no-dispatch', true);
-                if (!Mage::getSingleton('customer/session')->getBeforeUrl()) {
-                    Mage::getSingleton('customer/session')->setBeforeUrl($this->_getRefererUrl());
-                }
-            }
-        }
-    }
-
-     public function stockAction()
+    public function stockAction()
     {
         $session = Mage::getSingleton('catalog/session');
         /* @var $session Mage_Catalog_Model_Session */
@@ -30,7 +17,7 @@ class Amasty_Xnotif_EmailController extends Mage_Core_Controller_Front_Action
          
         if (!$backUrl) {
             $this->_redirect('/');
-            return ;
+            return;
         }
 
         if (!$product = Mage::getModel('catalog/product')->load($productId)) {
@@ -45,7 +32,7 @@ class Amasty_Xnotif_EmailController extends Mage_Core_Controller_Front_Action
                 ->setProductId($product->getId())
                 ->setWebsiteId(Mage::app()->getStore()->getWebsiteId());
            
-            if ($parentId){
+            if ($parentId) {
                  $model->setParentId($parentId);
             }
             $collection = Mage::getModel('productalert/stock')
@@ -55,36 +42,32 @@ class Amasty_Xnotif_EmailController extends Mage_Core_Controller_Front_Action
                     ->addStatusFilter(0)
                     ->setCustomerOrder();
 
-            if($guestEmail) {
+            if ($guestEmail) {
                 if (!Zend_Validate::is($guestEmail, 'EmailAddress')) {
                     Mage::throwException($this->__('Please enter a valid email address.'));
                 }
-                $customer = Mage::getModel('customer/customer') ;
+                $customer = Mage::getModel('customer/customer');
                 $customer->setWebsiteId(Mage::app()->getWebsite()->getId());
                 $customer->loadByEmail($guestEmail);
             
-                if(!$customer->getId()){         
+                if (!$customer->getId()) {
                     $model->setEmail($guestEmail);
                     $model->setStoreId(Mage::app()->getStore()->getId());
                     $collection->addFieldToFilter('email', $guestEmail);
-                }
-                else{
+                } else {
                     $model->setCustomerId($customer->getId());
                     $collection->addFieldToFilter('customer_id', $customer->getId());
                 }
-            }
-            else {
+            } else {
                 $model->setCustomerId(Mage::getSingleton('customer/session')->getId());
                 $collection->addFieldToFilter('customer_id', Mage::getSingleton('customer/session')->getId());
             }
-        
             
-            if($collection->getSize() > 0) {
-                $session->addSuccess($this->__('Thank you! We will send you an e-mail as soon as this product is back in stock.'));
-             }
-            else{
+            if ($collection->getSize() > 0) {
+                $session->addSuccess($this->__('Thank you! You are already subscribed to this product.'));
+            } else {
                 $model->save();
-                $session->addSuccess($this->__('Thank you! We will send you an e-mail as soon as this product is back in stock.'));
+                $session->addSuccess($this->__('Alert subscription has been saved.'));
             }
         }
         catch (Exception $e) {
@@ -121,46 +104,43 @@ class Amasty_Xnotif_EmailController extends Mage_Core_Controller_Front_Action
                 ->setPrice($product->getFinalPrice())
                 ->setWebsiteId(Mage::app()->getStore()->getWebsiteId());
            
-            if ($parentId){
+            if ($parentId) {
                  $model->setParentId($parentId);
             }
-	        $collection = Mage::getModel('productalert/price')
+            $collection = Mage::getModel('productalert/price')
                     ->getCollection()
                     ->addWebsiteFilter(Mage::app()->getWebsite()->getId())
 		            ->addFieldToFilter('product_id', $productId)
 		            ->addFieldToFilter('status', 0)
                     ->setCustomerOrder();
 
-	        if($guestEmail) {
+            if ($guestEmail) {
                 if (!Zend_Validate::is($guestEmail, 'EmailAddress')) {
                     Mage::throwException($this->__('Please enter a valid email address.'));
                 }
-		        $customer = Mage::getModel('customer/customer') ;
-	    	    $customer->setWebsiteId(Mage::app()->getWebsite()->getId());
-		        $customer->loadByEmail($guestEmail);
-	        
-		        if(!$customer->getId()){
-	                    $model->setEmail($guestEmail);
-                        $model->setStoreId(Mage::app()->getStore()->getId());
-			            $collection->addFieldToFilter('email', $guestEmail);
-		        }
-		        else{
-			        $model->setCustomerId($customer->getId());
-			        $collection->addFieldToFilter('customer_id', $customer->getId());
-		        }
-	        }
-            else {
-		        $model ->setCustomerId(Mage::getSingleton('customer/session')->getId());
+                $customer = Mage::getModel('customer/customer');
+                $customer->setWebsiteId(Mage::app()->getWebsite()->getId());
+                $customer->loadByEmail($guestEmail);
+
+                if (!$customer->getId()) {
+                    $model->setEmail($guestEmail);
+                    $model->setStoreId(Mage::app()->getStore()->getId());
+                    $collection->addFieldToFilter('email', $guestEmail);
+                } else {
+                    $model->setCustomerId($customer->getId());
+                    $collection->addFieldToFilter('customer_id', $customer->getId());
+                }
+            } else {
+                $model ->setCustomerId(Mage::getSingleton('customer/session')->getId());
                 $collection->addFieldToFilter('customer_id', Mage::getSingleton('customer/session')->getId());
-		    }
-            
-	        if($collection->getSize() > 0) {
-		        $session->addSuccess($this->__('Thank you! You are already subscribed to this product.'));
-	        }
-		    else{
-		        $model->save();
-		        $session->addSuccess($this->__('Alert subscription has been saved.'));
-		    }
+            }
+
+            if ($collection->getSize() > 0) {
+                $session->addSuccess($this->__('Thank you! You are already subscribed to this product.'));
+            } else {
+                $model->save();
+                $session->addSuccess($this->__('Alert subscription has been saved.'));
+            }
         }
         catch (Exception $e) {
             $session->addException($e, $this->__('Unable to update the alert subscription.'));
