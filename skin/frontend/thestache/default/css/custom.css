@@ -290,3 +290,6 @@ header.header .top-cart {
 body header.header .search_mini_form {
     right: auto;
 }
+
+.messages li li:first-child{float: none;}
+.messages li li{display: inline-block;}
