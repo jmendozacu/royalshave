@@ -424,6 +424,7 @@
 		<action method="addItem"><type>skin_js</type><name helper="ThemeOptionsBizarre/fancySwitcherJS" /></action>
         <!--Cloud Zoom-->
         <action method="addItem"><type>skin_js</type><name>js/cloud-zoom.1.0.2.min.js</name><params/></action>
+        <action method="addJs"><script>varien/product_options.js</script></action>
 	</reference>
     <reference name="product.info">
 		<block type="core/text_list" name="product_col" as="product_col" translate="label">
