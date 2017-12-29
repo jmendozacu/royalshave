@@ -665,11 +665,12 @@
 			<block type="amazon_payments/button" before="checkout.cart.methods.paypal_express.bottom" name="AmazonPayButtonBefore" template="amazon_payments/onepage/button.phtml"/>
 		</reference>	
             	<reference name="checkout.cart.methods">  
-			<block type="globalshopex/internationallogic" name="globalshopex.internationallogic" before="-" template="globalshopex/switchtypecart.phtml">
+			<!-- <block type="globalshopex/internationallogic" name="globalshopex.internationallogic" before="-" template="globalshopex/switchtypecart.phtml">
 				<block type="globalshopex/internationallogic" name="formiframe"  template="globalshopex/formiframe.phtml" />
 				<block type="globalshopex/internationallogic" name="buttoniframe"  template="globalshopex/buttoniframe.phtml" />
 				<block type="globalshopex/internationallogic" name="formcartocart"  template="globalshopex/formcarttocart.phtml" />
-			</block>
+			</block> -->
+			<block type="internationalcheckout/international" name="internationalcheckout.international" before='-' template="internationalcheckout/ic_button_on_cart.phtml"/>
 		</reference>	
 		<!-- END GSX -->
 	    <block type="core/text_list" name="col1_before" />
