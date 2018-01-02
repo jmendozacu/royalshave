@@ -36,7 +36,8 @@ class AW_Giftcard_Model_Observer_Totals extends Mage_Core_Model_Abstract
 
         if ($observer->getBlock() instanceof Mage_Checkout_Block_Cart_Coupon) {
             $block = Mage::app()->getLayout()->createBlock('aw_giftcard/frontend_checkout_cart_giftcard');
-            $observer->getTransport()->setHtml($observer->getTransport()->getHtml() . $block->toHtml());
+            $html = $observer->getTransport()->getHtml();
+            $observer->getTransport()->setHtml($block->toHtml() . $html);
         }
         return $this;
     }
