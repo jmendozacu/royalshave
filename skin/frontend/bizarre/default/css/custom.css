@@ -259,7 +259,7 @@ header#header .quick-access{z-index: 1;}
   position: absolute;
   padding-top: 7px;
 }
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 767px){
 .catalog-product-view .product-view .product-shop .price-box {width: 55%;}
 .nav-wide li.level-top, .alpha {width:100% !important;}
 
@@ -1045,7 +1045,7 @@ button.international{background-color: white;}
 }
 @media only screen and (max-width: 977px) and (min-width: 768px){
     .cart.cart-2 aside section.payment-wrap .items-icon img {  margin: 20px;}
-    .cart.cart-2 aside section.payment-wrap .items-icon img:last-child { display: block; margin: 10px auto;}
+    .cart.cart-2 aside section.payment-wrap .items-icon img:last-child { /*display: block;*/ margin: 10px auto;}
 }
 
 
