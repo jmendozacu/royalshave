@@ -293,3 +293,5 @@ body header.header .search_mini_form {
 
 .messages li li:first-child{float: none;}
 .messages li li{display: inline-block;}
+
+.cart #icForm .international{border: 1px solid #ddd!important;width: 260px!important;}

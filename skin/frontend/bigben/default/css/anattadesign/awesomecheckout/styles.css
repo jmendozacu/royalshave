@@ -1766,3 +1766,6 @@ body {
 @media (max-width: 767px){
   #ac-page .my-cart .cart-qty{top: 8px;}
 }
+@media only screen and (max-width: 978px){
+  #icForm .text-below {width: 100%!important;}
+}
