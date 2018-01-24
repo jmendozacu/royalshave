@@ -1116,3 +1116,4 @@ a.check-giftcard {
 	    width: 726px;
 	}
 }
+body .cart.cart-2 .btn-proceed-checkout:hover span span{background-image: inherit;background-color: #4a9556;}
