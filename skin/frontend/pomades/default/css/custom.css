@@ -967,9 +967,10 @@ button.international{background-color: white;}
     display: block;
     font-size: 12px;
     border: none;
-    color: #000;}
+    /*color: #000;*/
+}
 .cart .discount .buttons-set button.button span span,
-.cart .shipping .buttons-set button.button span span {line-height: 36px; padding: 0; background: none;}
+.cart .shipping .buttons-set button.button span span {line-height: 36px; padding: 0; /*background: none;*/}
 #cart-accordion .discount{margin-bottom:0;}
 .cart .shipping p {font-size:.91em;}
 .cart .shipping .form-list{margin:9px 0;}
@@ -1099,5 +1100,5 @@ a.check-giftcard {
         width: 726px;
     }
 }
-body .cart.cart-2 .btn-proceed-checkout:hover span span{background-image: inherit;background-color: #E44600;}
+body .cart.cart-2 .btn-proceed-checkout:hover span span{background-image: inherit;}
 div.quantity-increase, div.quantity-decrease {display: inline-block; vertical-align: middle;  float:left;padding-top: 10px;}
