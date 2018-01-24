@@ -24,12 +24,17 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<td>
 <form id="discount-coupon-form" action="<?php echo $this->getUrl('checkout/cart/couponPost') ?>" method="post">
     <div class="discount">
 		<header>
 			<h2><?php echo $this->__('Discount Codes') ?></h2>
+            <span class="discount-item-button">
+                <i class="fa fa-plus" id="plus-1"></i>
+                <i class="fa fa-minus" id="minus-1"></i>
+            </span>
 		</header>
-        <div class="discount-form">
+        <div class="discount-form" id='promo-discount-form'>
             <label for="coupon_code"><?php echo $this->__('Enter your coupon code if you have one.') ?></label>
             <input type="hidden" name="remove" id="remove-coupone" value="0" />
             <div class="input-box">
@@ -44,6 +49,7 @@
         </div>
     </div>
 </form>
+</td>
 <script type="text/javascript">
 //<![CDATA[
 var discountForm = new VarienForm('discount-coupon-form');
@@ -58,4 +64,20 @@ discountForm.submit = function (isRemove) {
     return VarienForm.prototype.submit.bind(discountForm)();
 }
 //]]>
+
+jQuery( "#plus-1" ).click(function() {
+  jQuery( "#promo-discount-form" ).toggle( "slow", function() {
+    jQuery("#promo-discount-form").slideDown();
+    jQuery( "#minus-1" ).show();
+    jQuery( "#plus-1" ).hide();
+  });
+});
+
+jQuery( "#minus-1" ).click(function() {
+  jQuery( "#promo-discount-form" ).toggle( "slow", function() {
+    jQuery("#promo-discount-form").slideUp();
+    jQuery( "#minus-1" ).hide();
+    jQuery( "#plus-1" ).show();
+  });
+});
 </script>

@@ -646,6 +646,11 @@
 			<label>Payment Methods After Checkout Button</label>
 			<block type="checkout/onepage_link" name="checkout.cart.methods.onepage" template="checkout/onepage/link.phtml"/>
 			<block type="checkout/multishipping_link" name="checkout.cart.methods.multishipping" template="checkout/multishipping/link.phtml"/>
+			<block type="paypal/express_shortcut" name="checkout.cart.methods.paypal_express.bottom" after='-' template="paypal/express/shortcut.phtml">
+				<action method="setIsQuoteAllowed"><value>1</value></action>
+			</block>
+			<block type="amazon_payments/button" after='-' name="AmazonPayButtonMethod" template="amazon_payments/button.phtml"/>
+			<block type="internationalcheckout/international" name="internationalcheckout.international" after='-' template="internationalcheckout/ic_button_on_cart.phtml"/>
 		</block>
 		
 		<block type="checkout/cart_coupon" name="checkout.cart.coupon" as="coupon" template="checkout/cart/coupon.phtml"/>
@@ -657,25 +662,9 @@
 			<block type="paypal/express_shortcut" name="checkout.cart.methods.paypal_express.top1" before="-" template="paypal/express/shortcut.phtml">
 				<action method="setIsQuoteAllowed"><value>1</value></action>
 			</block>
+			<block type="amazon_payments/button" after='-' name="AmazonPayButtonMethod" template="amazon_payments/button.phtml"/>
+			<block type="internationalcheckout/international" name="internationalcheckout.international" after='-' template="internationalcheckout/ic_button_on_cart.phtml"/>
 		</reference>
-		<reference name="checkout.cart.methods">
-			<block type="paypal/express_shortcut" name="checkout.cart.methods.paypal_express.bottom" before="-" template="paypal/express/shortcut.phtml">
-				<action method="setIsQuoteAllowed"><value>1</value></action>
-			</block>
-		</reference>
-		<!-- GSX -->
-            	<reference name="checkout.cart.methods">  
-			<block type="amazon_payments/button" before="checkout.cart.methods.paypal_express.bottom" name="AmazonPayButtonBefore" template="amazon_payments/onepage/button.phtml"/>
-		</reference>	
-            	<reference name="checkout.cart.methods">  
-			<!-- <block type="globalshopex/internationallogic" name="globalshopex.internationallogic" before="-" template="globalshopex/switchtypecart.phtml">
-				<block type="globalshopex/internationallogic" name="formiframe"  template="globalshopex/formiframe.phtml" />
-				<block type="globalshopex/internationallogic" name="buttoniframe"  template="globalshopex/buttoniframe.phtml" />
-				<block type="globalshopex/internationallogic" name="formcartocart"  template="globalshopex/formcarttocart.phtml" />
-			</block> -->
-			<block type="internationalcheckout/international" name="internationalcheckout.international" before='-' template="internationalcheckout/ic_button_on_cart.phtml"/>
-		</reference>	
-		<!-- END GSX -->
 	    <block type="core/text_list" name="col1_before" />
         <block type="core/text_list" name="col2_before" />
 
