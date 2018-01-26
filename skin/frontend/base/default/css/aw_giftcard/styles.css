@@ -24,7 +24,7 @@ div#aw-giftcard-info-block table td.label {
 a.giftcard-btn-remove {
     display: inline;
     padding-right: 2px;
-    vertical-align: middle;
+    /*vertical-align: middle;*/
     text-decoration: none !important;
 }
 
