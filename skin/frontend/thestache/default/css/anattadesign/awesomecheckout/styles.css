@@ -1769,3 +1769,6 @@ body {
 @media only screen and (max-width: 978px){
   #icForm .text-below {width: 100%!important;}
 }
+.mess-country{font-style: italic;}
+.mess-country a{color: #53a548;}
+.mess-country span{font-weight: bold;color: #938a8d;}
