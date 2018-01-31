@@ -216,6 +216,7 @@ header#header .quick-access{z-index: 1;}
 	    float: none;
 	}
 	.cart .discount, .cart .shipping{margin-bottom: 0;}
+    .reward-mess{display: none;}
 }
 @media only screen and (max-width : 767px) and (min-width:481px)	{
 	
