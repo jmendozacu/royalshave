@@ -227,6 +227,7 @@ header.header .top-cart {
         float: none;
     }
     .cart .discount, .cart .shipping{margin-bottom: 0;}
+    .reward-mess{display: none;}
 }
 @media only screen and (max-width: 374px){
 	.catalog-product-view .product-view .product-shop .add-to-links-box {

@@ -188,15 +188,43 @@
     <div class="clear"></div>
 </div>
 <script type="text/javascript">
-    jQuery(document).ready(function(){
+    var myVar = setInterval(function(){ 
+        if (jQuery('.top-checkout .amazon-pay-button img').length ){
+            jQuery('.top-checkout .amazon-pay-button img').clone().appendTo('.totals-main .amazon-pay-button');
+            jQuery('.totals-main .amazon-pay-button img').click(function(){
+                jQuery('.top-checkout .amazon-pay-button img').click();
+            });
+            myStopFunction();
+        }
+    }, 1000);
+
+    function myStopFunction() {
+        clearInterval(myVar);
+    }
+
+    var w = jQuery(window).width();
+    var clone = jQuery('.omega.totals-main').clone();
+    jQuery('.omega.totals-main').remove();
+    if ( w > 768 ){
+        clone.insertBefore('.alpha.congift-wrap');
+    }else{
+        clone.insertAfter('.alpha.congift-wrap');
+    }
+
+    jQuery(window).resize(function() {
+        var w = jQuery(window).width();
+        var clone = jQuery('.omega.totals-main').clone();
+        jQuery('.omega.totals-main').remove();
+        if ( w > 768 ){
+            clone.insertBefore('.alpha.congift-wrap');
+        }else{
+            clone.insertAfter('.alpha.congift-wrap');
+        }
         var myVar = setInterval(function(){ 
-            if (jQuery('.top-checkout .amazon-pay-button img').length ){
-                jQuery('.top-checkout .amazon-pay-button img').clone().appendTo('.totals-main .amazon-pay-button');
-                jQuery('.totals-main .amazon-pay-button img').click(function(){
-                    jQuery('.top-checkout .amazon-pay-button img').click();
-                });
-                myStopFunction();
-            }
+            jQuery('.totals-main .amazon-pay-button img').click(function(){
+                jQuery('.top-checkout .amazon-pay-button img').click();
+            });
+            myStopFunction();
         }, 1000);
 
         function myStopFunction() {
