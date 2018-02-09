@@ -44,23 +44,25 @@
     </div>
 <?php elseif ($theme == 'New'): ?>
     <li id="<?php echo $captcha->getElementId(); ?>">
-        <div id="<?php echo $captcha->getElementId('image'); ?>" class='proxiblue-recaptcha'></div>
+        <div id="<?php echo $captcha->getElementId('image').uniqid(); ?>" class='proxiblue-recaptcha'></div>
     </li>
     <?php if ($this->canRenderJS()): ?>
         <script type="text/javascript">
             var reCaptchaCallback = function () {
                 $$('.proxiblue-recaptcha').each(
                     function (elm) {
-                        grecaptcha.render(elm.id, {
-                            'sitekey': '<?php echo $captcha->getPublicKey(); ?>',
-                            'callback': function (response) {
-                                // since there are multiple instances of the response text area, populate them all with this response.
-                                // this then will ensure teh correct response is submitted back for this request
-                                $$('.g-recaptcha-response').each(function (elm) {
-                                    $(elm).innerText = response;
-                                });
-                            }
-                        });
+                        if($$('#'+elm.id+' .g-recaptcha-response').length == 0 ) {
+                            grecaptcha.render(elm.id, {
+                                'sitekey': '<?php echo $captcha->getPublicKey(); ?>',
+                                'callback': function (response) {
+                                    // since there are multiple instances of the response text area, populate them all with this response.
+                                    // this then will ensure teh correct response is submitted back for this request
+                                    $$('.g-recaptcha-response').each(function (elm) {
+                                        $(elm).innerText = response;
+                                    });
+                                }
+                            });
+                        }
                     }
                 )
             };
