@@ -152,6 +152,9 @@
 			</block>
 			 <block type="core/template" name="top.search" as="topSearch" template="catalogsearch/form.mini.phtml"/>
 		</block>
+		<block type="cms/block" name="header-primary-right">
+			<action method="setBlockId"><block_id>header-primary-right</block_id></action>
+		</block>
     </reference>
 
         <!-- Removing sidebar blocks from default position and moving into left reference ====================================================================== -->

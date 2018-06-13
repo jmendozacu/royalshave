@@ -241,9 +241,81 @@ header.header .top-cart {
         top: 0px;
         text-align: center;
         float: none;
+        display: none;
     }
     .cart .discount, .cart .shipping{margin-bottom: 0;}
     .reward-mess{display: none;}
+    .bss-header-bar-right{
+        right: auto;
+        left: 10px;
+        z-index: 9;
+        top: 63px !important;
+        display: none;
+    }
+    header#header{height: 150px;}
+    .header-primary-right.mobile{position: static;background: white;padding: 0 20px;display: block;}
+    .header-primary-right.mobile img{width: 100%;}
+    .menu-text{display: none;}
+    .header#header .menu-button{position: absolute;left: 0;width: 35px;}
+    header#header .menu-line{position: absolute;top: 47px;left: 20px;}
+    .logo > img{width: 100% !important;}
+    header#header h2.logo{width: 85px;left: 30px;padding: 0;top: 6px;position: absolute !important;}
+    header.header .topline .grid_12.grid-topline{position: static;}
+    header#header .quick-access{top: 40px;position: absolute;left: 0;width: 100%;}
+    header.header .top-cart{top: 56px !important;width: auto;right: 20px;}
+    .bss-header-bar-left .top-cart .cart img{margin-left: 0;}
+    .topline{margin: 0 20px;}
+    body header#header .search_mini_form.floating{padding: 10px 0;}
+    .phone-mobile{position: absolute;top: 59px;right: 80px;z-index: 1;}
+    .login-mobile{position: absolute;top: 58px;right: 50px;z-index: 1;}
+    header.header .top-cart .block-title{display: none}
+    header.header .top-cart .block-title.top-cart-mobile{display: block;}
+    header.header .topline .quick-access form.searchautocomplete.UI-SEARCHAUTOCOMPLETE.search_mini_form{padding: 0;}
+    header.header .topline .searchautocomplete .nav .nav-search-in{width: 49px;}
+    header.header .topline .searchautocomplete .nav .nav-search-in .category-fake{border: none;}
+    header.header .topline .searchautocomplete .nav .nav-input{left: 50px;width: calc( 100% - 51px );padding: 0 !important;}
+    header.header .topline .searchautocomplete .nav .nav-input input{margin: 0;padding: 0 5px;}
+    header.header .topline .searchautocomplete .nav-submit-button{padding: 0;float: left;width: 50px;}
+    header.header .topline .searchautocomplete .nav-submit-button .button{padding: 0;width: 100%;}
+    header.header .topline .searchautocomplete .nav{float: left;width: calc( 100% - 50px );}
+    .catalog-product-view .product-view {
+        z-index: 10;
+    }
+    .product-view .product-options-bottom .add-to-cart,
+    .product-view .add-to-cart {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        margin: 0 !important;
+        width: calc(100% - 30px);
+        display: block;
+        padding: 15px;
+        background: #fff;
+        z-index: 9;
+    }
+    .product-view .product-options {
+        position: fixed;
+        left: 0;
+        bottom: 66px;
+        margin: 0 !important;
+        width: calc(100% - 30px);
+        display: block;
+        padding: 15px;
+        background: #fff;
+        border-top: 2px solid #9a9a9a;
+        z-index: 10;
+    }
+    .product-view .add-to-cart button.button {
+        width: calc(100% - 115px);
+    }
+    .add-to-cart button.button span {
+        width: 100%;
+    }
+    .add-to-cart button.button span span{
+        width: 100%;
+        padding: 0;
+    }
+    .menu-button span{color: #222;}
 }
 @media only screen and (max-width: 374px){
 	.catalog-product-view .product-view .product-shop .add-to-links-box {
@@ -256,7 +328,6 @@ header.header .top-cart {
 /************/
 @media only screen and (max-width : 977px) {
 .header-primary-right {
-    display: block;
     top: 13px;
     position: relative;
 }
@@ -673,6 +744,8 @@ table.table-cogift td {
         color: #000;
         text-decoration: none;
     }
+    .top-cart-mobile, .phone-mobile, .login-mobile{display: none;}
+    .header-primary-right.mobile{display: none;}
 }
 @media only screen and (min-width: 1280px){
     .cart .data-table .item-options {
