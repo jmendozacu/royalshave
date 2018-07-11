@@ -305,7 +305,7 @@ class Ebizmarts_MailChimp_Model_Observer
     public function addColumnToSalesOrderGrid($observer)
     {
         $block = $observer->getEvent()->getBlock();
-        if ($block instanceof Mage_Adminhtml_Block_Sales_Order_Grid && Mage::helper('mailchimp')->getConfigValue(Ebizmarts_MailChimp_Model_Config::MONKEY_GRID) &&(Mage::helper('mailchimp')->getConfigValue(Ebizmarts_MailChimp_Model_Config::ABANDONEDCART_ACTIVE) || Mage::helper('mailchimp')->getConfigValue(Ebizmarts_MailChimp_Model_Config::GENERAL_ACTIVE))) {
+        if (($block instanceof Mage_Adminhtml_Block_Sales_Order_Grid || $block instanceof Raveinfosys_Deleteorder_Block_Adminhtml_Sales_Order_Grid) && Mage::helper('mailchimp')->getConfigValue(Ebizmarts_MailChimp_Model_Config::MONKEY_GRID) &&(Mage::helper('mailchimp')->getConfigValue(Ebizmarts_MailChimp_Model_Config::ABANDONEDCART_ACTIVE) || Mage::helper('mailchimp')->getConfigValue(Ebizmarts_MailChimp_Model_Config::GENERAL_ACTIVE))) {
             $block->addColumnAfter(
                 'mailchimp_flag', array(
                 'header' => Mage::helper('mailchimp')->__('MailChimp'),
