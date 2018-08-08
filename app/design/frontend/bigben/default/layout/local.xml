@@ -649,7 +649,7 @@
 			<block type="paypal/express_shortcut" name="checkout.cart.methods.paypal_express.bottom" after='-' template="paypal/express/shortcut.phtml">
 				<action method="setIsQuoteAllowed"><value>1</value></action>
 			</block>
-			<block type="amazon_payments/button" after='-' name="AmazonPayButtonMethod" template="amazon_payments/button.phtml"/>
+			<block type="amazon_payments/button" after='-' name="AmazonPayButtonMethod_clone" template="amazon_payments/button_clone.phtml"/>
 			<block type="internationalcheckout/international" name="internationalcheckout.international" after='-' template="internationalcheckout/ic_button_on_cart.phtml"/>
 		</block>
 		
