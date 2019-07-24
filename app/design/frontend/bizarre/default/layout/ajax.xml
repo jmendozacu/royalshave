@@ -32,7 +32,14 @@
             <!-- <action method="addJs" ifconfig="ajax/wishlistcompare/enabled"><script>VS/ajaxwishlist.js</script></action> -->
             <action method="addItem" ifconfig="ajax/wishlistcompare/enabled"><type>skin_js</type><name>js/ajaxwishlist.js</name><params/></action>
 			<block type="core/template" name="ajaxtoolbar" template="ajax/ajaxtoolbar.phtml" output="toHtml"></block>
-			<action method="addJs" ifconfig="ajax/ajaxtoolbar/enabled"><script>VS/ajaxtoolbar.js</script></action>
+            <action method="removeItem" ifconfig="ajax/ajaxtoolbar/enabled">
+                <type>js</type>
+                <name>VS/ajaxtoolbar.js</name>
+            </action>
+            <action method="addJs" ifconfig="ajax/ajaxtoolbar/enabled">
+                <script>custom_vs/ajaxtoolbar.js</script>
+            </action>
+			<!-- <action method="addJs" ifconfig="ajax/ajaxtoolbar/enabled"><script>VS/ajaxtoolbar.js</script></action> -->
 			 <!-- <action method="addItem" ifconfig="ajax/general/enabledpro">
                 <type>skin_js</type>
                 <name>VS/js/fancybox/jquery.fancybox-1.3.4.js</name>
@@ -61,7 +68,14 @@
             <!-- <action method="addJs" ifconfig="ajax/wishlistcompare/enabled"><script>VS/ajaxwishlist.js</script></action> -->
             <action method="addItem" ifconfig="ajax/wishlistcompare/enabled"><type>skin_js</type><name>js/ajaxwishlist.js</name><params/></action>
 			<block type="core/template" name="ajaxtoolbar" template="ajax/ajaxtoolbar.phtml" output="toHtml"></block>
-			<action method="addJs" ifconfig="ajax/ajaxtoolbar/enabled"><script>VS/ajaxtoolbar.js</script></action>
+            <action method="removeItem" ifconfig="ajax/ajaxtoolbar/enabled">
+                <type>js</type>
+                <name>VS/ajaxtoolbar.js</name>
+            </action>
+            <action method="addJs" ifconfig="ajax/ajaxtoolbar/enabled">
+                <script>custom_vs/ajaxtoolbar.js</script>
+            </action>
+			<!-- <action method="addJs" ifconfig="ajax/ajaxtoolbar/enabled"><script>VS/ajaxtoolbar.js</script></action> -->
 			<!-- <action method="addItem" ifconfig="ajax/general/enabledpro">
                 <type>skin_js</type>
                 <name>VS/js/fancybox/jquery.fancybox-1.3.4.js</name>
@@ -88,7 +102,14 @@
 	<catalogsearch_result_index>
 		<reference name="head">
 			<action method="addItem" ifconfig="ajax/wishlistcompare/enabled"><type>skin_js</type><name>js/ajaxwishlist.js</name><params/></action>
-			<action method="addJs" ifconfig="ajax/ajaxtoolbar/enabled"><script>VS/ajaxtoolbar.js</script></action>catalogsearch_result_index
+            <action method="removeItem" ifconfig="ajax/ajaxtoolbar/enabled">
+                <type>js</type>
+                <name>VS/ajaxtoolbar.js</name>
+            </action>
+            <action method="addJs" ifconfig="ajax/ajaxtoolbar/enabled">
+                <script>custom_vs/ajaxtoolbar.js</script>
+            </action>
+			<!-- <action method="addJs" ifconfig="ajax/ajaxtoolbar/enabled"><script>VS/ajaxtoolbar.js</script></action> -->catalogsearch_result_index
 		</reference>
 	</catalogsearch_result_index>
 	<catalogsearch_advanced_result>
