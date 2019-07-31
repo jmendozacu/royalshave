@@ -34,12 +34,7 @@ $jq=jQuery.noConflict();
 			},//End onReady
 			onSend:function(url,typemethod){
 				var pageCurrent = '';
-				if(url.indexOf("ajaxtoolbar") != -1){
-					pageCurrent = url.split("?");
-				    pageCurrent = pageCurrent[1].split("&");
-				}else {
-					pageCurrent = url.split("?");
-				}
+				pageCurrent = 'p='+ajaxtoolbar.urlParam('p',url);
 				new Ajax.Request(url,
 					{parameters:{ajaxtoolbar:1},
 					method:typemethod,
@@ -55,7 +50,7 @@ $jq=jQuery.noConflict();
 							// Get success	
 							var list	=	cp.responseJSON;
 							$$("section.category-products").invoke("replace",list.toolbarlistproduct);
-							window.history.pushState("", "", "?"+pageCurrent[1]);
+							window.history.pushState("", "", "?"+pageCurrent);
 							ajaxtoolbar.onReady();
 							
 						}
@@ -64,7 +59,15 @@ $jq=jQuery.noConflict();
 					}
 					
 				});
-			}//End onSend	
+			},//End onSend
+			
+			urlParam:function(name,url){
+			    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(url);
+			    if (results==null) {
+			       return null;
+			    }
+			    return decodeURI(results[1]) || 0;
+			}	
 		}
 	}();
 Prototype.Browser.IE?Event.observe(window,"load",function(){ajaxtoolbar.onReady()}):document.observe("dom:loaded",function(){ajaxtoolbar.onReady()});
