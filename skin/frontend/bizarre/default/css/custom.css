@@ -1160,7 +1160,30 @@ position: absolute;right: 35px;padding-top: 5px;
 }
 }
 
+.products-grid .availability.out-of-stock {
+    background-color: rgba(204,204,204,.8);
+    height: 110px;
+    width: 116px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px;
+    font-size: 1em;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -60px 0 0 -63px;
+    z-index: 100;
+    display: table;
+}
 
+.products-grid .availability.out-of-stock > span {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 12px;
+}
+    
 @media screen and (max-width: 414px){
     .product-box h2.product-name{
         margin: 0;

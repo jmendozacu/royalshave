@@ -197,6 +197,9 @@
             <li class="item<?php if($labelsoptions['labelsorder'] == 'new_sale'):?> labels-new-sale<?php endif; ?>">
 				<div class="product-container">
 					<div class="product-img-box">
+						<?php if ($_product->getStockItem()->getIsInStock() == 0) : ?>
+							<span class="availability out-of-stock"><span><?php echo $this->__('Sold Out'); ?></span></span>
+						<?php endif; ?>
 						<?php echo MAGE::helper('ThemeOptionsBizarre')->getProductLabels($_product, 'new'); ?>
 						<?php if($productOnlyXleft and MAGE::helper('ThemeOptionsBizarre')->getProductOnlyXleft($_product)): ?>
 							<?php echo MAGE::helper('ThemeOptionsBizarre')->getProductOnlyXleft($_product); ?>
