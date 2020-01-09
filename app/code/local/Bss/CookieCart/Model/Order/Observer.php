@@ -1,4 +1,4 @@
-<?php
+<?php   
 
 class Bss_CookieCart_Model_Order_Observer
 {
@@ -23,7 +23,7 @@ class Bss_CookieCart_Model_Order_Observer
             }
             $productRemove = '';
             $flag = 0;
-            if (($_COOKIE['cookiecart_' . $domain] != 'bss_cookiecart') && !$isProductInCart) {
+            if (isset($_COOKIE['cookiecart_' . $domain]) && ($_COOKIE['cookiecart_' . $domain] != 'bss_cookiecart') && !$isProductInCart) {
                 $cart = Mage::getSingleton('checkout/cart');
                 $cart->init();
                 $data_unserialize = unserialize($_COOKIE['cookiecart_' . $domain]);
