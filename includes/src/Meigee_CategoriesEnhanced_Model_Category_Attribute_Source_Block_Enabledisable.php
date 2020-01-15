@@ -1,4 +1,4 @@
- <?php
+<?php
 class Meigee_CategoriesEnhanced_Model_Category_Attribute_Source_Block_Enabledisable extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
 {	
 	public function getAllOptions()

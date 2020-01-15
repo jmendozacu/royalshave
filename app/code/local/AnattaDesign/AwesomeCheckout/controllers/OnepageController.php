@@ -450,7 +450,7 @@ class AnattaDesign_AwesomeCheckout_OnepageController extends Mage_Checkout_Contr
 			$this->getResponse()->setBody( Mage::helper( 'core' )->jsonEncode( $result ) );
 		}
 	}
-
+	
 	/**
 	 * Save payment ajax action
 	 *
@@ -508,7 +508,6 @@ class AnattaDesign_AwesomeCheckout_OnepageController extends Mage_Checkout_Contr
 					$data['method'] = 'free';
 				$this->getOnepage()->getQuote()->setTotalsCollectedFlag(false);
 				$result = $this->getOnepage()->savePayment( $data );
-
 				// get section and redirect data
 				$redirectUrl = $this->getOnepage()->getQuote()->getPayment()->getCheckoutRedirectUrl();
 				if ( empty( $result['error'] ) && !$redirectUrl ) {
